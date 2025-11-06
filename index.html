@@ -22,26 +22,26 @@
       background:var(--bg);
       color:var(--fg);
       font-family:'D2Coding','D2 coding',monospace;
-      line-height:1.9;
-      font-size:24px;
+      line-height:1.8;
+      font-size:19px;
     }
-    body{padding:50px 25px}
+    body{padding:42px 22px}
     .container{max-width:var(--maxw);margin:0 auto}
     
     /* Header */
-    .header{margin-bottom:60px;border-bottom:2px solid var(--border);padding-bottom:35px}
-    .header h1{font-size:42px;margin-bottom:10px;letter-spacing:-.5px;font-weight:700}
-    .header .subtitle{color:var(--muted);margin-bottom:16px;font-size:22px;line-height:1.6}
-    .header .contact{display:flex;gap:18px;flex-wrap:wrap;margin-top:16px}
-    .header .contact a{color:var(--accent);text-decoration:none;font-size:21px}
+    .header{margin-bottom:52px;border-bottom:2px solid var(--border);padding-bottom:30px}
+    .header h1{font-size:35px;margin-bottom:8px;letter-spacing:-.5px;font-weight:700}
+    .header .subtitle{color:var(--muted);margin-bottom:14px;font-size:18px;line-height:1.6}
+    .header .contact{display:flex;gap:15px;flex-wrap:wrap;margin-top:14px}
+    .header .contact a{color:var(--accent);text-decoration:none;font-size:17px}
     .header .contact a:hover{text-decoration:underline}
     
     /* Section */
-    section{margin:50px 0}
+    section{margin:42px 0}
     section h2{
-      font-size:32px;
-      margin-bottom:25px;
-      padding-bottom:12px;
+      font-size:26px;
+      margin-bottom:20px;
+      padding-bottom:10px;
       border-bottom:2px solid var(--border);
       color:var(--hl);
       letter-spacing:.3px;
@@ -49,47 +49,47 @@
     }
     
     /* About */
-    .about p{margin-bottom:14px;color:var(--fg);font-size:24px;line-height:1.8}
-    .tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+    .about p{margin-bottom:12px;color:var(--fg);font-size:19px;line-height:1.8}
+    .tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
     .tag{
-      padding:8px 16px;
+      padding:6px 13px;
       background:#12151c;
       border:1px solid var(--border);
       border-radius:6px;
-      font-size:20px;
+      font-size:16px;
       color:var(--muted);
     }
     
     /* Timeline Items */
     .timeline-year{
-      font-size:28px;
+      font-size:23px;
       font-weight:700;
       color:var(--hl);
-      margin:35px 0 20px;
+      margin:30px 0 17px;
       display:block;
     }
     .item{
-      margin:12px 0 12px 25px;
-      padding-left:16px;
+      margin:10px 0 10px 20px;
+      padding-left:14px;
       border-left:3px solid var(--border);
       line-height:1.7;
     }
     .item .title{
       font-weight:700;
       color:var(--fg);
-      margin-bottom:6px;
-      font-size:24px;
+      margin-bottom:5px;
+      font-size:19px;
     }
     .item .meta{
       color:var(--muted);
-      font-size:20px;
+      font-size:17px;
       line-height:1.6;
     }
     
     /* CVE Project Group */
     .cve-project{
-      margin:25px 0;
-      padding:22px;
+      margin:22px 0;
+      padding:19px;
       background:#0f1117;
       border:1px solid var(--border);
       border-radius:10px;
@@ -97,29 +97,29 @@
     .cve-project-header{
       font-weight:700;
       color:var(--hl);
-      margin-bottom:14px;
-      font-size:24px;
+      margin-bottom:12px;
+      font-size:19px;
     }
     .cve-project-meta{
       color:var(--muted);
-      font-size:20px;
-      margin-bottom:16px;
+      font-size:17px;
+      margin-bottom:14px;
       line-height:1.6;
     }
     
     /* CVE Grid */
     .cve-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fill, minmax(190px, 1fr));
-      gap:12px;
-      margin-top:16px;
+      grid-template-columns:repeat(auto-fill, minmax(165px, 1fr));
+      gap:10px;
+      margin-top:14px;
     }
     .cve-item{
-      padding:10px 14px;
+      padding:8px 12px;
       background:#12151c;
       border:1px solid var(--border);
       border-radius:6px;
-      font-size:19px;
+      font-size:16px;
       color:var(--accent);
       text-align:center;
       display:block;
@@ -134,12 +134,12 @@
     
     /* Simple list for org */
     .simple-item{
-      margin:12px 0;
-      padding-left:16px;
+      margin:10px 0;
+      padding-left:14px;
       border-left:3px solid var(--border);
     }
-    .simple-item .title{font-weight:700;color:var(--fg);font-size:24px}
-    .simple-item .meta{color:var(--muted);font-size:20px;margin-top:4px}
+    .simple-item .title{font-weight:700;color:var(--fg);font-size:19px}
+    .simple-item .meta{color:var(--muted);font-size:17px;margin-top:4px}
     
     /* Links */
     a{color:var(--accent);text-decoration:none}
@@ -147,25 +147,25 @@
     
     /* Footer */
     footer{
-      margin-top:70px;
-      padding-top:25px;
+      margin-top:62px;
+      padding-top:22px;
       border-top:2px solid var(--border);
       text-align:center;
       color:var(--muted);
-      font-size:19px;
+      font-size:16px;
     }
     
     /* Emoji */
     .emoji{font-style:normal;margin-right:6px}
     
     @media(max-width:640px){
-      html,body{font-size:20px}
-      body{padding:30px 18px}
-      .header h1{font-size:34px}
-      .header .subtitle{font-size:18px}
-      section h2{font-size:26px}
-      .cve-grid{grid-template-columns:repeat(auto-fill, minmax(150px, 1fr))}
-      .timeline-year{font-size:24px}
+      html,body{font-size:17px}
+      body{padding:26px 16px}
+      .header h1{font-size:30px}
+      .header .subtitle{font-size:16px}
+      section h2{font-size:23px}
+      .cve-grid{grid-template-columns:repeat(auto-fill, minmax(135px, 1fr))}
+      .timeline-year{font-size:21px}
     }
   </style>
 </head>
@@ -217,7 +217,7 @@
       <div class="meta">2025.03 ~ 2025.09</div>
     </div>
     <div class="simple-item">
-      <div class="title">CYAI Lab (Cybersecurity AI Lab)</div>
+      <div class="title">CYAI Lab 학부연구생 (Cybersecurity AI Lab)</div>
       <div class="meta">2025.04 ~ Present</div>
     </div>
   </section>

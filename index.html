@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>김근호(rootk1m) — Security Researcher</title>
+  <meta name="description" content="김근호(rootk1m) — IoT/System/Mobile Security · CVE · Exploit/Reversing" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-subset.css" rel="stylesheet"/>
+  <style>
+    :root{
+      --bg:#0a0b0f; 
+      --fg:#e8e8e8; 
+      --muted:#888; 
+      --accent:#64d2ff; 
+      --hl:#7aa2ff;
+      --border:#1b1e27;
+      --maxw:800px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{
+      background:var(--bg);
+      color:var(--fg);
+      font-family:'D2Coding','D2 coding',monospace;
+      line-height:1.8;
+      font-size:15px;
+    }
+    body{padding:40px 20px}
+    .container{max-width:var(--maxw);margin:0 auto}
+    
+    /* Header */
+    .header{margin-bottom:50px;border-bottom:1px solid var(--border);padding-bottom:30px}
+    .header h1{font-size:28px;margin-bottom:6px;letter-spacing:-.5px}
+    .header .subtitle{color:var(--muted);margin-bottom:12px;font-size:14px}
+    .header .contact{display:flex;gap:15px;flex-wrap:wrap;margin-top:12px}
+    .header .contact a{color:var(--accent);text-decoration:none;font-size:14px}
+    .header .contact a:hover{text-decoration:underline}
+    
+    /* Section */
+    section{margin:40px 0}
+    section h2{
+      font-size:19px;
+      margin-bottom:18px;
+      padding-bottom:8px;
+      border-bottom:1px solid var(--border);
+      color:var(--hl);
+      letter-spacing:.3px;
+    }
+    
+    /* About */
+    .about p{margin-bottom:12px;color:var(--fg)}
+    .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+    .tag{
+      padding:4px 12px;
+      background:#12151c;
+      border:1px solid var(--border);
+      border-radius:4px;
+      font-size:13px;
+      color:var(--muted);
+    }
+    
+    /* Timeline Items */
+    .timeline-year{
+      font-size:17px;
+      font-weight:600;
+      color:var(--hl);
+      margin:25px 0 15px;
+      display:block;
+    }
+    .item{
+      margin:8px 0 8px 20px;
+      padding-left:12px;
+      border-left:2px solid var(--border);
+      line-height:1.6;
+    }
+    .item .title{
+      font-weight:600;
+      color:var(--fg);
+      margin-bottom:2px;
+      font-size:15px;
+    }
+    .item .meta{
+      color:var(--muted);
+      font-size:13px;
+    }
+    
+    /* CVE Project Group */
+    .cve-project{
+      margin:20px 0;
+      padding:16px;
+      background:#0f1117;
+      border:1px solid var(--border);
+      border-radius:8px;
+    }
+    .cve-project-header{
+      font-weight:600;
+      color:var(--hl);
+      margin-bottom:12px;
+      font-size:15px;
+    }
+    .cve-project-meta{
+      color:var(--muted);
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    
+    /* CVE Grid */
+    .cve-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fill, minmax(150px, 1fr));
+      gap:8px;
+      margin-top:12px;
+    }
+    .cve-item{
+      padding:6px 10px;
+      background:#12151c;
+      border:1px solid var(--border);
+      border-radius:4px;
+      font-size:12px;
+      color:var(--accent);
+      text-align:center;
+      display:block;
+      transition:all 0.2s;
+    }
+    .cve-item:hover{
+      background:#16181f;
+      border-color:var(--accent);
+      transform:translateY(-2px);
+    }
+    
+    /* Simple list for org */
+    .simple-item{
+      margin:8px 0;
+      padding-left:12px;
+      border-left:2px solid var(--border);
+    }
+    .simple-item .title{font-weight:600;color:var(--fg)}
+    .simple-item .meta{color:var(--muted);font-size:13px}
+    
+    /* Links */
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    
+    /* Footer */
+    footer{
+      margin-top:60px;
+      padding-top:20px;
+      border-top:1px solid var(--border);
+      text-align:center;
+      color:var(--muted);
+      font-size:13px;
+    }
+    
+    /* Emoji */
+    .emoji{font-style:normal;margin-right:4px}
+    
+    @media(max-width:640px){
+      body{padding:20px 15px}
+      .header h1{font-size:24px}
+      .cve-grid{grid-template-columns:repeat(auto-fill, minmax(120px, 1fr))}
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  
+  <!-- Header -->
+  <header class="header">
+    <h1>김근호 (rootk1m)</h1>
+    <div class="subtitle">Security Researcher — IoT / System / Mobile Security · CVE · Exploit/Reversing</div>
+    <div class="contact">
+      <a href="mailto:awqs1221@naver.com">awqs1221@naver.com</a>
+      <span style="color:var(--border)">|</span>
+      <a href="https://github.com/R00T-Kim" target="_blank">GitHub</a>
+      <span style="color:var(--border)">|</span>
+      <a href="https://github.com/Brrester/IoT-Smart-Doorbell-Vulnerability-Analysis-Guide" target="_blank">Team Brrester</a>
+      <span style="color:var(--border)">|</span>
+      <a href="https://rootk1m.tistory.com/" target="_blank">Blog</a>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section class="about">
+    <h2>About</h2>
+    <p>SSG(Sejong Security Group) / WhiteHat School 3기</p>
+    <p>IoT/Embedded/Mobile Security 등 Offensive Security 분야를 공부합니다.</p>
+    <div class="tags">
+      <span class="tag">Offensive Security</span>
+      <span class="tag">IoT/Embedded</span>
+      <span class="tag">Binary Exploitation</span>
+      <span class="tag">Reverse Engineering</span>
+      <span class="tag">CVE Research</span>
+    </div>
+  </section>
+
+  <!-- Organization -->
+  <section>
+    <h2>Organization</h2>
+    <div class="simple-item">
+      <div class="title">세종대학교 컴퓨터공학과 (재학)</div>
+      <div class="meta">2021 ~ Present</div>
+    </div>
+    <div class="simple-item">
+      <div class="title">세종대학교 보안동아리 SSG (운영진)</div>
+      <div class="meta">2024 ~ Present</div>
+    </div>
+    <div class="simple-item">
+      <div class="title">화이트햇 스쿨 3기</div>
+      <div class="meta">2025.03 ~ 2025.09</div>
+    </div>
+    <div class="simple-item">
+      <div class="title">CYAI Lab (Cybersecurity AI Lab)</div>
+      <div class="meta">2025.04 ~ Present</div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section>
+    <h2>Timeline</h2>
+    
+    <span class="timeline-year">2025</span>
+
+    <div class="item">
+      <div class="title"><span class="emoji">🏆</span>최우수 논문상</div>
+      <div class="meta">한국인터넷정보학회 추계학술대회 · 국방정보기술연구회 · 2025.10.30</div>
+    </div>
+    
+    <div class="item">
+      <div class="title"><span class="emoji">🎯</span>AutoHack 2025 본선 진출</div>
+      <div class="meta">국민대학교 미래자동차사업단</div>
+    </div>
+    
+    <div class="item">
+      <div class="title">📝 Agentic AI 기반 ExploitAgent의 구조 설계 및 자율 행위 생성 기술 (논문)</div>
+      <div class="meta">학부생논문(구두) · 논문번호 0067 · 조상훈(발표자), 김근호, 최창희</div>
+    </div>
+    
+    <div class="item">
+        <div class="title">SSG 프로젝트부 부장</div>
+        <div class="meta">2025.09 ~ Present</div>
+    </div>
+
+    <div class="item">
+      <div class="title">🔬 스마트 기기 취약점 분석 (18 CVE)</div>
+      <div class="meta">Team Brrester · 2025.05 ~ 2025.07 · <a href="https://github.com/Brrester/IoT-Smart-Doorbell-Vulnerability-Analysis-Guide" target="_blank">GitHub</a></div>
+    </div>
+    
+    <div class="item">
+      <div class="title">🎤 SSG 시스템 해킹 강의 및 멘토링</div>
+      <div class="meta">동아리 신입생 대상 · 2025.03 ~ 2025.08</div>
+    </div>
+
+    <span class="timeline-year">2024</span>
+    
+    <div class="item">
+      <div class="title">SSG 회계 및 서기 (운영진)</div>
+      <div class="meta">2024.09 ~ 2025.08</div>
+    </div>
+    
+    <div class="item">
+      <div class="title">SSG 입부 및 활동</div>
+      <div class="meta">2024.03 ~ 2024.08</div>
+    </div>
+
+    <span class="timeline-year">2021</span>
+    
+    <div class="item">
+      <div class="title">🎓 세종대학교 컴퓨터공학과 입학</div>
+      <div class="meta">2021.03</div>
+    </div>
+
+  </section>
+
+  <!-- CVE & Vulnerability Research -->
+  <section>
+    <h2>CVE & Vulnerability Research</h2>
+    
+    <!-- Project Group: Team Brrester -->
+    <div class="cve-project">
+      <div class="cve-project-header">🔬 스마트 기기 취약점 분석 (Team Brrester)</div>
+      <div class="cve-project-meta">2025.05 ~ 2025.07 · IoT Smart Doorbell · <a href="https://github.com/Brrester/IoT-Smart-Doorbell-Vulnerability-Analysis-Guide" target="_blank">GitHub</a></div>
+      <div class="cve-grid">
+        <a href="https://www.opencve.io/cve/CVE-2025-55619" target="_blank" class="cve-item">CVE-2025-55619</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55620" target="_blank" class="cve-item">CVE-2025-55620</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55621" target="_blank" class="cve-item">CVE-2025-55621</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55622" target="_blank" class="cve-item">CVE-2025-55622</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55623" target="_blank" class="cve-item">CVE-2025-55623</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55624" target="_blank" class="cve-item">CVE-2025-55624</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55625" target="_blank" class="cve-item">CVE-2025-55625</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55626" target="_blank" class="cve-item">CVE-2025-55626</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55627" target="_blank" class="cve-item">CVE-2025-55627</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55629" target="_blank" class="cve-item">CVE-2025-55629</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55630" target="_blank" class="cve-item">CVE-2025-55630</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55631" target="_blank" class="cve-item">CVE-2025-55631</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55634" target="_blank" class="cve-item">CVE-2025-55634</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-55637" target="_blank" class="cve-item">CVE-2025-55637</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-56799" target="_blank" class="cve-item">CVE-2025-56799</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-56800" target="_blank" class="cve-item">CVE-2025-56800</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-56801" target="_blank" class="cve-item">CVE-2025-56801</a>
+        <a href="https://www.opencve.io/cve/CVE-2025-56802" target="_blank" class="cve-item">CVE-2025-56802</a>
+      </div>
+    </div>
+    
+    <!-- Other CVE Analysis -->
+     
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Kim Keunho (rootk1m). All rights reserved.</p>
+  </footer>
+
+</div>
+</body>
+</html>

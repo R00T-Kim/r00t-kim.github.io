@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "certified": "Certified",
+    "speaking": "Speaking",
+    "projects": "Projects",
+    "contact": "Contact",
+    "career-highlights": "Portfolio"
+  },
+  "hero": {
+    "greeting": "Hello",
+    "name": "Keunho Kim(rootk1m)",
+    "title": "Security Researcher",
+    "subtitle": "Researching vulnerability analysis and exploit/reversing across diverse environments from an Offensive Security perspective",
+    "cta_resume": "View Portfolio",
+    "cta_contact": "Get in Touch"
+  },
+  "about": {
+    "heading": "About",
+    "description_1": "Security researcher specializing in vulnerability analysis and exploit/reversing across diverse environments including IoT, Embedded, Automotive, and Mobile from an Offensive Security perspective. Beyond finding vulnerabilities, I pursue evidence-based analysis routines that include reproducibility, verification evidence, and documentation deliverables.",
+    "description_2": "Contributed to discovering 18 CVEs through IoT smart doorbell analysis and currently researching vulnerability analysis automation using Agentic AI and LLM-based APT scenario variant generation experiments.",
+    "description_3": "Currently studying Computer Science at Sejong University and participating in AI-based security research as an undergraduate researcher at CYAI Lab. Experienced as a Red Team intern at AUTOCRYPT Vehicle Threat Research Lab with an AutoHack 2025 award.",
+    "keywords": ["IoT/Embedded Security", "Automotive Security", "Reverse Engineering", "Binary Exploitation", "Agentic AI", "CVE Research"]
+  },
+  "experience": {
+    "heading": "Experience"
+  },
+  "certified": {
+    "heading": "Certified",
+    "certifications": "Certifications",
+    "awards": "Awards"
+  },
+  "speaking": {
+    "heading": "Speaking & Community",
+    "talks": "Talks & Lectures",
+    "community": "Community"
+  },
+  "projects": {
+    "heading": "Projects"
+  },
+  "contact": {
+    "heading": "Contact",
+    "description": "Feel free to reach out for security research collaboration, speaking, or opportunities.",
+    "email": "Email",
+    "blog": "Blog",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "© 2026 Keunho Kim. All rights reserved.",
+    "built_with": "Built with Awesome Portfolio Template"
+  },
+  "common": {
+    "present": "Present",
+    "goal": "Goal",
+    "content": "Content",
+    "result": "Result",
+    "view_more": "View Guideline",
+    "view_slides": "Slides",
+    "view_video": "Watch Video",
+    "featured": "Featured",
+    "active": "Active"
+  },
+  "career_highlights": {
+    "heading": "Portfolio",
+    "overview_label": "Overview",
+    "achievements_label": "Key Achievements",
+    "competencies_label": "Core Competencies",
+    "cta_title": "See the Full Story",
+    "cta_description": "Explore the background, role, results and lessons behind each project.",
+    "cta_button": "View Details",
+    "self_developed_tools_label": "Self-Developed Tools"
+  },
+  "career_story": {
+    "title": "Portfolio",
+    "subtitle": "Detailed background, role, results and lessons behind each achievement.",
+    "back": "Go Back",
+    "background": "Background",
+    "role": "Role",
+    "results": "Results & Impact",
+    "lessons": "Lessons Learned",
+    "toc": "Table of Contents"
+  }
+}

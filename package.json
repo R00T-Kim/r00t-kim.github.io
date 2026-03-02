@@ -1,0 +1,46 @@
+{
+  "name": "awesome-portfolio-template",
+  "version": "1.0.0",
+  "description": "All-in-one portfolio template with Next.js 16, TypeScript, Tailwind CSS v4, i18n, dark mode, and career detail page",
+  "keywords": ["portfolio", "template", "nextjs", "typescript", "tailwindcss", "i18n", "dark-mode", "framer-motion"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zer0-kr/awesome-portfolio-template"
+  },
+  "author": "zer0-kr",
+  "homepage": "https://github.com/zer0-kr/awesome-portfolio-template",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-dropdown-menu": "^2.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@vercel/analytics": "^1.6.1",
+    "@vercel/speed-insights": "^1.3.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.4.7",
+    "lucide-react": "^0.475.0",
+    "next": "16.1.6",
+    "next-intl": "^4.1.0",
+    "next-themes": "^0.4.4",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "tailwind-merge": "^3.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "typescript": "5.9.3"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "nav": {
+    "about": "소개",
+    "experience": "경력",
+    "certified": "자격·수상",
+    "speaking": "발표",
+    "projects": "프로젝트",
+    "contact": "연락처",
+    "career-highlights": "포트폴리오"
+  },
+  "hero": {
+    "greeting": "안녕하세요",
+    "name": "김근호(rootk1m)",
+    "title": "Security Researcher",
+    "subtitle": "Offensive Security 관점에서 다양한 환경의 취약점 분석과 Exploit/Reversing을 연구합니다",
+    "cta_resume": "포트폴리오",
+    "cta_contact": "연락하기"
+  },
+  "about": {
+    "heading": "About",
+    "description_1": "Offensive Security 관점에서 IoT, Embedded, Automotive, Mobile 등 다양한 환경의 취약점 분석과 Exploit/Reversing을 연구하는 보안 연구원입니다. 취약점을 찾는 수준을 넘어, 재현 가능성·검증 근거·문서화 산출물까지 포함한 근거 중심의 분석 루틴을 지향합니다.",
+    "description_2": "IoT 스마트 도어벨 분석을 통해 총 18건의 CVE 발굴에 기여했으며, Agentic AI를 활용한 취약점 분석 자동화 연구와 LLM 기반 APT 시나리오 변종 생성 실험을 수행하고 있습니다.",
+    "description_3": "세종대학교 컴퓨터공학과 재학 중이며, CYAI Lab에서 학부 연구생으로 AI 기반 보안 연구에 참여하고 있습니다. AUTOCRYPT 자동차보안위협연구소 Red Team 인턴 경험과 AutoHack 2025 수상 경력이 있습니다.",
+    "keywords": ["IoT/Embedded Security", "Automotive Security", "Reverse Engineering", "Binary Exploitation", "Agentic AI", "CVE Research"]
+  },
+  "experience": {
+    "heading": "Experience"
+  },
+  "certified": {
+    "heading": "Certified",
+    "certifications": "자격증",
+    "awards": "수상"
+  },
+  "speaking": {
+    "heading": "Speaking & Community",
+    "talks": "발표·강의",
+    "community": "커뮤니티"
+  },
+  "projects": {
+    "heading": "Projects"
+  },
+  "contact": {
+    "heading": "Contact",
+    "description": "보안 연구 협업, 강연, 채용 등 편하게 연락 주세요.",
+    "email": "이메일",
+    "blog": "블로그",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "footer": {
+    "copyright": "© 2026 김근호. All rights reserved.",
+    "built_with": "Built with Awesome Portfolio Template"
+  },
+  "common": {
+    "present": "현재",
+    "goal": "목표",
+    "content": "내용",
+    "result": "성과",
+    "view_more": "가이드라인 바로가기",
+    "view_slides": "발표 자료",
+    "view_video": "영상 보기",
+    "featured": "Featured",
+    "active": "활동 중"
+  },
+  "career_highlights": {
+    "heading": "Portfolio",
+    "overview_label": "개요",
+    "achievements_label": "주요 성과",
+    "competencies_label": "핵심 역량",
+    "cta_title": "더 자세히 알아보기",
+    "cta_description": "각 프로젝트의 배경, 수행 역할, 성과와 교훈을 확인하세요.",
+    "cta_button": "상세 보기",
+    "self_developed_tools_label": "자체 개발 도구"
+  },
+  "career_story": {
+    "title": "포트폴리오",
+    "subtitle": "각 성과의 배경, 역할, 결과와 교훈을 상세히 소개합니다.",
+    "back": "뒤로가기",
+    "background": "배경",
+    "role": "역할",
+    "results": "결과 & 임팩트",
+    "lessons": "Lessons Learned",
+    "toc": "목차"
+  }
+}

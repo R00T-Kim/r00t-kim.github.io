@@ -26,7 +26,7 @@ export function About() {
         >
           <div className="relative h-36 w-36 overflow-hidden rounded-full border-2 border-border shadow-lg">
             <Image
-              src="/profile.png"
+              src="/profile.jpg"
               alt={t("heading")}
               fill
               className="object-cover"

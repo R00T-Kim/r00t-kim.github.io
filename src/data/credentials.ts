@@ -22,6 +22,14 @@ export const certifications: Certification[] = [];
 
 export const awards: Award[] = [
   {
+    title: "SPACE WAR @ ARIES (AI) CTF All Solved 7위",
+    titleEn: "SPACE WAR @ ARIES (AI) CTF All Solved 7th Place",
+    issuer: "HSPACE",
+    issuerEn: "HSPACE",
+    date: "2026.03",
+    highlight: true,
+  },
+  {
     title: "AutoHack 2025 COSS 협의회 의장상",
     titleEn: "AutoHack 2025 COSS Council Chair Award",
     issuer: "국민대학교 미래자동차사업단",

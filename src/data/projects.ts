@@ -45,14 +45,14 @@ export const projects: Project[] = [
     ],
     results: [
       "프로젝트 리더로서 시스템 아키텍처 설계 및 팀 리딩",
-      "FirmAE 데이터셋 기반 1,124개 펌웨어 이미지 대상 테스트 완료",
-      "정밀도 0.90 이상, 재현율 0.60 이상 품질 게이트 달성",
+      "FirmAE 데이터셋 기반 1,123개 펌웨어 이미지 대상 검증 (성공률 98.8%, 1110/1123)",
+      "LLM-Adjudicated FPR 99.3% 달성 (Tier 2 carry-over baseline)",
       "Python 표준 라이브러리만으로 구현 (Zero pip dependencies)",
     ],
     resultsEn: [
       "Led system architecture design and team as project lead",
-      "Tested against 1,124 firmware images from FirmAE dataset",
-      "Achieved quality gates: precision ≥ 0.90, recall ≥ 0.60",
+      "Validated against 1,123 firmware images from FirmAE dataset (98.8% success rate, 1110/1123)",
+      "Achieved 99.3% LLM-adjudicated FPR (Tier 2 carry-over baseline)",
       "Implemented with Python standard library only (zero pip dependencies)",
     ],
     tags: ["Python", "Firmware Analysis", "Binary Analysis", "SARIF", "SBOM", "AFL++", "MCP"],

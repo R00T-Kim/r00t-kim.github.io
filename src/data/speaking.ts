@@ -27,8 +27,7 @@ export const talks: Talk[] = [
     venue: "세종대학교 보안 동아리 연합 세미나 (SSG, S!, NSbit, 사이버펑크)",
     venueEn:
       "Sejong University Security Club Joint Seminar (SSG, S!, NSbit, Cyberpunk)",
-    slidesUrl:
-      "https://github.com/R00T-Kim/gnosis/blob/main/wiki/academic/presentation-thinking-not-solving.md",
+    slidesUrl: "/slides/20260516-thinking-not-solving.pdf",
     highlight: true,
   },
   {
@@ -37,7 +36,6 @@ export const talks: Talk[] = [
     date: "2026.05.09",
     venue: "Incognito Conference",
     venueEn: "Incognito Conference",
-    slidesUrl: "https://www.instagram.com/incognito.conference/",
     highlight: true,
   },
   {
@@ -46,8 +44,7 @@ export const talks: Talk[] = [
     date: "2026.05.01",
     venue: "SSG 내부 세미나",
     venueEn: "SSG Internal Seminar",
-    slidesUrl:
-      "https://github.com/R00T-Kim/gnosis/blob/main/wiki/academic/ssg-android-hacking-intro-v2.md",
+    slidesUrl: "/slides/20260501-ssg-android-hacking-intro.pdf",
   },
   {
     title: "SSG 임베디드 해킹 입문",
@@ -55,8 +52,7 @@ export const talks: Talk[] = [
     date: "2026.05.01",
     venue: "SSG 내부 세미나",
     venueEn: "SSG Internal Seminar",
-    slidesUrl:
-      "https://github.com/R00T-Kim/gnosis/blob/main/wiki/academic/ssg-embedded-hacking-intro-v4.md",
+    slidesUrl: "/slides/20260501-ssg-embedded-hacking-intro.pdf",
   },
   {
     title:

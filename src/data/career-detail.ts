@@ -177,6 +177,138 @@ export const careerDetailSections: CareerDetailSection[] = [
     ],
   },
   {
+    id: "scout",
+    title: "SCOUT - IoT 펌웨어 취약점 후보 자동 생성 시스템",
+    titleEn: "SCOUT - Deterministic Firmware-to-Exploit Evidence Engine",
+    background: [
+      {
+        text: "IoT 펌웨어 취약점 분석은 파일 시스템, 바이너리, SBOM, CVE 매칭, 동적 검증 결과가 분리되어 있어 분석가가 바로 따라갈 수 있는 재현 가능한 근거 체인을 만들기 어려웠습니다.",
+        textEn:
+          "IoT firmware vulnerability analysis often separates filesystem, binary, SBOM, CVE matching, and dynamic validation results, making it difficult to build reproducible evidence chains that analysts can immediately follow.",
+      },
+      {
+        text: "Agentic AI 기반 분석을 실제 펌웨어 규모에 적용하려면, LLM의 추론보다 먼저 해시·오프셋·파일 경로·stage 산출물로 검증 가능한 결정론적 증거 구조가 필요했습니다.",
+        textEn:
+          "To apply Agentic AI-based analysis at real firmware scale, a deterministic evidence structure anchored by hashes, offsets, file paths, and stage artifacts was required before relying on LLM reasoning.",
+      },
+    ],
+    role: [
+      {
+        title: "End-to-End 시스템 오너십",
+        titleEn: "End-to-End System Ownership",
+        items: [
+          {
+            text: "SCOUT의 핵심 아키텍처, stage 오케스트레이션, 증거 스키마, CLI/리포팅 흐름을 직접 설계하고 대부분의 구현을 주도했습니다.",
+            textEn:
+              "Designed SCOUT's core architecture, stage orchestration, evidence schema, and CLI/reporting flow, while driving most of the implementation directly.",
+            subItems: [
+              {
+                text: "펌웨어 입력부터 SARIF, CycloneDX SBOM+VEX, SLSA Provenance, 해시 앵커 증거 체인까지 이어지는 자동 분석 경로를 구축했습니다.",
+                textEn:
+                  "Built the automated analysis path from firmware input to SARIF, CycloneDX SBOM+VEX, SLSA Provenance, and hash-anchored evidence chains.",
+              },
+              {
+                text: "초기 42단계 파이프라인을 compliance_report까지 포함한 43단계 구조로 확장하고, Zero pip dependencies 원칙을 유지했습니다.",
+                textEn:
+                  "Extended the initial 42-stage pipeline into a 43-stage structure including compliance_report while preserving the zero-pip-dependencies principle.",
+              },
+              {
+                text: "AI Agent가 취약점 후보와 증거 번들을 넘겨받아 후속 분석을 수행할 수 있도록 MCP 서버와 handoff writer 구조를 설계했습니다.",
+                textEn:
+                  "Designed the MCP server and handoff writer structure so AI agents could consume vulnerability candidates and evidence bundles for follow-up analysis.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "핵심 개발·디버깅·품질 안정화",
+        titleEn: "Core Development, Debugging & Quality Stabilization",
+        items: [
+          {
+            text: "CVE 매칭, ELF 하드닝 감사, source/sink 식별, LLM triage, adversarial verification, compliance mapping 등 핵심 분석 모듈을 직접 구현·디버깅했습니다.",
+            textEn:
+              "Directly implemented and debugged core analysis modules including CVE matching, ELF hardening audits, source/sink identification, LLM triage, adversarial verification, and compliance mapping.",
+            subItems: [
+              {
+                text: "2,239개 CVE 시그니처 기반 매칭 엔진, 51개 sink coverage, format-string detector, LARA URI/CGI/config-key source identification을 구축했습니다.",
+                textEn:
+                  "Built a CVE matching engine with 2,239 signatures, 51-sink coverage, a format-string detector, and LARA URI/CGI/config-key source identification.",
+              },
+              {
+                text: "AFL++ 퍼징, FirmAE/QEMU 에뮬레이션, Ghidra/P-code 분석, 4개 LLM 드라이버(Codex, Claude API, Claude Code, Ollama)를 파이프라인에 통합했습니다.",
+                textEn:
+                  "Integrated AFL++ fuzzing, FirmAE/QEMU emulation, Ghidra/P-code analysis, and four LLM drivers (Codex, Claude API, Claude Code, Ollama) into the pipeline.",
+              },
+              {
+                text: "run.py 집중 구조를 normalize, stage_executor, report_assembler, handoff_writer로 분해하고, pyright 113개 오류를 0개로 줄이며 회귀 테스트 기반을 정리했습니다.",
+                textEn:
+                  "Decomposed the run.py-centered architecture into normalize, stage_executor, report_assembler, and handoff_writer, reduced 113 pyright errors to zero, and organized the regression-test foundation.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "벤치마크·릴리즈·발표까지 직접 마무리",
+        titleEn: "Benchmarking, Release & Presentation Ownership",
+        items: [
+          {
+            text: "FirmAE 데이터셋 기반 대규모 벤치마크, analyst-ready evidence bundle 재설계, release gate, 문서 정합성, 외부 발표까지 직접 챙겼습니다.",
+            textEn:
+              "Owned the large-scale FirmAE benchmark, analyst-ready evidence bundle redesign, release gates, documentation consistency, and external presentation.",
+            subItems: [
+              {
+                text: "벤치마크를 단순 성공률이 아니라 analysis rate와 analyst-ready rate를 분리해 보는 구조로 재설계했습니다.",
+                textEn:
+                  "Redesigned the benchmark to separate analysis rate from analyst-ready rate instead of reporting only raw success rates.",
+              },
+              {
+                text: "v2.7.2 기준 수치와 문서를 정리하고, 2026년 5월 9일 프로젝트를 마무리해 Incognito Conference에서 발표했습니다.",
+                textEn:
+                  "Organized the v2.7.2 figures and documentation, concluded the project on May 9, 2026, and presented it at Incognito Conference.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    results: [
+      {
+        text: "FirmAE 데이터셋 1,123개 펌웨어 이미지 대상 검증에서 98.8% 성공률(1110/1123)을 달성했습니다.",
+        textEn:
+          "Achieved a 98.8% success rate (1110/1123) when validating against 1,123 firmware images from the FirmAE dataset.",
+      },
+      {
+        text: "LLM-Adjudicated FPR 99.3%를 달성하고, 증거 기반 취약점 후보 생성 시스템으로 SCOUT v2.7.2를 완성했습니다.",
+        textEn:
+          "Achieved 99.3% LLM-adjudicated FPR and completed SCOUT v2.7.2 as an evidence-driven vulnerability candidate generation system.",
+      },
+      {
+        text: "1,136개 이상의 테스트, release gate, 문서 정합성 검증을 통해 대규모 펌웨어 분석 파이프라인을 회귀 가능한 상태로 안정화했습니다.",
+        textEn:
+          "Stabilized the large-scale firmware analysis pipeline into a regression-testable state through 1,136+ tests, release gates, and documentation consistency checks.",
+      },
+      {
+        text: "아키텍처 설계, 핵심 개발, 디버깅, 벤치마크, 테스트, 문서화, 발표까지 프로젝트의 대부분 핵심 작업을 엔드투엔드로 직접 수행했습니다.",
+        textEn:
+          "Executed most of the project's core work end-to-end, including architecture design, core development, debugging, benchmarking, testing, documentation, and presentation.",
+      },
+    ],
+    lessons: [
+      {
+        text: "보안 자동화에서 중요한 것은 모델이 그럴듯한 답을 내는 것이 아니라, 모든 판단이 원본 바이트와 재현 가능한 근거로 되돌아갈 수 있게 만드는 것임을 배웠습니다.",
+        textEn:
+          "Learned that security automation is not about models producing plausible answers, but about making every judgment traceable back to original bytes and reproducible evidence.",
+      },
+      {
+        text: "Agentic AI를 실제 취약점 분석에 적용하려면 자동화, 검증, 리포팅, 팀 운영을 하나의 시스템으로 설계해야 한다는 것을 경험했습니다.",
+        textEn:
+          "Experienced that applying Agentic AI to real vulnerability analysis requires designing automation, validation, reporting, and team operations as one integrated system.",
+      },
+    ],
+  },
+  {
     id: "autohack",
     title: "AutoHack 2025 자동차 해킹 경진대회",
     titleEn: "AutoHack 2025 Automotive Hacking Competition",

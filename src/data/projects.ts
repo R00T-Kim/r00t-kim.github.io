@@ -17,8 +17,8 @@ export const projects: Project[] = [
   {
     title: "SCOUT - IoT 펌웨어 취약점 후보 자동 생성 시스템",
     titleEn: "SCOUT - Deterministic Firmware-to-Exploit Evidence Engine",
-    period: "2026.01 ~ 현재",
-    periodEn: "Jan 2026 — Present",
+    period: "2026.01 ~ 2026.05",
+    periodEn: "Jan 2026 — May 2026",
     goals: [
       "IoT 펌웨어 대상 결정론적 취약점 증거 체인 자동 생성 시스템 개발",
       "해시 앵커 기반 증거 추적이 가능한 42단계 분석 파이프라인 구축",
@@ -45,12 +45,14 @@ export const projects: Project[] = [
     ],
     results: [
       "프로젝트 리더로서 시스템 아키텍처 설계 및 팀 리딩",
+      "2026년 5월 9일 프로젝트 마무리 및 Incognito Conference 발표",
       "FirmAE 데이터셋 기반 1,123개 펌웨어 이미지 대상 검증 (성공률 98.8%, 1110/1123)",
       "LLM-Adjudicated FPR 99.3% 달성 (Tier 2 carry-over baseline)",
       "Python 표준 라이브러리만으로 구현 (Zero pip dependencies)",
     ],
     resultsEn: [
       "Led system architecture design and team as project lead",
+      "Concluded the project on May 9, 2026 and presented it at Incognito Conference",
       "Validated against 1,123 firmware images from FirmAE dataset (98.8% success rate, 1110/1123)",
       "Achieved 99.3% LLM-adjudicated FPR (Tier 2 carry-over baseline)",
       "Implemented with Python standard library only (zero pip dependencies)",

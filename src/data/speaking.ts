@@ -32,12 +32,22 @@ export const talks: Talk[] = [
   },
   {
     title:
+      "LLM 기반 보안로그 저감 기법 (공저: 변재준, 김민준, 김근호, 조상훈, 이지민, 한인성, 박성진, 김태훈, 최창희)",
+    titleEn:
+      "LLM-based security log reduction technique (Co-authors: Jaejun Byun, Minjun Kim, Keunho Kim, Sanghoon Cho, Jimin Lee, Insung Han, Sungjin Park, Taehoon Kim, Changhee Choi)",
+    date: "2026.05",
+    venue: "한국인터넷정보학회 춘계학술대회 2026",
+    venueEn: "KSII Spring Conference 2026",
+    highlight: true,
+  },
+  {
+    title:
       "Agentic AI 기반 악성 행위 탐지 기법 (공저: 김민준, 변재준, 김근호, 조상훈, 이지민, 한인성, 박성진, 김태훈, 최창희)",
     titleEn:
       "Agentic AI-based Anomaly Behavior Detection Method (Co-authors: Minjun Kim, Jaejun Byun, Keunho Kim, Sanghoon Cho, Jimin Lee, Insung Han, Sungjin Park, Taehoon Kim, Changhee Choi)",
     date: "2026.05",
-    venue: "한국인터넷정보학회 춘계학술대회 2026 (Vol. 27, No. 1)",
-    venueEn: "KSII Spring Conference 2026 (Vol. 27, No. 1)",
+    venue: "한국인터넷정보학회 춘계학술대회 2026",
+    venueEn: "KSII Spring Conference 2026",
     highlight: true,
   },
   {

@@ -11,16 +11,16 @@
   "hero": {
     "greeting": "Hello",
     "name": "Keunho Kim(rootk1m,gnosis)",
-    "title": "Zero-Day Researcher & Automated Exploit Generation Engineer",
-    "subtitle": "Evidence-driven security research from vulnerability discovery to automated exploit generation",
+    "title": "Embedded Security Researcher",
+    "subtitle": "Researches IoT and embedded security through Vulnerability Research, Firmware Analysis, Exploit Reproduction, and Automated Exploit Generation.",
     "cta_resume": "View Portfolio",
     "cta_contact": "Get in Touch"
   },
   "about": {
     "heading": "About",
-    "description_1": "Zero-Day Researcher and Automated Exploit Generation Engineer specializing in vulnerability analysis and exploit/reversing across IoT, Embedded, Automotive, and Mobile environments. Beyond finding vulnerabilities, I pursue evidence-based analysis routines that include reproducibility, verification evidence, and documentation deliverables.",
-    "description_2": "Contributed to discovering 18 CVEs through IoT smart doorbell analysis and now focus on automation that reconstructs exploitability from firmware evidence, including SCOUT.",
-    "description_3": "Currently studying Computer Science at Sejong University and completed AI-based security research at CYAI Lab. Experienced as a Red Team intern at AUTOCRYPT Vehicle Threat Research Lab with an AutoHack 2025 award.",
+    "description_1": "Embedded security researcher performing vulnerability analysis, firmware reversing, exploit reproduction, and exploitability validation across IoT and embedded systems. Rather than stopping at reports, I connect findings to reproducible PoCs, exploit evidence, analysis logs, and response-oriented documentation.",
+    "description_2": "Contributed to discovering multiple CVEs through smart-device vulnerability research, and built practical security analysis experience through an AUTOCRYPT Vehicle Threat Research Lab Red Team internship and an AutoHack 2025 award.",
+    "description_3": "Recently, I focus on structuring vulnerability analysis and exploit generation through Firmware-to-Exploit pipelines, Automated Exploit Generation, and Agentic AI-based security automation.",
     "keywords": [
       "Zero-Day Research",
       "Automated Exploit Generation",

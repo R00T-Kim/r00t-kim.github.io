@@ -11,16 +11,16 @@
   "hero": {
     "greeting": "안녕하세요",
     "name": "김근호(rootk1m,gnosis)",
-    "title": "Zero-Day Researcher & Automated Exploit Generation Engineer",
-    "subtitle": "취약점 발굴에서 자동 익스플로잇 생성까지, 재현 가능한 근거 중심 보안 연구를 수행합니다",
+    "title": "Embedded Security Researcher",
+    "subtitle": "Vulnerability Research, Firmware Analysis, Exploit Reproduction, Automated Exploit Generation을 중심으로 IoT·Embedded 보안 연구를 수행합니다.",
     "cta_resume": "포트폴리오",
     "cta_contact": "연락하기"
   },
   "about": {
     "heading": "About",
-    "description_1": "Zero-Day Research와 Automated Exploit Generation 관점에서 IoT, Embedded, Automotive, Mobile 환경의 취약점 분석과 Exploit/Reversing을 연구합니다. 취약점을 찾는 수준을 넘어, 재현 가능성·검증 근거·문서화 산출물까지 포함한 근거 중심 분석 루틴을 지향합니다.",
-    "description_2": "IoT 스마트 도어벨 분석을 통해 총 18건의 CVE 발굴에 기여했으며, SCOUT처럼 펌웨어 증거에서 익스플로잇 가능성을 재구성하는 자동화 연구를 수행하고 있습니다.",
-    "description_3": "세종대학교 컴퓨터공학과 재학 중이며, CYAI Lab에서 AI 기반 보안 연구를 수행했습니다. AUTOCRYPT 자동차보안위협연구소 Red Team 인턴 경험과 AutoHack 2025 수상 경력이 있습니다.",
+    "description_1": "IoT와 Embedded 시스템을 대상으로 취약점 분석, 펌웨어 리버싱, 익스플로잇 재현, 공격 가능성 검증을 수행하는 보안 연구자입니다. 분석 결과를 단순 보고서로 끝내지 않고, 재현 가능한 PoC, exploit evidence, 분석 로그, 대응 관점의 문서화까지 연결하는 연구 방식을 지향합니다.",
+    "description_2": "스마트 기기 취약점 분석 프로젝트를 통해 다수의 CVE 발굴에 기여했으며, AUTOCRYPT 자동차보안위협연구소 Red Team 인턴과 AutoHack 2025 수상 경험을 바탕으로 실제 시스템 대상 보안 분석을 수행해 왔습니다.",
+    "description_3": "최근에는 Firmware-to-Exploit Pipeline, Automated Exploit Generation, Agentic AI 기반 보안 자동화를 중심으로 취약점 분석과 익스플로잇 생성 과정을 구조화하는 연구를 수행하고 있습니다.",
     "keywords": [
       "Zero-Day Research",
       "Automated Exploit Generation",

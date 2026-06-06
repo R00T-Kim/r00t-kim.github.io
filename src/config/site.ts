@@ -3,8 +3,8 @@ export const siteConfig = {
   author: {
     name: { ko: "김근호", en: "Keunho Kim" },
     title: {
-      ko: "Zero-Day Researcher & Automated Exploit Generation Engineer",
-      en: "Zero-Day Researcher & Automated Exploit Generation Engineer",
+      ko: "Embedded Security Researcher",
+      en: "Embedded Security Researcher",
     },
     email: "awqs1221@naver.com",
   },
@@ -35,9 +35,9 @@ export const siteConfig = {
   },
   seo: {
     titleTemplate: "%s | Keunho Kim",
-    defaultTitle: "Keunho Kim | Zero-Day Researcher & Automated Exploit Generation Engineer",
+    defaultTitle: "Keunho Kim | Embedded Security Researcher",
     description:
-      "Zero-Day Research와 Automated Exploit Generation 관점에서 IoT, Embedded, Automotive, Mobile 환경의 취약점 분석과 익스플로잇 재현을 연구하는 김근호의 포트폴리오입니다.",
+      "IoT와 Embedded 시스템을 중심으로 취약점 분석, 펌웨어 리버싱, 익스플로잇 재현, Automated Exploit Generation을 수행하는 보안 연구자 김근호의 포트폴리오입니다.",
     keywords: [
       "zero-day researcher",
       "automated exploit generation",

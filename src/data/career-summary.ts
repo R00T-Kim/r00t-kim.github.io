@@ -6,8 +6,8 @@ export interface CareerHighlight {
 }
 
 export const careerOverview = {
-  ko: "Zero-Day Research와 Automated Exploit Generation 관점에서 IoT, Embedded, Automotive, Mobile 환경의 취약점 분석과 Exploit/Reversing을 연구합니다. IoT 디바이스 대상 18건의 CVE를 발굴했으며, Agentic AI를 활용해 펌웨어 증거에서 익스플로잇 가능성을 재구성하는 자동화 연구를 수행하고 있습니다.",
-  en: "I research vulnerability analysis and exploit/reversing across IoT, Embedded, Automotive, and Mobile environments as a Zero-Day Researcher and Automated Exploit Generation Engineer. I discovered 18 CVEs in IoT devices and work on Agentic AI automation that reconstructs exploitability from firmware evidence.",
+  ko: "IoT와 Embedded 시스템을 중심으로 취약점 분석, 펌웨어 리버싱, 익스플로잇 재현, 공격 가능성 검증을 수행합니다. 스마트 기기 취약점 분석으로 다수의 CVE 발굴에 기여했으며, Firmware-to-Exploit Pipeline과 Automated Exploit Generation을 통해 분석 결과를 재현 가능한 PoC와 exploit evidence로 연결하는 연구를 수행하고 있습니다.",
+  en: "I perform vulnerability analysis, firmware reversing, exploit reproduction, and exploitability validation across IoT and embedded systems. I contributed to discovering multiple CVEs through smart-device vulnerability research, and work on Firmware-to-Exploit pipelines and Automated Exploit Generation that connect findings to reproducible PoCs and exploit evidence.",
 };
 
 export const careerHighlights: CareerHighlight[] = [

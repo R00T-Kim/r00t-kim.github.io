@@ -6,8 +6,8 @@ export interface CareerHighlight {
 }
 
 export const careerOverview = {
-  ko: "Offensive Security 관점에서 IoT, Embedded, Automotive, Mobile 등 다양한 환경의 취약점 분석과 Exploit/Reversing을 연구합니다. IoT 디바이스 대상 18건의 CVE를 발굴했으며, Agentic AI를 활용한 취약점 분석 자동화 연구를 수행하고 있습니다.",
-  en: "I research vulnerability analysis and exploit/reversing across diverse environments including IoT, Embedded, Automotive, and Mobile from an Offensive Security perspective. Discovered 18 CVEs in IoT devices and currently researching vulnerability analysis automation using Agentic AI.",
+  ko: "Zero-Day Research와 Automated Exploit Generation 관점에서 IoT, Embedded, Automotive, Mobile 환경의 취약점 분석과 Exploit/Reversing을 연구합니다. IoT 디바이스 대상 18건의 CVE를 발굴했으며, Agentic AI를 활용해 펌웨어 증거에서 익스플로잇 가능성을 재구성하는 자동화 연구를 수행하고 있습니다.",
+  en: "I research vulnerability analysis and exploit/reversing across IoT, Embedded, Automotive, and Mobile environments as a Zero-Day Researcher and Automated Exploit Generation Engineer. I discovered 18 CVEs in IoT devices and work on Agentic AI automation that reconstructs exploitability from firmware evidence.",
 };
 
 export const careerHighlights: CareerHighlight[] = [
@@ -26,16 +26,16 @@ export const careerHighlights: CareerHighlight[] = [
     ],
   },
   {
-    title: "AI 기반 보안 연구",
-    titleEn: "AI-Powered Security Research",
+    title: "Automated Exploit Generation 연구",
+    titleEn: "Automated Exploit Generation Research",
     items: [
       "Agentic AI 기반 ExploitAgent 구조 설계 및 자율 행위 생성 기술 연구",
-      "SCOUT: Agent 기반 IoT 펌웨어 취약점 후보 자동 생성 시스템 개발",
+      "SCOUT: 펌웨어 증거에서 익스플로잇 가능성을 재구성하는 결정론적 AEG 파이프라인 개발",
       "한국인터넷정보학회 추계학술대회 우수논문상 수상",
     ],
     itemsEn: [
       "Agentic AI-based ExploitAgent architecture design and autonomous behavior generation research",
-      "SCOUT: Agent-based IoT firmware vulnerability candidate auto-generation system development",
+      "SCOUT: deterministic AEG pipeline that reconstructs exploitability from firmware evidence",
       "Best Paper Award at KSII Autumn Conference",
     ],
   },
@@ -71,23 +71,23 @@ export const careerHighlights: CareerHighlight[] = [
 
 export const selfDevelopedTools = [
   {
-    ko: "SCOUT - IoT 펌웨어 취약점 후보 자동 생성 시스템",
-    en: "SCOUT - IoT Firmware Vulnerability Candidate Auto-Generation System",
+    ko: "SCOUT - 결정론적 펌웨어-to-익스플로잇 증거 엔진",
+    en: "SCOUT - Deterministic Firmware-to-Exploit Evidence Engine",
   },
 ];
 
 export const coreCompetencies = [
   {
-    ko: "IoT/임베디드 디바이스 취약점 분석 및 CVE 발굴",
-    en: "IoT/Embedded device vulnerability analysis and CVE discovery",
+    ko: "Zero-Day 취약점 분석 및 CVE 발굴",
+    en: "Zero-day vulnerability analysis and CVE discovery",
   },
   {
     ko: "바이너리 익스플로잇 및 리버스 엔지니어링",
     en: "Binary exploitation and reverse engineering",
   },
   {
-    ko: "Agentic AI 기반 보안 분석 자동화 연구",
-    en: "Agentic AI-based security analysis automation research",
+    ko: "Agentic AI 기반 Automated Exploit Generation 연구",
+    en: "Agentic AI-based Automated Exploit Generation research",
   },
   {
     ko: "자동차 보안 위협 분석 및 모의해킹",

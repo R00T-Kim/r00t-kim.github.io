@@ -9,6 +9,7 @@ export interface Experience {
   periodEn: string;
   startDate: string;
   endDate: string | null;
+  url?: string;
   description: string[];
   descriptionEn: string[];
   tags: string[];
@@ -43,23 +44,24 @@ export const experiences: Experience[] = [
     roleEn: "Undergraduate Researcher",
     team: "사이버보안 AI 연구실",
     teamEn: "Cybersecurity AI Lab",
-    period: "2025.04 ~ 현재",
-    periodEn: "Apr 2025 — Present",
+    period: "2025.04 ~ 2026.06",
+    periodEn: "Apr 2025 — Jun 2026",
     startDate: "2025-04",
-    endDate: null,
+    endDate: "2026-06",
+    url: "https://cyai-lab.github.io/",
     description: [
       "LLM 및 자율 에이전트 기반 보안 자동화 연구 수행",
       "Agentic AI 기반 ExploitAgent 구조 설계 및 실험 파이프라인 구축",
       "한국인터넷정보학회 추계학술대회 논문 발표 (우수논문상 수상)",
       "정기 세미나 참여 및 APT 공격·방어 메커니즘 최신 동향 분석",
-      "개인 연구 MuCAMP2: LLM 기반 APT 공격 시나리오 변종 생성 실험 수행",
+      "개인 연구 MuCamp2: LLM 기반 APT 공격 시나리오 변종 생성 실험 수행",
     ],
     descriptionEn: [
       "Conducting research on AI-driven security automation focusing on LLM and autonomous agents",
       "Designed Agentic AI-based ExploitAgent architecture and experiment pipelines",
       "Paper presentation at KSII Autumn Conference (Best Paper Award)",
       "Participating in regular seminars analyzing recent APT attack and defense trends",
-      "Personal research MuCAMP2: LLM-based APT attack scenario variant generation experiments",
+      "Personal research MuCamp2: LLM-based APT attack scenario variant generation experiments",
     ],
     tags: ["AI for Security", "Agentic AI", "LLM", "Exploit Automation", "APT Analysis"],
   },

@@ -29,6 +29,17 @@ export function Projects() {
         <div className="space-y-4">
           {projects.map((project, i) => {
             const isOpen = expandedIndex === i;
+            const links =
+              project.links ??
+              (project.url
+                ? [
+                    {
+                      label: tc("view_more"),
+                      labelEn: tc("view_more"),
+                      url: project.url,
+                    },
+                  ]
+                : []);
             return (
               <m.div
                 key={project.title}
@@ -161,18 +172,21 @@ export function Projects() {
                           </ul>
                         </div>
 
-                        {/* Link */}
-                        {project.url && (
-                          <div className="pt-1">
-                            <a
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
-                            >
-                              <ExternalLink className="h-3 w-3" />
-                              {tc("view_more")}
-                            </a>
+                        {/* Links */}
+                        {links.length > 0 && (
+                          <div className="flex flex-wrap gap-2 pt-1">
+                            {links.map((link) => (
+                              <a
+                                key={link.url}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
+                              >
+                                <ExternalLink className="h-3 w-3" />
+                                {isKo ? link.label : link.labelEn}
+                              </a>
+                            ))}
                           </div>
                         )}
 

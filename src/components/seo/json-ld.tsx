@@ -60,15 +60,19 @@ export function JsonLd() {
     ...(talk.videoUrl && { recordedIn: { "@type": "VideoObject", url: talk.videoUrl } }),
   }));
 
-  const creativeWorkSchemas = projects.map((project) => ({
-    "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    name: project.titleEn,
-    description: project.goalsEn.join(". "),
-    author: { "@id": `${siteConfig.url}/#person` },
-    keywords: project.tags,
-    ...(project.url && { url: project.url }),
-  }));
+  const creativeWorkSchemas = projects.map((project) => {
+    const url = project.url ?? project.links?.[0]?.url;
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      name: project.titleEn,
+      description: project.goalsEn.join(". "),
+      author: { "@id": `${siteConfig.url}/#person` },
+      keywords: project.tags,
+      ...(url && { url }),
+    };
+  });
 
   return (
     <>

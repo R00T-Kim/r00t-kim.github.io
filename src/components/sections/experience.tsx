@@ -2,7 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { m } from "framer-motion";
-import { MapPin, Calendar } from "lucide-react";
+import { MapPin, Calendar, ExternalLink } from "lucide-react";
 import { experiences } from "@/data/experience";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Badge } from "@/components/ui/badge";
@@ -58,7 +58,19 @@ export function Experience() {
                 <div className="rounded-xl border border-border bg-card p-5 transition-all hover:border-accent/30 hover:shadow-md">
                   {/* Company & Role */}
                   <h3 className="text-base font-semibold text-foreground">
-                    {isKo ? exp.company : exp.companyEn}
+                    {exp.url ? (
+                      <a
+                        href={exp.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 transition-colors hover:text-accent"
+                      >
+                        {isKo ? exp.company : exp.companyEn}
+                        <ExternalLink className="h-3 w-3" />
+                      </a>
+                    ) : (
+                      isKo ? exp.company : exp.companyEn
+                    )}
                   </h3>
                   <p className="mt-0.5 text-sm font-medium text-accent">
                     {isKo ? exp.role : exp.roleEn}

@@ -2,7 +2,10 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_BASE_URL || "https://r00t-kim.github.io",
   author: {
     name: { ko: "김근호", en: "Keunho Kim" },
-    title: { ko: "보안 연구원", en: "Security Researcher" },
+    title: {
+      ko: "Zero-Day Researcher & Automated Exploit Generation Engineer",
+      en: "Zero-Day Researcher & Automated Exploit Generation Engineer",
+    },
     email: "awqs1221@naver.com",
   },
   social: {
@@ -32,10 +35,13 @@ export const siteConfig = {
   },
   seo: {
     titleTemplate: "%s | Keunho Kim",
-    defaultTitle: "Keunho Kim | Security Researcher",
+    defaultTitle: "Keunho Kim | Zero-Day Researcher & Automated Exploit Generation Engineer",
     description:
-      "Offensive Security 관점에서 IoT, Embedded, Automotive, Mobile 환경의 취약점 분석과 Exploit/Reversing을 연구하는 보안 연구원 김근호의 포트폴리오입니다.",
+      "Zero-Day Research와 Automated Exploit Generation 관점에서 IoT, Embedded, Automotive, Mobile 환경의 취약점 분석과 익스플로잇 재현을 연구하는 김근호의 포트폴리오입니다.",
     keywords: [
+      "zero-day researcher",
+      "automated exploit generation",
+      "AEG",
       "security researcher",
       "offensive security",
       "IoT security",

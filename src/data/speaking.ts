@@ -92,9 +92,9 @@ export const communities: Community[] = [
     roleEn: "President",
     organization: "SSG (Sejong Security Group)",
     organizationEn: "SSG (Sejong Security Group)",
-    period: "2026.01 ~ 현재",
-    periodEn: "Jan 2026 — Present",
-    active: true,
+    period: "2026.01 ~ 2026.06",
+    periodEn: "Jan 2026 — Jun 2026",
+    active: false,
   },
   {
     role: "프로젝트부 부장",

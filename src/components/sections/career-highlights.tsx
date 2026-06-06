@@ -124,7 +124,7 @@ export function CareerHighlights() {
           transition={{ duration: 0.45 }}
           className="mb-12 flex flex-wrap gap-2"
         >
-          {coreCompetencies.map((comp, i) => (
+          {coreCompetencies.map((comp) => (
             <Badge key={`${comp.ko}-${comp.en}`} variant="accent">
               {isKo ? comp.ko : comp.en}
             </Badge>

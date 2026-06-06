@@ -177,6 +177,100 @@ export const careerDetailSections: CareerDetailSection[] = [
     ],
   },
   {
+    id: "mucamp2",
+    title: "MuCamp2 - 검증 기반 사이버 캠페인 변종 생성",
+    titleEn: "MuCamp2 - Validated Cyber Campaign Variant Generation",
+    background: [
+      {
+        text: "APT 그룹 분류와 CTI 분석에서는 실제 캠페인 데이터가 제한적이어서, TTP 시퀀스를 증강하더라도 공격 전술 구조와 실행 가능성을 훼손하지 않는 검증 체계가 필요했습니다.",
+        textEn:
+          "APT group attribution and CTI analysis face limited real campaign data, so augmenting TTP sequences required validation that preserves tactic structure and operational plausibility.",
+      },
+      {
+        text: "LLM을 자유 생성기로 사용하면 그럴듯하지만 검증되지 않은 캠페인 변종이 만들어질 수 있어, 후보 풀 제약과 독립 검증기를 결합한 구조가 필요했습니다.",
+        textEn:
+          "Using LLMs as free-form generators can produce plausible but unverified campaign variants, requiring a design that combines constrained candidate pools with independent validation.",
+      },
+    ],
+    role: [
+      {
+        title: "제약 기반 생성·검증 구조 설계",
+        titleEn: "Constrained Generation & Validation Design",
+        items: [
+          {
+            text: "MuCamp2에서 LLM을 신뢰 경계 밖에 두고, 동일 tactic 후보 풀과 코드 수준 검증으로 TTP 변종 생성을 제한하는 구조를 설계·구현했습니다.",
+            textEn:
+              "Designed and implemented MuCamp2's architecture that keeps LLMs outside the trust boundary and constrains TTP mutation with same-tactic candidate pools and code-level verification.",
+            subItems: [
+              {
+                text: "MITRE ATT&CK 기반 technique/tactic 매핑을 사용해 변이 후보를 제한하고, V1~V4 코드 검증으로 길이·인덱스·원본 보존·후보 풀 일치성을 확인했습니다.",
+                textEn:
+                  "Constrained mutation candidates with MITRE ATT&CK technique/tactic mappings and checked length, index consistency, original-position preservation, and candidate-pool membership through V1–V4 verification.",
+              },
+              {
+                text: "AEP 기반 L1/L2/L3 의미 검증을 적용해 구조적 일관성, 실행 가능성, strict dependency 만족도를 단계적으로 평가했습니다.",
+                textEn:
+                  "Applied AEP-based L1/L2/L3 semantic validation to evaluate structural consistency, execution feasibility, and strict dependency satisfaction.",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        title: "실험·재현 산출물 정리",
+        titleEn: "Experiment & Reproducibility Artifacts",
+        items: [
+          {
+            text: "Lazarus와 MenuPass 캠페인 시퀀스를 대상으로 SR baseline과 LLM few-shot 변종을 비교하고, 평가 스크립트·데이터·GUI 재현 환경을 공개 저장소로 정리했습니다.",
+            textEn:
+              "Compared SR baselines and LLM few-shot variants on Lazarus and MenuPass campaign sequences, then organized evaluation scripts, data, and GUI reproduction artifacts in a public repository.",
+            subItems: [
+              {
+                text: "AEP coverage 한계를 명시해 'validated' 표현을 완전한 semantic ground truth가 아니라 AEP coverage 내 검증으로 해석하도록 정리했습니다.",
+                textEn:
+                  "Documented AEP coverage limits so 'validated' is interpreted as validation under current AEP coverage rather than complete semantic ground truth.",
+              },
+              {
+                text: "IEEE Access 논문 링크와 Apache-2.0 라이선스 GitHub 저장소를 공개 산출물로 연결했습니다.",
+                textEn:
+                  "Connected the IEEE Access paper and Apache-2.0 GitHub repository as public research artifacts.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    results: [
+      {
+        text: "MuCamp2 논문이 IEEE Access 2026에 게재되었고, IEEE Xplore 및 GitHub 저장소를 통해 논문·코드 산출물을 공개했습니다.",
+        textEn:
+          "The MuCamp2 paper was published in IEEE Access 2026, with paper and code artifacts released through IEEE Xplore and GitHub.",
+      },
+      {
+        text: "tactic violation rate 0%를 달성하고, L3 pass rate에서 Lazarus +5.5pp, MenuPass +3.0pp의 개선을 보고했습니다.",
+        textEn:
+          "Reported a 0% tactic violation rate and L3 pass-rate improvements of +5.5 pp for Lazarus and +3.0 pp for MenuPass.",
+      },
+      {
+        text: "LLM을 신뢰 주체가 아니라 제한된 선택·정제 모듈로 두고, 독립 검증기로 산출물을 gate하는 보안 연구 패턴을 정리했습니다.",
+        textEn:
+          "Established a security research pattern where the LLM is a constrained selection/refinement module rather than a trusted actor, and outputs are gated by independent validators.",
+      },
+    ],
+    lessons: [
+      {
+        text: "보안 데이터 증강에서 중요한 것은 생성량보다 구조적 무결성, 검증 기준, coverage 한계를 함께 공개하는 것임을 확인했습니다.",
+        textEn:
+          "Confirmed that security data augmentation is less about generation volume and more about publishing structural integrity, validation criteria, and coverage limits together.",
+      },
+      {
+        text: "LLM 기반 보안 자동화는 모델 성능만으로 설득되지 않으며, 신뢰 경계·제약 조건·재현 가능한 평가 파이프라인이 함께 설계되어야 한다는 점을 배웠습니다.",
+        textEn:
+          "Learned that LLM-based security automation is not justified by model capability alone; trust boundaries, constraints, and reproducible evaluation pipelines must be designed together.",
+      },
+    ],
+  },
+  {
     id: "scout",
     title: "SCOUT - IoT 펌웨어 취약점 후보 자동 생성 시스템",
     titleEn: "SCOUT - Deterministic Firmware-to-Exploit Evidence Engine",

@@ -38,6 +38,14 @@ export const awards: Award[] = [
     highlight: true,
   },
   {
+    title: "우수논문상 (Agentic AI 기반 악성 행위 탐지 기법)",
+    titleEn: "Best Paper Award (Agentic AI-based Anomaly Behavior Detection Method)",
+    issuer: "한국인터넷정보학회 춘계학술대회 (국방정보기술연구회)",
+    issuerEn: "KSII Spring Conference (Defense IT Research Society)",
+    date: "2026.06",
+    highlight: true,
+  },
+  {
     title: "우수논문상",
     titleEn: "Best Paper Award",
     issuer: "한국인터넷정보학회 추계학술대회 (국방정보기술연구회)",

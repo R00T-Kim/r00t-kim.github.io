@@ -48,7 +48,7 @@ export const experiences: Experience[] = [
     periodEn: "Apr 2025 — Jun 2026",
     startDate: "2025-04",
     endDate: "2026-06",
-    url: "https://cyai-lab.github.io/",
+    url: "https://cyai.sejong.ac.kr/",
     description: [
       "LLM 및 자율 에이전트 기반 보안 자동화 연구 수행",
       "Agentic AI 기반 ExploitAgent 구조 설계 및 실험 파이프라인 구축",

@@ -30,12 +30,12 @@ export const careerHighlights: CareerHighlight[] = [
     titleEn: "Automated Exploit Generation Research",
     items: [
       "Agentic AI 기반 ExploitAgent 구조 설계 및 자율 행위 생성 기술 연구",
-      "SCOUT: 펌웨어 증거에서 익스플로잇 가능성을 재구성하는 결정론적 AEG 파이프라인 개발",
+      "SCOUT: ELF/쉘 스크립트 증거에서 익스플로잇 가능성을 재구성하는 AEG-first Hybrid Engine 개발",
       "한국인터넷정보학회 추계학술대회 우수논문상 수상",
     ],
     itemsEn: [
       "Agentic AI-based ExploitAgent architecture design and autonomous behavior generation research",
-      "SCOUT: deterministic AEG pipeline that reconstructs exploitability from firmware evidence",
+      "SCOUT: AEG-first Hybrid Engine that reconstructs exploitability from ELF and shell-script firmware evidence",
       "Best Paper Award at KSII Autumn Conference",
     ],
   },
@@ -71,8 +71,8 @@ export const careerHighlights: CareerHighlight[] = [
 
 export const selfDevelopedTools = [
   {
-    ko: "SCOUT - 결정론적 펌웨어-to-익스플로잇 증거 엔진",
-    en: "SCOUT - Deterministic Firmware-to-Exploit Evidence Engine",
+    ko: "SCOUT - AEG-first 펌웨어-to-익스플로잇 증거 엔진",
+    en: "SCOUT - AEG-First Firmware-to-Exploit Evidence Engine",
   },
 ];
 

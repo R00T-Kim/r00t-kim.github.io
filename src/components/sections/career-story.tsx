@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { m } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { careerDetailSections } from "@/data/career-detail";
 import { cn } from "@/lib/utils";
@@ -142,6 +142,22 @@ export function CareerStoryContent() {
                     {isKo ? section.title : section.titleEn}
                   </h2>
                   <div aria-hidden="true" className="mt-3 h-1 w-16 rounded-full bg-accent" />
+                  {section.links && section.links.length > 0 && (
+                    <div className="mt-5 flex flex-wrap gap-2">
+                      {section.links.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
+                        >
+                          <ExternalLink className="h-3 w-3" />
+                          {isKo ? link.label : link.labelEn}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Background */}

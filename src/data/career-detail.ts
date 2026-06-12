@@ -4,6 +4,12 @@ export interface SubSection {
   items: CareerDetailItem[];
 }
 
+export interface CareerDetailLink {
+  label: string;
+  labelEn: string;
+  url: string;
+}
+
 export interface CareerDetailItem {
   text: string;
   textEn: string;
@@ -14,6 +20,7 @@ export interface CareerDetailSection {
   id: string;
   title: string;
   titleEn: string;
+  links?: CareerDetailLink[];
   background: CareerDetailItem[];
   role: SubSection[];
   results: CareerDetailItem[];
@@ -25,6 +32,13 @@ export const careerDetailSections: CareerDetailSection[] = [
     id: "iot-doorbell",
     title: "IoT 스마트 도어벨 취약점 분석",
     titleEn: "IoT Smart Doorbell Vulnerability Analysis",
+    links: [
+      {
+        label: "분석 가이드",
+        labelEn: "Analysis Guide",
+        url: "https://github.com/Brrester/IoT-Smart-Doorbell-Vulnerability-Analysis-Guide",
+      },
+    ],
     background: [
       {
         text: "IoT 디바이스의 급격한 보급에도 불구하고 보안 검증이 부족한 제품들이 시장에 유통되고 있었습니다.",
@@ -180,6 +194,18 @@ export const careerDetailSections: CareerDetailSection[] = [
     id: "mucamp2",
     title: "MuCamp2 - 검증 기반 사이버 캠페인 변종 생성",
     titleEn: "MuCamp2 - Validated Cyber Campaign Variant Generation",
+    links: [
+      {
+        label: "논문",
+        labelEn: "Paper",
+        url: "https://ieeexplore.ieee.org/document/11552376",
+      },
+      {
+        label: "코드",
+        labelEn: "Code",
+        url: "https://github.com/cyailab/MuCamp2",
+      },
+    ],
     background: [
       {
         text: "APT 그룹 분류와 CTI 분석에서는 실제 캠페인 데이터가 제한적이어서, TTP 시퀀스를 증강하더라도 공격 전술 구조와 실행 가능성을 훼손하지 않는 검증 체계가 필요했습니다.",
@@ -274,6 +300,13 @@ export const careerDetailSections: CareerDetailSection[] = [
     id: "scout",
     title: "SCOUT - AEG-first 펌웨어-to-익스플로잇 증거 엔진",
     titleEn: "SCOUT - AEG-First Firmware-to-Exploit Evidence Engine",
+    links: [
+      {
+        label: "GitHub",
+        labelEn: "GitHub",
+        url: "https://github.com/R00T-Kim/SCOUT",
+      },
+    ],
     background: [
       {
         text: "IoT 펌웨어 취약점 분석은 파일 시스템, ELF 바이너리, 쉘 스크립트, SBOM, CVE 매칭, 동적 검증 결과가 분리되어 있어 분석가가 바로 따라갈 수 있는 재현 가능한 근거 체인을 만들기 어려웠습니다.",

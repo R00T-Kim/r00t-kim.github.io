@@ -17,6 +17,30 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    company: "Out of Bounds",
+    companyEn: "Out of Bounds",
+    role: "Researcher",
+    roleEn: "Researcher",
+    team: "제로데이 리서치 · AEG 엔지니어링",
+    teamEn: "Zero-Day Research · AEG Engineering",
+    period: "2026.06 ~ 현재",
+    periodEn: "Jun 2026 — Present",
+    startDate: "2026-06",
+    endDate: null,
+    url: "https://oobs.io/",
+    description: [
+      "임베디드/IoT 시스템 대상 제로데이 취약점 연구 수행",
+      "Automated Exploit Generation(AEG) 기반 익스플로잇 자동화 파이프라인 개발",
+      "취약점 재현, exploitability 검증, PoC 산출물을 연결하는 보안 자동화 엔지니어링",
+    ],
+    descriptionEn: [
+      "Conducting zero-day vulnerability research targeting embedded and IoT systems",
+      "Developing exploit automation pipelines based on Automated Exploit Generation (AEG)",
+      "Engineering security automation that connects vulnerability reproduction, exploitability validation, and PoC artifacts",
+    ],
+    tags: ["Zero-Day Research", "Vulnerability Research", "AEG", "Exploit Automation"],
+  },
+  {
     company: "AUTOCRYPT",
     companyEn: "AUTOCRYPT",
     role: "Red Team 인턴",

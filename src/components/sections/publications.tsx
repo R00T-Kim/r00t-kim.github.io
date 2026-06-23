@@ -97,7 +97,7 @@ export function Publications() {
   const firstAuthorLabel = t("first_author");
 
   return (
-    <section id="publications" className="bg-section-alt py-20 md:py-28">
+    <section id="publications" className="bg-background py-20 md:py-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <SectionHeading>{t("heading")}</SectionHeading>
 

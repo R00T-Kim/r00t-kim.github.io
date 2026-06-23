@@ -71,6 +71,7 @@ Defined in `src/app/[locale]/layout.tsx`.
 | Career highlights, competencies | `src/data/career-summary.ts` |
 | Career story narratives | `src/data/career-detail.ts` |
 | Projects | `src/data/projects.ts` |
+| Publications (papers) | `src/data/publications.ts` |
 | Certifications, awards | `src/data/credentials.ts` |
 | Talks, community | `src/data/speaking.ts` |
 | Site URL, author, nav, SEO | `src/config/site.ts` |

@@ -6,7 +6,8 @@
     "speaking": "Speaking",
     "projects": "Projects",
     "contact": "Contact",
-    "career-highlights": "Portfolio"
+    "career-highlights": "Portfolio",
+    "publications": "Publications"
   },
   "hero": {
     "greeting": "Hello",
@@ -39,6 +40,12 @@
     "heading": "Certified",
     "certifications": "Certifications",
     "awards": "Awards"
+  },
+  "publications": {
+    "heading": "Publications",
+    "journal": "Journal",
+    "conference": "Conference",
+    "first_author": "First Author"
   },
   "speaking": {
     "heading": "Speaking & Community",

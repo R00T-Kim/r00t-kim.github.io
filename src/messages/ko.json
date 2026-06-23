@@ -6,7 +6,8 @@
     "speaking": "발표",
     "projects": "프로젝트",
     "contact": "연락처",
-    "career-highlights": "포트폴리오"
+    "career-highlights": "포트폴리오",
+    "publications": "논문"
   },
   "hero": {
     "greeting": "안녕하세요",
@@ -39,6 +40,12 @@
     "heading": "Certified",
     "certifications": "자격증",
     "awards": "수상"
+  },
+  "publications": {
+    "heading": "Publications",
+    "journal": "저널",
+    "conference": "학회",
+    "first_author": "제1저자"
   },
   "speaking": {
     "heading": "Speaking & Community",

@@ -6,6 +6,7 @@ import { Experience } from "@/components/sections/experience";
 import { Footer } from "@/components/layout/footer";
 import { CareerHighlights } from "@/components/sections/career-highlights";
 import { Credentials } from "@/components/sections/credentials";
+import { Publications } from "@/components/sections/publications";
 import { Speaking } from "@/components/sections/speaking";
 import { Projects } from "@/components/sections/projects";
 import { Contact } from "@/components/sections/contact";
@@ -74,6 +75,7 @@ export default async function Home({
         <About />
         <Experience />
         <CareerHighlights />
+        <Publications />
         <Speaking />
         <Credentials />
         <Projects />

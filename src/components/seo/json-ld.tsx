@@ -1,6 +1,7 @@
 import { profile } from "@/data/profile";
 import { talks } from "@/data/speaking";
 import { projects } from "@/data/projects";
+import { publications } from "@/data/publications";
 import { siteConfig } from "@/config/site";
 
 export function JsonLd() {
@@ -74,6 +75,36 @@ export function JsonLd() {
     };
   });
 
+  const scholarlyArticleSchemas = publications.map((pub) => {
+    const url = pub.doi
+      ? `https://doi.org/${pub.doi}`
+      : pub.links?.[0]?.url;
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "ScholarlyArticle",
+      "@id": url ?? pub.titleEn,
+      headline: pub.titleEn,
+      name: pub.titleEn,
+      author: pub.authorsEn.map((authorName, idx) =>
+        idx === pub.authorIndex
+          ? { "@type": "Person", "@id": `${siteConfig.url}/#person`, name: authorName }
+          : { "@type": "Person", name: authorName }
+      ),
+      datePublished: pub.date.replace(/\./g, "-"),
+      isPartOf: { "@type": "Periodical", name: pub.venueEn },
+      ...(pub.doi && {
+        sameAs: `https://doi.org/${pub.doi}`,
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "DOI",
+          value: pub.doi,
+        },
+      }),
+      ...(url && { url }),
+    };
+  });
+
   return (
     <>
       <script type="application/ld+json" suppressHydrationWarning>
@@ -92,6 +123,11 @@ export function JsonLd() {
       ))}
       {creativeWorkSchemas.map((schema, i) => (
         <script key={`work-${i}`} type="application/ld+json" suppressHydrationWarning>
+          {JSON.stringify(schema)}
+        </script>
+      ))}
+      {scholarlyArticleSchemas.map((schema, i) => (
+        <script key={`article-${i}`} type="application/ld+json" suppressHydrationWarning>
           {JSON.stringify(schema)}
         </script>
       ))}

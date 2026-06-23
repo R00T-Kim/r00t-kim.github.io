@@ -37,20 +37,4 @@ export const awards: Award[] = [
     date: "2025.11",
     highlight: true,
   },
-  {
-    title: "우수논문상",
-    titleEn: "Best Paper Award",
-    issuer: "한국인터넷정보학회 춘계학술대회",
-    issuerEn: "KSII Spring Conference",
-    date: "2026.06",
-    highlight: true,
-  },
-  {
-    title: "우수논문상",
-    titleEn: "Best Paper Award",
-    issuer: "한국인터넷정보학회 추계학술대회 (국방정보기술연구회)",
-    issuerEn: "KSII Autumn Conference (Defense IT Research Society)",
-    date: "2025.10",
-    highlight: true,
-  },
 ];

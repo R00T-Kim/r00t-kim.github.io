@@ -30,7 +30,7 @@ export interface Publication {
 export const publications: Publication[] = [
   {
     title:
-      "MuCamp2: 제약 기반 LLM을 통한 공격 그룹 식별용 검증된 사이버 캠페인 변종 생성",
+      "MuCamp2: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
     titleEn:
       "MuCamp2: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
     authors: [

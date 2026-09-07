@@ -39,7 +39,7 @@ export const siteConfig = {
     titleTemplate: "%s | Keunho Kim",
     defaultTitle: "Keunho Kim | Vulnerability Researcher",
     description:
-      "하드웨어 보안, 네트워크 취약점 연구, Automated Exploit Generation, Automated Post-Exploitation을 수행하는 Vulnerability Researcher 김근호의 포트폴리오입니다.",
+      "하드웨어 보안과 네트워크 취약점, Automated Exploit Generation, Automated Post-Exploitation을 연구하는 Vulnerability Researcher 김근호의 포트폴리오입니다.",
     keywords: [
       "vulnerability researcher",
       "hardware security",

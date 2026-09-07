@@ -29,8 +29,8 @@ export const experiences: Experience[] = [
     endDate: null,
     url: "https://oobs.io/",
     description: [
-      "하드웨어·네트워크 시스템 대상 제로데이 취약점 연구",
-      "Automated Exploit Generation 및 Automated Post-Exploitation 연구",
+      "하드웨어·네트워크 시스템의 제로데이 취약점 연구",
+      "Automated Exploit Generation과 Automated Post-Exploitation 연구",
     ],
     descriptionEn: [
       "Zero-day vulnerability research across hardware and network systems",

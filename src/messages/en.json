@@ -19,9 +19,9 @@
   },
   "about": {
     "heading": "About",
-    "description_1": "I am a Vulnerability Researcher who discovers vulnerabilities across hardware and network environments and validates their exploitability on real devices and services. My research extends from vulnerability discovery to exploit generation and post-exploitation work such as privilege escalation, lateral movement, and impact validation.",
+    "description_1": "I am a Vulnerability Researcher who discovers vulnerabilities across hardware and network environments and validates their exploitability on real devices and services. My work extends from vulnerability discovery and exploit generation to automated post-exploitation after initial access.",
     "description_2": "I currently conduct zero-day and offensive automation research at Out of Bounds. My hands-on work includes contributing to 18 CVE discoveries through smart-device research, a Red Team internship at AUTOCRYPT's Vehicle Threat Research Lab, and an award at AutoHack 2025.",
-    "description_3": "My current work treats Hardware Security, Network Vulnerability Research, Automated Exploit Generation, and Automated Post-Exploitation as equal research pillars, using AI agents to structure analysis, exploitation, and follow-up validation workflows.",
+    "description_3": "My current work treats Hardware Security, Network Vulnerability Research, Automated Exploit Generation, and Automated Post-Exploitation as equal research pillars. I use AI agents to structure vulnerability analysis, exploit generation, and post-exploitation as a continuous workflow.",
     "keywords": [
       "Hardware Security",
       "Network Vulnerability Research",

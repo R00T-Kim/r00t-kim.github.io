@@ -4,8 +4,8 @@ export const profile = {
     en: "Keunho Kim",
   },
   title: {
-    ko: "Embedded Security Researcher",
-    en: "Embedded Security Researcher",
+    ko: "Vulnerability Researcher",
+    en: "Vulnerability Researcher",
   },
   birth: "",
   links: {

@@ -30,6 +30,33 @@ export interface Publication {
 export const publications: Publication[] = [
   {
     title:
+      "Multi-Strategy RAG with ATT&CK STIX Metadata-Enriched Embeddings for Technique Extraction",
+    titleEn:
+      "Multi-Strategy RAG with ATT&CK STIX Metadata-Enriched Embeddings for Technique Extraction",
+    authors: ["Jimin Lee", "Keunho Kim", "Kwonmoo You", "Changhee Choi"],
+    authorsEn: ["Jimin Lee", "Keunho Kim", "Kwonmoo You", "Changhee Choi"],
+    authorIndex: 1,
+    venue: "IEEE Access",
+    venueEn: "IEEE Access",
+    date: "2026.09",
+    type: "journal",
+    highlight: true,
+    doi: "10.1109/ACCESS.2026.3730184",
+    links: [
+      {
+        label: "논문",
+        labelEn: "Paper",
+        url: "https://ieeexplore.ieee.org/document/11675985",
+      },
+      {
+        label: "DOI",
+        labelEn: "DOI",
+        url: "https://doi.org/10.1109/ACCESS.2026.3730184",
+      },
+    ],
+  },
+  {
+    title:
       "MuCamp2: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
     titleEn:
       "MuCamp2: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",

@@ -29,14 +29,19 @@ export const experiences: Experience[] = [
     endDate: null,
     url: "https://oobs.io/",
     description: [
-      "제로데이 취약점 연구 수행",
-      "Automated Exploit Generation(AEG) 개발",
+      "하드웨어·네트워크 시스템 대상 제로데이 취약점 연구",
+      "Automated Exploit Generation 및 Automated Post-Exploitation 연구",
     ],
     descriptionEn: [
-      "Zero-day vulnerability research",
-      "Automated Exploit Generation (AEG) development",
+      "Zero-day vulnerability research across hardware and network systems",
+      "Research on Automated Exploit Generation and Automated Post-Exploitation",
     ],
-    tags: ["Zero-Day Research", "Vulnerability Research", "AEG", "Exploit Automation"],
+    tags: [
+      "Hardware Security",
+      "Network Vulnerability Research",
+      "Automated Exploit Generation",
+      "Automated Post-Exploitation",
+    ],
   },
   {
     company: "AUTOCRYPT",

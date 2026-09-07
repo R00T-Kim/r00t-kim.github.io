@@ -11,26 +11,26 @@
   },
   "hero": {
     "greeting": "Hello",
-    "name": "Keunho Kim(rootk1m,gnosis)",
-    "title": "Embedded Security Researcher",
-    "subtitle": "Researches IoT and embedded security through Vulnerability Research, Firmware Analysis, Exploit Reproduction, and Automated Exploit Generation.",
+    "name": "Keunho Kim(gnosis,rootk1m)",
+    "title": "Vulnerability Researcher",
+    "subtitle": "Researches hardware security, network vulnerabilities, Automated Exploit Generation, and Automated Post-Exploitation on real systems.",
     "cta_resume": "View Portfolio",
     "cta_contact": "Get in Touch"
   },
   "about": {
     "heading": "About",
-    "description_1": "Embedded security researcher performing vulnerability analysis, firmware reversing, exploit reproduction, and exploitability validation across IoT and embedded systems. Rather than stopping at reports, I connect findings to reproducible PoCs, exploit evidence, analysis logs, and response-oriented documentation.",
-    "description_2": "Contributed to discovering multiple CVEs through smart-device vulnerability research, and built practical security analysis experience through an AUTOCRYPT Vehicle Threat Research Lab Red Team internship and an AutoHack 2025 award.",
-    "description_3": "Recently, I focus on structuring vulnerability analysis and exploit generation through Firmware-to-Exploit pipelines, Automated Exploit Generation, and Agentic AI-based security automation.",
+    "description_1": "I am a Vulnerability Researcher who discovers vulnerabilities across hardware and network environments and validates their exploitability on real devices and services. My research extends from vulnerability discovery to exploit generation and post-exploitation work such as privilege escalation, lateral movement, and impact validation.",
+    "description_2": "I currently conduct zero-day and offensive automation research at Out of Bounds. My hands-on work includes contributing to 18 CVE discoveries through smart-device research, a Red Team internship at AUTOCRYPT's Vehicle Threat Research Lab, and an award at AutoHack 2025.",
+    "description_3": "My current work treats Hardware Security, Network Vulnerability Research, Automated Exploit Generation, and Automated Post-Exploitation as equal research pillars, using AI agents to structure analysis, exploitation, and follow-up validation workflows.",
     "keywords": [
-      "Zero-Day Research",
+      "Hardware Security",
+      "Network Vulnerability Research",
       "Automated Exploit Generation",
-      "IoT/Embedded Security",
-      "Automotive Security",
+      "Automated Post-Exploitation",
+      "Zero-Day Research",
       "Reverse Engineering",
       "Binary Exploitation",
-      "Agentic AI",
-      "CVE Research"
+      "Agentic AI"
     ]
   },
   "experience": {
@@ -90,7 +90,7 @@
   },
   "career_story": {
     "title": "Portfolio",
-    "subtitle": "Detailed background, role, results and lessons behind each achievement.",
+    "subtitle": "Background, roles, and results across hardware and network vulnerability research and offensive automation.",
     "back": "Go Back",
     "background": "Background",
     "role": "Role",

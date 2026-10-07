@@ -6,7 +6,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?logo=typescript)](https://www.typescriptlang.org/)
 
-**Hardware Security | Network Vulnerability Research | Automated Exploit Generation | Automated Post-Exploitation**
+**Vulnerability Research | Reverse Engineering | Exploit Development | Security Research Automation**
 
 [**https://r00t-kim.github.io**](https://r00t-kim.github.io)
 

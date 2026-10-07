@@ -25,7 +25,6 @@ export function Experience() {
 
           {experiences.map((exp, i) => {
             const isLeft = i % 2 === 0;
-            const isCurrent = !exp.endDate;
             return (
               <m.div
                 key={`${exp.company}-${exp.period}`}
@@ -40,19 +39,18 @@ export function Experience() {
                     : "md:pl-12 md:ml-auto"
                 )}
               >
-                {/* Timeline dot */}
-                <div
+                {/* Timeline marker */}
+                <span
+                  aria-hidden="true"
                   className={cn(
-                    "absolute top-1 left-2 h-4 w-4 rounded-full border-2 border-accent bg-background md:top-1",
+                    "absolute top-1 left-2 flex h-4 w-4 items-center justify-center bg-background text-accent md:top-1",
                     isLeft
                       ? "md:left-auto md:-right-[8px] md:translate-x-0"
                       : "md:-left-[8px]"
                   )}
                 >
-                  {isCurrent && i === 0 && (
-                    <span className="absolute inset-0 animate-ping rounded-full bg-accent/40" />
-                  )}
-                </div>
+                  /
+                </span>
 
                 {/* Card */}
                 <div className="rounded-xl border border-border bg-card p-5 transition-all hover:border-accent/30 hover:shadow-md">
@@ -96,7 +94,7 @@ export function Experience() {
                           key={j}
                           className="flex items-start gap-2 text-sm text-muted-foreground"
                         >
-                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                          <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
                           {item}
                         </li>
                       )

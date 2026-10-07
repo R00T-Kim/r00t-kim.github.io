@@ -29,16 +29,17 @@ export const experiences: Experience[] = [
     endDate: null,
     url: "https://oobs.io/",
     description: [
-      "하드웨어·네트워크 시스템의 제로데이 취약점 연구",
+      "소프트웨어 / 펌웨어 / 하드웨어의 제로데이 취약점 분석 및 익스플로잇 개발",
       "Automated Exploit Generation과 Automated Post-Exploitation 연구",
     ],
     descriptionEn: [
-      "Zero-day vulnerability research across hardware and network systems",
+      "Zero-day vulnerability analysis and exploit development across software / firmware / hardware",
       "Research on Automated Exploit Generation and Automated Post-Exploitation",
     ],
     tags: [
-      "Hardware Security",
-      "Network Vulnerability Research",
+      "Vulnerability Research",
+      "Reverse Engineering",
+      "Exploit Development",
       "Automated Exploit Generation",
       "Automated Post-Exploitation",
     ],
@@ -80,7 +81,7 @@ export const experiences: Experience[] = [
       "LLM 및 자율 에이전트 기반 보안 자동화 연구 수행",
       "Agentic AI 기반 ExploitAgent 구조 설계 및 실험 파이프라인 구축",
       "한국인터넷정보학회 추계학술대회 논문 발표 (우수논문상 수상)",
-      "정기 세미나 참여 및 APT 공격·방어 메커니즘 최신 동향 분석",
+      "정기 세미나 참여 및 APT 공격 / 방어 메커니즘 최신 동향 분석",
       "개인 연구 MuCamp2: LLM 기반 APT 공격 시나리오 변종 생성 실험 수행",
     ],
     descriptionEn: [

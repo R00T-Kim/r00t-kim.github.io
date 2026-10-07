@@ -220,16 +220,16 @@ export const careerDetailSections: CareerDetailSection[] = [
     ],
     role: [
       {
-        title: "제약 기반 생성·검증 구조 설계",
+        title: "제약 기반 생성 / 검증 구조 설계",
         titleEn: "Constrained Generation & Validation Design",
         items: [
           {
-            text: "MuCamp2에서 LLM을 신뢰 경계 밖에 두고, 동일 tactic 후보 풀과 코드 수준 검증으로 TTP 변종 생성을 제한하는 구조를 설계·구현했습니다.",
+            text: "MuCamp2에서 LLM을 신뢰 경계 밖에 두고, 동일 tactic 후보 풀과 코드 수준 검증으로 TTP 변종 생성을 제한하는 구조를 설계 / 구현했습니다.",
             textEn:
               "Designed and implemented MuCamp2's architecture that keeps LLMs outside the trust boundary and constrains TTP mutation with same-tactic candidate pools and code-level verification.",
             subItems: [
               {
-                text: "MITRE ATT&CK 기반 technique/tactic 매핑을 사용해 변이 후보를 제한하고, V1~V4 코드 검증으로 길이·인덱스·원본 보존·후보 풀 일치성을 확인했습니다.",
+                text: "MITRE ATT&CK 기반 technique/tactic 매핑을 사용해 변이 후보를 제한하고, V1~V4 코드 검증으로 길이 / 인덱스 / 원본 보존 / 후보 풀 일치성을 확인했습니다.",
                 textEn:
                   "Constrained mutation candidates with MITRE ATT&CK technique/tactic mappings and checked length, index consistency, original-position preservation, and candidate-pool membership through V1–V4 verification.",
               },
@@ -243,11 +243,11 @@ export const careerDetailSections: CareerDetailSection[] = [
         ],
       },
       {
-        title: "실험·재현 산출물 정리",
+        title: "실험 / 재현 산출물 정리",
         titleEn: "Experiment & Reproducibility Artifacts",
         items: [
           {
-            text: "Lazarus와 MenuPass 캠페인 시퀀스를 대상으로 SR baseline과 LLM few-shot 변종을 비교하고, 평가 스크립트·데이터·GUI 재현 환경을 공개 저장소로 정리했습니다.",
+            text: "Lazarus와 MenuPass 캠페인 시퀀스를 대상으로 SR baseline과 LLM few-shot 변종을 비교하고, 평가 스크립트 / 데이터 / GUI 재현 환경을 공개 저장소로 정리했습니다.",
             textEn:
               "Compared SR baselines and LLM few-shot variants on Lazarus and MenuPass campaign sequences, then organized evaluation scripts, data, and GUI reproduction artifacts in a public repository.",
             subItems: [
@@ -268,7 +268,7 @@ export const careerDetailSections: CareerDetailSection[] = [
     ],
     results: [
       {
-        text: "MuCamp2 논문이 IEEE Access 2026에 게재되었고, IEEE Xplore 및 GitHub 저장소를 통해 논문·코드 산출물을 공개했습니다.",
+        text: "MuCamp2 논문이 IEEE Access 2026에 게재되었고, IEEE Xplore 및 GitHub 저장소를 통해 논문 / 코드 산출물을 공개했습니다.",
         textEn:
           "The MuCamp2 paper was published in IEEE Access 2026, with paper and code artifacts released through IEEE Xplore and GitHub.",
       },
@@ -278,7 +278,7 @@ export const careerDetailSections: CareerDetailSection[] = [
           "Reported a 0% tactic violation rate and L3 pass-rate improvements of +5.5 pp for Lazarus and +3.0 pp for MenuPass.",
       },
       {
-        text: "LLM을 신뢰 주체가 아니라 제한된 선택·정제 모듈로 두고, 독립 검증기로 산출물을 gate하는 보안 연구 패턴을 정리했습니다.",
+        text: "LLM을 신뢰 주체가 아니라 제한된 선택 / 정제 모듈로 두고, 독립 검증기로 산출물을 gate하는 보안 연구 패턴을 정리했습니다.",
         textEn:
           "Established a security research pattern where the LLM is a constrained selection/refinement module rather than a trusted actor, and outputs are gated by independent validators.",
       },
@@ -290,7 +290,7 @@ export const careerDetailSections: CareerDetailSection[] = [
           "Confirmed that security data augmentation is less about generation volume and more about publishing structural integrity, validation criteria, and coverage limits together.",
       },
       {
-        text: "LLM 기반 보안 자동화는 모델 성능만으로 설득되지 않으며, 신뢰 경계·제약 조건·재현 가능한 평가 파이프라인이 함께 설계되어야 한다는 점을 배웠습니다.",
+        text: "LLM 기반 보안 자동화는 모델 성능만으로 설득되지 않으며, 신뢰 경계 / 제약 조건 / 재현 가능한 평가 파이프라인이 함께 설계되어야 한다는 점을 배웠습니다.",
         textEn:
           "Learned that LLM-based security automation is not justified by model capability alone; trust boundaries, constraints, and reproducible evaluation pipelines must be designed together.",
       },
@@ -314,7 +314,7 @@ export const careerDetailSections: CareerDetailSection[] = [
           "IoT firmware vulnerability analysis often separates filesystem, ELF binaries, shell scripts, SBOM, CVE matching, and dynamic validation results, making it difficult to build reproducible evidence chains that analysts can immediately follow.",
       },
       {
-        text: "Agentic AI 기반 AEG를 실제 펌웨어 규모에 적용하려면, LLM의 추론보다 먼저 해시·오프셋·파일 경로·stage 산출물로 검증 가능한 결정론적 증거 구조가 필요했습니다.",
+        text: "Agentic AI 기반 AEG를 실제 펌웨어 규모에 적용하려면, LLM의 추론보다 먼저 해시 / 오프셋 / 파일 경로 / stage 산출물로 검증 가능한 결정론적 증거 구조가 필요했습니다.",
         textEn:
           "To apply Agentic AI-based AEG at real firmware scale, a deterministic evidence structure anchored by hashes, offsets, file paths, and stage artifacts was required before relying on LLM reasoning.",
       },
@@ -349,11 +349,11 @@ export const careerDetailSections: CareerDetailSection[] = [
         ],
       },
       {
-        title: "핵심 개발·디버깅·품질 안정화",
+        title: "핵심 개발 / 디버깅 / 품질 안정화",
         titleEn: "Core Development, Debugging & Quality Stabilization",
         items: [
           {
-            text: "CVE 매칭, ELF 하드닝 감사, 쉘 스크립트 분석, source/sink 식별, Exploit Pattern RAG, LLM triage, adversarial verification 등 핵심 분석 모듈을 직접 구현·디버깅했습니다.",
+            text: "CVE 매칭, ELF 하드닝 감사, 쉘 스크립트 분석, source/sink 식별, Exploit Pattern RAG, LLM triage, adversarial verification 등 핵심 분석 모듈을 직접 구현 / 디버깅했습니다.",
             textEn:
               "Directly implemented and debugged core analysis modules including CVE matching, ELF hardening audits, shell-script analysis, source/sink identification, Exploit Pattern RAG, LLM triage, and adversarial verification.",
             subItems: [
@@ -377,7 +377,7 @@ export const careerDetailSections: CareerDetailSection[] = [
         ],
       },
       {
-        title: "벤치마크·릴리즈·발표까지 직접 마무리",
+        title: "벤치마크 / 릴리즈 / 발표까지 직접 마무리",
         titleEn: "Benchmarking, Release & Presentation Ownership",
         items: [
           {
@@ -456,7 +456,7 @@ export const careerDetailSections: CareerDetailSection[] = [
           "The importance of automotive cybersecurity has rapidly increased with advances in connected cars and autonomous driving technology.",
       },
       {
-        text: "AutoHack 2025는 실제 차량 시스템을 대상으로 한 해킹·방어 경진대회로, 실전 역량을 검증하는 기회였습니다.",
+        text: "AutoHack 2025는 실제 차량 시스템을 대상으로 한 해킹 / 방어 경진대회로, 실전 역량을 검증하는 기회였습니다.",
         textEn:
           "AutoHack 2025 was a hacking and defense competition targeting real vehicle systems, providing an opportunity to validate practical capabilities.",
       },
@@ -477,7 +477,7 @@ export const careerDetailSections: CareerDetailSection[] = [
                   "Performed vehicle network (CAN Bus) analysis and UDS protocol-based vulnerability scanning.",
               },
               {
-                text: "IVI(In-Vehicle Infotainment) 시스템 익스플로잇 및 UAV 보안 챌린지(RF 기반 Hijacking 후 소유권 탈취 시나리오 분석·재현)를 수행했습니다.",
+                text: "IVI(In-Vehicle Infotainment) 시스템 익스플로잇 및 UAV 보안 챌린지(RF 기반 Hijacking 후 소유권 탈취 시나리오 분석 / 재현)를 수행했습니다.",
                 textEn:
                   "Conducted IVI (In-Vehicle Infotainment) exploitation and UAV security challenges (RF-based hijacking and ownership takeover scenario analysis/reproduction).",
               },

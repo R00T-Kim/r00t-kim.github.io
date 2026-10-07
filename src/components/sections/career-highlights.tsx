@@ -75,7 +75,7 @@ export function CareerHighlights() {
                         key={j}
                         className="flex items-start gap-2 text-sm text-muted-foreground"
                       >
-                        <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                        <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
                         {item}
                       </li>
                     )
@@ -95,7 +95,7 @@ export function CareerHighlights() {
                           key={k}
                           className="flex items-start gap-2 text-xs text-muted-foreground"
                         >
-                          <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-secondary/60" />
+                          <span aria-hidden="true" className="shrink-0 text-accent-secondary/60">/</span>
                           {isKo ? tool.ko : tool.en}
                         </li>
                       ))}

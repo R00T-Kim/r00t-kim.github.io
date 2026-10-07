@@ -149,7 +149,18 @@ export function Credentials() {
                   <div className="flex items-center gap-2">
                     <Award className="h-3.5 w-3.5 shrink-0 text-accent" />
                     <h4 className="text-sm font-semibold text-foreground">
-                      {isKo ? award.title : award.titleEn}
+                      {award.url ? (
+                        <a
+                          href={award.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-colors hover:text-accent"
+                        >
+                          {isKo ? award.title : award.titleEn}
+                        </a>
+                      ) : (
+                        isKo ? award.title : award.titleEn
+                      )}
                     </h4>
                   </div>
                   <p className="mt-1 text-xs text-muted-foreground">
@@ -160,6 +171,11 @@ export function Credentials() {
                   {award.date}
                 </span>
               </div>
+              {(isKo ? award.description : award.descriptionEn) && (
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                  {isKo ? award.description : award.descriptionEn}
+                </p>
+              )}
             </m.div>
           ))}
         </div>

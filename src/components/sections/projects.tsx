@@ -121,7 +121,7 @@ export function Projects() {
                                 key={j}
                                 className="flex items-start gap-2 text-sm text-foreground/80"
                               >
-                                <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                                <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
                                 {item}
                               </li>
                             ))}
@@ -143,7 +143,7 @@ export function Projects() {
                                 key={j}
                                 className="flex items-start gap-2 text-sm text-foreground/80"
                               >
-                                <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+                                <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
                                 {item}
                               </li>
                             ))}
@@ -165,7 +165,7 @@ export function Projects() {
                                 key={j}
                                 className="flex items-start gap-2 text-sm text-foreground/80"
                               >
-                                <span aria-hidden="true" className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-secondary/60" />
+                                <span aria-hidden="true" className="shrink-0 text-accent-secondary/60">/</span>
                                 {item}
                               </li>
                             ))}

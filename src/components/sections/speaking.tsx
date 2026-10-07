@@ -216,7 +216,6 @@ export function Speaking() {
               </div>
               {com.active && (
                 <div className="mt-2 inline-flex items-center gap-1 rounded-full bg-accent-secondary/10 px-2 py-0.5 text-xs font-medium text-accent-secondary">
-                  <span className="h-1.5 w-1.5 rounded-full bg-accent-secondary" />
                   {tc("active")}
                 </div>
               )}

@@ -86,7 +86,7 @@ export const projects: Project[] = [
     ],
     contents: [
       "LLM을 신뢰 경계 밖에 두고, 동일 tactic 후보 풀과 코드 검증으로 변종 생성을 제한",
-      "AEP 기반 L1/L2/L3 의미 검증으로 Lazarus·MenuPass 캠페인 변종을 선별",
+      "AEP 기반 L1/L2/L3 의미 검증으로 Lazarus / MenuPass 캠페인 변종을 선별",
       "논문 산출물과 재현 코드를 IEEE Access 및 GitHub에 공개",
     ],
     contentsEn: [
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     results: [
       "IEEE Access 2026 게재: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
       "tactic violation rate 0% 및 L3 pass rate 개선(Lazarus +5.5pp, MenuPass +3.0pp) 보고",
-      "Apache-2.0 라이선스의 공개 저장소로 데이터·스크립트·GUI 재현 환경 제공",
+      "Apache-2.0 라이선스의 공개 저장소로 데이터 / 스크립트 / GUI 재현 환경 제공",
     ],
     resultsEn: [
       "Published in IEEE Access 2026: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",

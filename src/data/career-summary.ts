@@ -6,37 +6,53 @@ export interface CareerHighlight {
 }
 
 export const careerOverview = {
-  ko: "하드웨어 보안, 네트워크 취약점, Automated Exploit Generation, Automated Post-Exploitation을 함께 연구합니다. 실제 장비와 서비스에서 취약점을 찾고 공격 가능성을 검증합니다. 취약점 발견부터 익스플로잇 생성, 초기 접근 이후의 후속 공격까지 자동화하는 방법도 연구합니다.",
-  en: "I research hardware security, network vulnerabilities, Automated Exploit Generation, and Automated Post-Exploitation. On real devices and services, I discover vulnerabilities and validate exploitability. I also study how to automate exploit generation and follow-up attacks after initial access.",
+  ko: "소프트웨어 / 펌웨어 / 하드웨어에서 취약점의 원인을 분석하고 실제 시스템에서 재현해 익스플로잇 가능성을 검증합니다. 리버스 엔지니어링과 바이너리 분석을 활용하며 취약점 발견부터 익스플로잇 생성, 초기 접근 이후의 후속 공격까지 자동화하는 방법도 연구합니다.",
+  en: "I analyze the causes of vulnerabilities across software / firmware / hardware and reproduce them on real systems to validate exploitability. My work uses reverse engineering and binary analysis, and also explores automation from vulnerability discovery and exploit generation to post-exploitation.",
 };
 
 export const careerHighlights: CareerHighlight[] = [
   {
-    title: "하드웨어 보안 연구",
-    titleEn: "Hardware Security Research",
+    title: "Pwn2Own Ireland 2026 / Win",
+    titleEn: "Pwn2Own Ireland 2026 / Win",
+    items: [
+      "Smart Home 부문 Philips Hue Bridge Pro 익스플로잇 시연 성공",
+      "Out of Bounds 소속으로 참가",
+      "취약점 5개를 이용한 익스플로잇으로 공격 가능성 검증",
+      "상금 $12,000 / Master of Pwn 2.5점",
+    ],
+    itemsEn: [
+      "Successfully demonstrated a Philips Hue Bridge Pro exploit in the Smart Home category",
+      "Competed as part of Out of Bounds",
+      "Validated exploitability using five vulnerabilities",
+      "Awarded $12,000 and 2.5 Master of Pwn points",
+    ],
+  },
+  {
+    title: "취약점 분석과 익스플로잇 개발",
+    titleEn: "Vulnerability Analysis & Exploit Development",
+    items: [
+      "소프트웨어 / 펌웨어 / 하드웨어의 공격 표면을 분석하고 취약점을 검증",
+      "실제 시스템에서 취약점을 재현하고 익스플로잇 가능성을 확인",
+      "차량 네트워크의 CAN Bus / UDS 프로토콜 분석 경험",
+    ],
+    itemsEn: [
+      "Attack-surface analysis and vulnerability validation across software / firmware / hardware",
+      "Vulnerability reproduction and exploitability validation on real systems",
+      "Hands-on analysis of CAN bus and UDS protocols in automotive networks",
+    ],
+  },
+  {
+    title: "펌웨어 / 하드웨어 분석",
+    titleEn: "Firmware & Hardware Analysis",
     items: [
       "IoT 스마트 도어벨을 종합 분석해 18건의 CVE 발굴",
-      "펌웨어와 UART·JTAG 등 하드웨어 인터페이스를 함께 분석",
+      "펌웨어와 UART / JTAG 등 하드웨어 인터페이스를 함께 분석",
       "AUTOGLITCH를 이용한 폴트 인젝션 실험 자동화 연구",
     ],
     itemsEn: [
       "Comprehensive security analysis of an IoT smart doorbell, contributing to 18 CVE discoveries",
       "Combined firmware analysis with hardware interfaces including UART and JTAG",
       "Research on automating fault-injection experiments through AUTOGLITCH",
-    ],
-  },
-  {
-    title: "네트워크 취약점 연구",
-    titleEn: "Network Vulnerability Research",
-    items: [
-      "네트워크 장비와 서비스의 공격 표면을 분석하고 취약점을 검증",
-      "실제 시스템에서 취약점을 재현하고 익스플로잇 가능성을 확인",
-      "차량 네트워크의 CAN Bus·UDS 프로토콜 분석 경험",
-    ],
-    itemsEn: [
-      "Attack-surface analysis and vulnerability validation across network devices and services",
-      "Vulnerability reproduction and exploitability validation on real systems",
-      "Hands-on analysis of CAN bus and UDS protocols in automotive networks",
     ],
   },
   {
@@ -71,7 +87,7 @@ export const careerHighlights: CareerHighlight[] = [
     title: "Automated Post-Exploitation",
     titleEn: "Automated Post-Exploitation",
     items: [
-      "초기 접근 이후의 권한 확대·내부 이동 등 후속 공격 자동화 연구",
+      "초기 접근 이후의 권한 확대 / 내부 이동 등 후속 공격 자동화 연구",
       "전문 에이전트가 이전 공격 결과를 이어받아 다음 단계를 선택하도록 설계",
       "보안 도구를 연동해 선택한 공격 단계를 실행",
     ],
@@ -96,12 +112,12 @@ export const selfDevelopedTools = [
 
 export const coreCompetencies = [
   {
-    ko: "하드웨어 보안 연구",
-    en: "Hardware security research",
+    ko: "취약점 연구",
+    en: "Vulnerability research",
   },
   {
-    ko: "네트워크 취약점 연구",
-    en: "Network vulnerability research",
+    ko: "리버스 엔지니어링",
+    en: "Reverse engineering",
   },
   {
     ko: "Automated Exploit Generation",

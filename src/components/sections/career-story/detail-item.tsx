@@ -12,10 +12,7 @@ export const DetailItem = React.memo(function DetailItem({
 }: DetailItemProps) {
   return (
     <li className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground/80">
-      <span
-        aria-hidden="true"
-        className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent/60"
-      />
+      <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
       <div>
         <span>{isKo ? item.text : item.textEn}</span>
         {item.subItems && item.subItems.length > 0 && (
@@ -25,10 +22,7 @@ export const DetailItem = React.memo(function DetailItem({
                 key={k}
                 className="flex items-start gap-2 text-xs text-muted-foreground leading-relaxed"
               >
-                <span
-                  aria-hidden="true"
-                  className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-accent-secondary/50"
-                />
+                <span aria-hidden="true" className="shrink-0 text-accent-secondary/50">/</span>
                 {isKo ? sub.text : sub.textEn}
               </li>
             ))}

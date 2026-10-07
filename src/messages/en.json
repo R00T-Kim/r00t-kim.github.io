@@ -13,23 +13,23 @@
     "greeting": "Hello",
     "name": "Keunho Kim(gnosis,rootk1m)",
     "title": "Vulnerability Researcher",
-    "subtitle": "Researches hardware security, network vulnerabilities, Automated Exploit Generation, and Automated Post-Exploitation on real systems.",
+    "subtitle": "I discover vulnerabilities, investigate their root causes, and validate exploitability in real environments.",
     "cta_resume": "View Portfolio",
     "cta_contact": "Get in Touch"
   },
   "about": {
     "heading": "About",
-    "description_1": "I am a Vulnerability Researcher who discovers vulnerabilities across hardware and network environments and validates their exploitability on real devices and services. My work extends from vulnerability discovery and exploit generation to automated post-exploitation after initial access.",
-    "description_2": "I currently conduct zero-day and offensive automation research at Out of Bounds. My hands-on work includes contributing to 18 CVE discoveries through smart-device research, a Red Team internship at AUTOCRYPT's Vehicle Threat Research Lab, and an award at AutoHack 2025.",
-    "description_3": "My current work treats Hardware Security, Network Vulnerability Research, Automated Exploit Generation, and Automated Post-Exploitation as equal research pillars. I use AI agents to structure vulnerability analysis, exploit generation, and post-exploitation as a continuous workflow.",
+    "description_1": "I am a vulnerability researcher working across software / firmware / hardware. I discover vulnerabilities, investigate their root causes and impact, and develop exploits to validate them in real environments.",
+    "description_2": "I currently research zero-day vulnerabilities and offensive automation at Out of Bounds. At Pwn2Own Ireland 2026, I successfully exploited Philips Hue Bridge Pro as part of Out of Bounds. I contributed to the discovery of 18 CVEs in smart devices and worked as a Red Team intern at AUTOCRYPT’s Vehicle Threat Research Lab. At AutoHack 2025, I received the COSS Council Chair Award.",
+    "description_3": "I am also interested in using AI agents to automate security research. My work includes Automated Exploit Generation and Automated Post-Exploitation, which automates follow-up attacks after initial access.",
     "keywords": [
-      "Hardware Security",
-      "Network Vulnerability Research",
-      "Automated Exploit Generation",
-      "Automated Post-Exploitation",
+      "Vulnerability Research",
       "Zero-Day Research",
       "Reverse Engineering",
       "Binary Exploitation",
+      "Exploit Development",
+      "Automated Exploit Generation",
+      "Automated Post-Exploitation",
       "Agentic AI"
     ]
   },
@@ -90,7 +90,7 @@
   },
   "career_story": {
     "title": "Portfolio",
-    "subtitle": "Background, roles, and results across hardware and network vulnerability research and offensive automation.",
+    "subtitle": "Background and results from projects in vulnerability analysis, exploit development, and security research automation.",
     "back": "Go Back",
     "background": "Background",
     "role": "Role",

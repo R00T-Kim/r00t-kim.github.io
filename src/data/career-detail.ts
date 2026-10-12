@@ -29,6 +29,100 @@ export interface CareerDetailSection {
 
 export const careerDetailSections: CareerDetailSection[] = [
   {
+    id: "pwn2own-hue",
+    title: "Pwn2Own Ireland 2026 - Philips Hue Bridge Pro",
+    titleEn: "Pwn2Own Ireland 2026 - Philips Hue Bridge Pro",
+    links: [
+      {
+        label: "ZDI 결과 발표",
+        labelEn: "ZDI Results",
+        url: "https://www.thezdi.com/blog/2026/10/6/pwn2own-ireland-2026-day-one-results",
+      },
+    ],
+    background: [
+      {
+        text: "Pwn2Own은 Zero Day Initiative가 주최하는 해킹 대회로, 양산 상태의 실제 소비자 기기를 현장에서 공략해 익스플로잇 가능성을 입증하는 자리입니다.",
+        textEn:
+          "Pwn2Own is a hacking competition hosted by the Zero Day Initiative, where competitors must exploit real, retail consumer devices on-site to prove exploitability.",
+      },
+      {
+        text: "Smart Home 부문의 대상인 Philips Hue Bridge Pro는 가정 내 조명과 연동 기기를 제어하는 허브로, 침해 시 홈 네트워크 내 다른 기기로의 확장 경로가 될 수 있는 기기였습니다.",
+        textEn:
+          "The Smart Home target, the Philips Hue Bridge Pro, is a hub that controls home lighting and connected devices, and a compromise of it can become a pivot point to other devices on the home network.",
+      },
+    ],
+    role: [
+      {
+        title: "디버깅 환경 구축",
+        titleEn: "Debugging Environment Setup",
+        items: [
+          {
+            text: "대상 기기에 적용된 하드웨어 수준 완화 기법(미티게이션) 때문에, 취약점 분석에 앞서 기기 내부를 관측하고 디버거를 붙일 수 있는 환경을 만드는 것부터 시작했습니다.",
+            textEn:
+              "Because of the hardware-level mitigations applied to the target device, the work started with building an environment that could observe the device's internals and attach a debugger before any vulnerability analysis.",
+          },
+        ],
+      },
+      {
+        title: "하드웨어 분석",
+        titleEn: "Hardware Analysis",
+        items: [
+          {
+            text: "기기의 하드웨어 구성과 인터페이스를 분석해 공격 표면과 내부 접근 경로를 파악했습니다.",
+            textEn:
+              "Analyzed the device's hardware layout and interfaces to map the attack surface and paths for internal access.",
+          },
+        ],
+      },
+      {
+        title: "취약점 연구 및 익스플로잇",
+        titleEn: "Vulnerability Research & Exploitation",
+        items: [
+          {
+            text: "Out of Bounds 소속으로 취약점을 분석하고, 취약점 5개를 연결한 익스플로잇을 준비해 대회 현장에서 Philips Hue Bridge Pro에 대한 공격 가능성을 검증했습니다.",
+            textEn:
+              "As part of Out of Bounds, analyzed the vulnerabilities and prepared an exploit chaining five of them to validate exploitability of the Philips Hue Bridge Pro live at the competition.",
+            subItems: [
+              {
+                text: "대회 규정상 발견한 취약점은 벤더에 보고되어 책임공개 절차를 따르며, 기술 세부는 패치 전까지 비공개로 유지됩니다.",
+                textEn:
+                  "Under the competition rules, the discovered vulnerabilities were reported to the vendor and follow coordinated disclosure, with technical details kept private until a patch is released.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    results: [
+      {
+        text: "Philips Hue Bridge Pro 익스플로잇 시연에 성공해 Pwn2Own Ireland 2026에서 Win을 기록했습니다.",
+        textEn:
+          "Successfully demonstrated the Philips Hue Bridge Pro exploit and recorded a Win at Pwn2Own Ireland 2026.",
+      },
+      {
+        text: "상금 $12,000과 Master of Pwn 2.5점을 받았습니다.",
+        textEn: "Awarded $12,000 and 2.5 Master of Pwn points.",
+      },
+    ],
+    lessons: [
+      {
+        text: "하드웨어·임베디드 시스템에서는 소프트웨어처럼 바로 디버거를 붙일 수 없고, 하드웨어 미티게이션 때문에 기기를 관측 가능한 상태로 만드는 디버깅 환경 구축 자체가 집중해야 할 하나의 연구 과정임을 체감했습니다.",
+        textEn:
+          "Experienced that with hardware and embedded systems you cannot simply attach a debugger as with software; because of hardware mitigations, building a debugging environment that makes the device observable is itself a research effort that demands dedicated focus.",
+      },
+      {
+        text: "실험 환경이 아니라 양산 소비자 기기를 정해진 시간 안에 현장에서 공략해야 하는 조건에서, 취약점 분석을 재현 가능한 익스플로잇으로 끝까지 완성하는 경험을 했습니다.",
+        textEn:
+          "Gained experience carrying vulnerability analysis through to a reproducible, working exploit under the constraint of attacking a retail consumer device on-site within a fixed time window, rather than in a lab setting.",
+      },
+      {
+        text: "여러 취약점을 하나의 공격 경로로 연결하는 과정에서, 개별 결함보다 이들을 안정적으로 이어 붙이는 체인 구성이 실제 익스플로잇의 핵심임을 확인했습니다.",
+        textEn:
+          "In chaining multiple vulnerabilities into a single attack path, confirmed that reliably stitching them together, rather than any single flaw, is the core of a real exploit.",
+      },
+    ],
+  },
+  {
     id: "iot-doorbell",
     title: "IoT 스마트 도어벨 취약점 분석",
     titleEn: "IoT Smart Doorbell Vulnerability Analysis",
@@ -503,6 +597,178 @@ export const careerDetailSections: CareerDetailSection[] = [
         text: "팀 기반의 CTF/해킹 대회에서 역할 분담과 실시간 커뮤니케이션의 중요성을 배웠습니다.",
         textEn:
           "Learned the importance of role division and real-time communication in team-based CTF/hacking competitions.",
+      },
+    ],
+  },
+  {
+    id: "terminator",
+    title: "Terminator - 자율 보안 에이전트 시스템",
+    titleEn: "Terminator - Autonomous Security Agent System",
+    links: [
+      {
+        label: "GitHub",
+        labelEn: "GitHub",
+        url: "https://github.com/R00T-Kim/Terminator",
+      },
+    ],
+    background: [
+      {
+        text: "CTF 풀이와 버그바운티 헌팅은 분석, 익스플로잇 작성, 검증이 반복되는 과정이라, 사람이 수행하던 작업 흐름을 자율 에이전트로 옮길 수 있는지 확인하고 싶었습니다.",
+        textEn:
+          "CTF solving and bug bounty hunting repeat a cycle of analysis, exploit writing, and validation, so I wanted to see whether that human workflow could be moved onto autonomous agents.",
+      },
+      {
+        text: "다만 LLM 기반 에이전트는 작동하지 않는 결과를 그럴듯하게 보고하는 문제가 있어, 검증을 먼저 강제하는 구조가 필요했습니다.",
+        textEn:
+          "However, LLM-based agents tend to report non-working results plausibly, so a structure that enforces verification first was required.",
+      },
+    ],
+    role: [
+      {
+        title: "멀티 에이전트 설계 및 도구 통합",
+        titleEn: "Multi-agent Design & Tool Integration",
+        items: [
+          {
+            text: "Claude Code Agent Teams 기반으로 4개 도메인에 걸친 25개 전문 에이전트를 설계하고, 보안 도구와 지식 베이스를 파이프라인에 통합했습니다.",
+            textEn:
+              "Designed 25 specialized agents across 4 domains on top of Claude Code Agent Teams, and integrated security tools and a knowledge base into the pipeline.",
+            subItems: [
+              {
+                text: "reverser, exploiter, critic, verifier 등 역할별 에이전트를 순차 파이프라인과 구조화된 핸드오프로 협업하게 구성했습니다.",
+                textEn:
+                  "Composed role-specific agents such as reverser, exploiter, critic, and verifier to collaborate through sequential pipelines and structured handoffs.",
+              },
+              {
+                text: "14개 MCP 서버(gdb, radare2, Ghidra, Frida 등)와 40개 이상의 보안 도구, 28만 건 이상의 보안 지식 문서를 SQLite FTS5 검색 엔진으로 연결했습니다.",
+                textEn:
+                  "Connected 14 MCP servers (gdb, radare2, Ghidra, Frida, etc.), 40+ security tools, and 280,000+ security knowledge documents through a SQLite FTS5 search engine.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    results: [
+      {
+        text: "Verification-First 방법론(로컬 3회 검증 후 실행, Critic 에이전트 거부권)과 No-Exploit-No-Report 정책으로 작동하지 않는 결과의 보고를 차단했습니다.",
+        textEn:
+          "Blocked reporting of non-working results through a verification-first methodology (3x local validation before execution, critic-agent veto) and a no-exploit-no-report policy.",
+      },
+      {
+        text: "CTF 30문제 이상 자동 풀이와 40건 이상의 버그바운티 리포트 제출을 달성했습니다.",
+        textEn:
+          "Achieved autonomous solving of 30+ CTF challenges and submission of 40+ bug bounty reports.",
+      },
+    ],
+    lessons: [
+      {
+        text: "자율 보안 에이전트의 실질적 가치는 생성 능력보다, 작동하는 PoC로 검증되지 않은 결과를 걸러내는 게이트에 있다는 것을 확인했습니다.",
+        textEn:
+          "Confirmed that the real value of autonomous security agents lies less in generation capability and more in the gate that filters out results not backed by a working PoC.",
+      },
+    ],
+  },
+  {
+    id: "autoglitch",
+    title: "AUTOGLITCH - 폴트 인젝션 자동화 프레임워크",
+    titleEn: "AUTOGLITCH - Autonomous Fault Injection Framework",
+    links: [
+      {
+        label: "GitHub",
+        labelEn: "GitHub",
+        url: "https://github.com/R00T-Kim/autoglitch",
+      },
+    ],
+    background: [
+      {
+        text: "임베디드 하드웨어 대상 폴트 인젝션(글리치)은 전압·타이밍 같은 파라미터 조합이 방대해, 사람이 수동으로 탐색하면 성공 조건을 찾기까지 많은 시행착오가 필요했습니다.",
+        textEn:
+          "Fault injection (glitching) against embedded hardware has a vast combination of parameters such as voltage and timing, so manually searching for successful conditions required extensive trial and error.",
+      },
+    ],
+    role: [
+      {
+        title: "폐쇄 루프 탐색 파이프라인 설계",
+        titleEn: "Closed-loop Search Pipeline Design",
+        items: [
+          {
+            text: "파라미터 제안부터 하드웨어 실행, 결과 분류, 보상 신호, 최적화 반복까지 이어지는 폐쇄 루프 폴트 인젝션 파이프라인을 설계했습니다.",
+            textEn:
+              "Designed a closed-loop fault injection pipeline running from parameter suggestion through hardware execution, result classification, reward signal, and optimizer iteration.",
+            subItems: [
+              {
+                text: "베이지안 최적화와 Stable Baselines3 기반 강화학습으로 글리치 파라미터를 자율 탐색하게 구현했습니다.",
+                textEn:
+                  "Implemented autonomous glitch-parameter search using Bayesian optimization and reinforcement learning via Stable Baselines3.",
+              },
+              {
+                text: "ChipWhisperer USB 백엔드와 타입드 JSONL 시리얼 프로토콜을 구현하고, Mock 환경으로 하드웨어 없이도 개발과 CI 테스트가 가능하게 했습니다.",
+                textEn:
+                  "Built a ChipWhisperer USB backend and a typed JSONL serial protocol, and enabled development and CI testing without hardware through a mock environment.",
+              },
+            ],
+          },
+        ],
+      },
+    ],
+    results: [
+      {
+        text: "127개 테스트와 전체 품질 게이트(ruff, mypy, pytest)를 통과했으며, 실제 임베디드 디바이스(STM32F3 등) 대상 하드웨어 검증을 후속 연구로 계획하고 있습니다.",
+        textEn:
+          "Passed 127 tests and all quality gates (ruff, mypy, pytest), with hardware validation on real embedded devices (STM32F3, etc.) planned as follow-up research.",
+      },
+    ],
+    lessons: [
+      {
+        text: "하드웨어 보안 실험은 자동화를 설계할 때 하드웨어 없이도 반복 가능한 Mock 경로를 함께 만들어야, 실제 장비 접근이 제한된 상황에서도 연구를 이어갈 수 있다는 것을 배웠습니다.",
+        textEn:
+          "Learned that hardware security experiments need a repeatable mock path designed alongside the automation, so that research can continue even when access to real equipment is limited.",
+      },
+    ],
+  },
+  {
+    id: "awesome-offensive-mcp",
+    title: "Awesome Offensive MCP",
+    titleEn: "Awesome Offensive MCP",
+    links: [
+      {
+        label: "GitHub",
+        labelEn: "GitHub",
+        url: "https://github.com/R00T-Kim/awesome-offensive-mcp",
+      },
+    ],
+    background: [
+      {
+        text: "Agentic AI 도구가 빠르게 늘면서 공격 보안 워크플로우에 쓸 수 있는 MCP 서버가 흩어져 있었고, 어떤 도구가 실제로 쓸 만한지 판단하기 어려웠습니다.",
+        textEn:
+          "As Agentic AI tooling grew quickly, MCP servers usable in offensive security workflows were scattered, and it was hard to judge which tools were actually usable.",
+      },
+    ],
+    role: [
+      {
+        title: "큐레이션 및 검증",
+        titleEn: "Curation & Verification",
+        items: [
+          {
+            text: "Red Team, Pentest, 취약점 연구에 활용 가능한 MCP 서버를 수집하고, 커뮤니티 검증(30+ Stars) 또는 직접 검증을 거친 도구만 선별해 카테고리별로 정리했습니다.",
+            textEn:
+              "Collected MCP servers usable for Red Team, Pentest, and vulnerability research, then curated only community-verified (30+ stars) or personally verified tools and organized them by category with usage guides.",
+          },
+        ],
+      },
+    ],
+    results: [
+      {
+        text: "GitHub Stars 18개를 기록하고, 공격 보안 커뮤니티에서 MCP 활용 레퍼런스로 공유되었습니다.",
+        textEn:
+          "Reached 18 GitHub stars and was shared as an MCP reference in the offensive security community.",
+      },
+    ],
+    lessons: [
+      {
+        text: "도구 목록의 가치는 수집량이 아니라 검증 기준을 명확히 하는 데 있다는 것을 확인했습니다.",
+        textEn:
+          "Confirmed that the value of a tool list lies not in the volume collected but in making the verification criteria explicit.",
       },
     ],
   },

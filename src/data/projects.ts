@@ -18,6 +18,12 @@ export interface Project {
   tags: string[];
   url?: string;
   links?: ProjectLink[];
+  /** Directory name shown in the laboratory listing; defaults to the title before " - ". */
+  dir?: string;
+  /** Shown in the home page project strip (2-3 ongoing projects). */
+  featured?: boolean;
+  /** Ids of related blog posts (see src/data/posts.ts). */
+  relatedPostIds?: number[];
 }
 
 export const projects: Project[] = [
@@ -70,93 +76,8 @@ export const projects: Project[] = [
     ],
     tags: ["Python", "Firmware Analysis", "AEG", "Exploit Pattern RAG", "SARIF", "SBOM", "MCP"],
     url: "https://github.com/R00T-Kim/SCOUT",
-  },
-  {
-    title: "MuCamp2 - 검증 기반 사이버 캠페인 변종 생성",
-    titleEn: "MuCamp2 - Validated Cyber Campaign Variant Generation",
-    period: "2026.04 ~ 2026.06",
-    periodEn: "Apr 2026 — Jun 2026",
-    goals: [
-      "LLM 기반 APT TTP 시퀀스 증강에서 구조적 무결성과 검증 가능성을 확보",
-      "MITRE ATT&CK 및 AEP 기반 제약으로 공격 캠페인 변종 생성 품질 평가",
-    ],
-    goalsEn: [
-      "Preserve structural integrity and verifiability in LLM-based APT TTP sequence augmentation",
-      "Evaluate cyber campaign variant quality with MITRE ATT&CK and AEP-based constraints",
-    ],
-    contents: [
-      "LLM을 신뢰 경계 밖에 두고, 동일 tactic 후보 풀과 코드 검증으로 변종 생성을 제한",
-      "AEP 기반 L1/L2/L3 의미 검증으로 Lazarus / MenuPass 캠페인 변종을 선별",
-      "논문 산출물과 재현 코드를 IEEE Access 및 GitHub에 공개",
-    ],
-    contentsEn: [
-      "Kept LLMs outside the trust boundary, constraining generation with same-tactic candidate pools and code-level checks",
-      "Filtered Lazarus and MenuPass campaign variants through AEP-based L1/L2/L3 semantic validation",
-      "Published the paper artifact and reproducibility code through IEEE Access and GitHub",
-    ],
-    results: [
-      "IEEE Access 2026 게재: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
-      "tactic violation rate 0% 및 L3 pass rate 개선(Lazarus +5.5pp, MenuPass +3.0pp) 보고",
-      "Apache-2.0 라이선스의 공개 저장소로 데이터 / 스크립트 / GUI 재현 환경 제공",
-    ],
-    resultsEn: [
-      "Published in IEEE Access 2026: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
-      "Reported 0% tactic violation rate and L3 pass-rate gains (Lazarus +5.5 pp, MenuPass +3.0 pp)",
-      "Released data, scripts, and GUI reproduction environment in a public Apache-2.0 repository",
-    ],
-    tags: ["LLM", "Cyber Threat Intelligence", "APT Analysis", "MITRE ATT&CK", "AEP", "IEEE Access"],
-    links: [
-      {
-        label: "논문",
-        labelEn: "Paper",
-        url: "https://ieeexplore.ieee.org/document/11552376",
-      },
-      {
-        label: "코드",
-        labelEn: "Code",
-        url: "https://github.com/cyailab/MuCamp2",
-      },
-    ],
-  },
-  {
-    title: "IoT 스마트 도어벨 취약점 분석 (Team Brrester)",
-    titleEn: "IoT Smart Doorbell Vulnerability Analysis (Team Brrester)",
-    period: "2025.05 ~ 2025.07",
-    periodEn: "May 2025 — Jul 2025",
-    goals: [
-      "IoT 스마트 도어벨 디바이스 대상 종합 보안 분석 수행",
-      "실제 CVE 발굴을 통한 IoT 보안 취약점 연구",
-    ],
-    goalsEn: [
-      "Conduct comprehensive security analysis on IoT smart doorbell devices",
-      "IoT security vulnerability research through real CVE discovery",
-    ],
-    contents: [
-      "펌웨어 추출 및 리버스 엔지니어링을 통한 취약점 분석",
-      "하드웨어/소프트웨어 양면의 보안 취약점 도출",
-      "취약점 분석 가이드 문서 작성 및 공개",
-    ],
-    contentsEn: [
-      "Vulnerability analysis through firmware extraction and reverse engineering",
-      "Identified security vulnerabilities across hardware and software layers",
-      "Authored and published vulnerability analysis guide documentation",
-    ],
-    results: [
-      "총 18건의 CVE 발굴 (CVE-2025-55619 ~ CVE-2025-56802)",
-      "분석 가이드를 GitHub에 공개하여 IoT 보안 연구 커뮤니티에 기여",
-    ],
-    resultsEn: [
-      "Discovered 18 CVEs (CVE-2025-55619 ~ CVE-2025-56802)",
-      "Contributed to IoT security research community by publishing analysis guide on GitHub",
-    ],
-    tags: [
-      "IoT Security",
-      "Firmware Analysis",
-      "Reverse Engineering",
-      "CVE Research",
-      "Hardware Hacking",
-    ],
-    url: "https://github.com/Brrester/IoT-Smart-Doorbell-Vulnerability-Analysis-Guide",
+    featured: true,
+    relatedPostIds: [19],
   },
   {
     title: "Terminator - 자율 보안 에이전트 시스템",
@@ -204,6 +125,7 @@ export const projects: Project[] = [
       "MCP",
     ],
     url: "https://github.com/R00T-Kim/Terminator",
+    featured: true,
   },
   {
     title: "Awesome Offensive MCP",
@@ -238,6 +160,7 @@ export const projects: Project[] = [
     ],
     tags: ["MCP", "Offensive Security", "Red Team", "Pentest", "Agentic AI"],
     url: "https://github.com/R00T-Kim/awesome-offensive-mcp",
+    dir: "awesome_offensive_mcp",
   },
   {
     title: "AUTOGLITCH - 폴트 인젝션 자동화 프레임워크",
@@ -276,5 +199,6 @@ export const projects: Project[] = [
     ],
     tags: ["Python", "Fault Injection", "Hardware Security", "Bayesian Optimization", "Reinforcement Learning", "ChipWhisperer"],
     url: "https://github.com/R00T-Kim/autoglitch",
+    featured: true,
   },
 ];

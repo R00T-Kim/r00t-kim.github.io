@@ -1,16 +1,16 @@
 "use client";
 
-import { useState, useEffect, useSyncExternalStore } from "react";
-import { useTranslations, useLocale } from "next-intl";
-import { useTheme } from "next-themes";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { m, AnimatePresence } from "framer-motion";
-import { Shield, Sun, Moon, Menu, X, Globe } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { useTheme } from "next-themes";
+import { AnimatePresence } from "framer-motion";
+import { Github, Menu, Moon, Search, Sun, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/config/site";
-import { MobileDrawer } from "@/components/layout/mobile-drawer";
-
-const navKeys = siteConfig.nav;
+import { MobileDrawer, type NavLink } from "@/components/layout/mobile-drawer";
+import { SearchDialog } from "@/components/search/search-dialog";
 
 const subscribe = () => () => {};
 const getClientSnapshot = () => true;
@@ -18,19 +18,19 @@ const getServerSnapshot = () => false;
 
 export function Header() {
   const t = useTranslations("nav");
+  const tSearch = useTranslations("search");
   const locale = useLocale();
-  const { theme, setTheme } = useTheme();
   const pathname = usePathname();
   const router = useRouter();
+  const { resolvedTheme, setTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
   const mounted = useSyncExternalStore(
     subscribe,
     getClientSnapshot,
     getServerSnapshot
   );
-
-  const isSubPage = pathname.includes("/career");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -39,16 +39,31 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    const onKeyDown = (event: KeyboardEvent) => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setSearchOpen((value) => !value);
+      }
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [mobileOpen]);
 
+  const links: NavLink[] = siteConfig.nav.map((item) => {
+    const href = `/${locale}${item.href}`;
+    const active =
+      pathname === href ||
+      pathname.startsWith(`${href}/`) ||
+      (item.key === "about_me" && pathname.startsWith(`/${locale}/career`));
+    return { key: item.key, href, label: t(item.key), active };
+  });
 
   const switchLocale = () => {
     const next = locale === "ko" ? "en" : "ko";
@@ -57,125 +72,121 @@ export function Header() {
     router.push(segments.join("/"));
   };
 
-  const scrollTo = (id: string) => {
-    setMobileOpen(false);
-    if (isSubPage) {
-      router.push(`/${locale}#${id}`);
-      return;
-    }
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const targetLang = locale === "ko" ? "EN" : "KO";
+  const isDark = resolvedTheme === "dark";
 
   return (
     <>
-      <m.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+      <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300",
-          scrolled
-            ? "bg-background/80 backdrop-blur-xl border-border/50 shadow-sm"
-            : "bg-transparent border-transparent"
+          "fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300",
+          scrolled || mobileOpen
+            ? "border-border/70 bg-background/85 backdrop-blur-xl"
+            : "border-transparent bg-transparent"
         )}
       >
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <button
-              onClick={() => {
-                if (isSubPage) {
-                  router.push(`/${locale}`);
-                } else {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }
-              }}
-              className="group flex items-center gap-2 rounded-lg p-2 transition-colors hover:bg-muted/50"
-              aria-label="Back to top"
-            >
-              <Shield className="h-5 w-5 text-accent transition-transform group-hover:scale-110" />
-            </button>
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          {/* Wordmark */}
+          <Link
+            href={`/${locale}`}
+            className="flex items-center rounded-md font-mono text-sm font-semibold tracking-tight text-foreground"
+            aria-label={t("home")}
+          >
+            <span className="text-accent">{siteConfig.author.alias}@kim</span>
+            <span className="text-muted-foreground">:~</span>
+            <span className="text-accent">#</span>
+          </Link>
 
-            {/* Desktop Nav */}
-            {!isSubPage && (
-              <nav className="hidden md:flex items-center gap-1">
-                {navKeys.map((key) => (
-                  <button
-                    key={key}
-                    onClick={() => scrollTo(key)}
-                    className="px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground rounded-lg hover:bg-muted/50"
-                  >
-                    {t(key)}
-                  </button>
-                ))}
-              </nav>
-            )}
-
-            {/* Controls */}
-            <div className="flex items-center gap-1">
-              {/* Lang Switcher */}
-              <button
-                onClick={switchLocale}
-                className="flex items-center gap-1.5 rounded-lg border border-transparent px-2.5 py-2 text-sm text-muted-foreground transition-all hover:border-accent/30 hover:text-foreground hover:bg-muted/50"
-                aria-label="Switch language"
-              >
-                <Globe className="h-4 w-4" />
-                <span className="text-xs font-bold uppercase tracking-wide text-accent">
-                  {targetLang}
-                </span>
-              </button>
-
-              {/* Theme Toggle */}
-              <button
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50"
-                aria-label="Toggle theme"
-              >
-                {mounted ? (
-                  theme === "dark" ? (
-                    <Sun className="h-4 w-4" />
-                  ) : (
-                    <Moon className="h-4 w-4" />
-                  )
-                ) : (
-                  <Moon className="h-4 w-4" />
+          {/* Desktop nav */}
+          <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
+            {links.map((link) => (
+              <Link
+                key={link.key}
+                href={link.href}
+                aria-current={link.active ? "page" : undefined}
+                className={cn(
+                  "rounded-md px-3 py-2 font-mono text-sm transition-colors",
+                  link.active
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
-              </button>
-
-              {/* Mobile Menu Button */}
-              
-                <button
-                  onClick={() => setMobileOpen(!mobileOpen)}
-                  className="rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50 md:hidden"
-                  aria-label="Toggle menu"
+              >
+                {link.label}
+                <span
+                  aria-hidden="true"
+                  className={cn("text-accent", link.active ? "opacity-100" : "opacity-40")}
                 >
-                  {mobileOpen ? (
-                    <X className="h-5 w-5" />
-                  ) : (
-                    <Menu className="h-5 w-5" />
-                  )}
-                </button>
-              
-            </div>
+                  /
+                </span>
+              </Link>
+            ))}
+          </nav>
+
+          {/* Auxiliary controls */}
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              onClick={() => setSearchOpen(true)}
+              aria-label={tSearch("open")}
+              className="inline-flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+            >
+              <Search className="h-4 w-4" />
+              <kbd className="hidden rounded border border-border px-1.5 py-0.5 font-mono text-[11px] md:inline">
+                {tSearch("shortcut")}
+              </kbd>
+            </button>
+            <a
+              href={siteConfig.social.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="hidden rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground sm:inline-flex"
+            >
+              <Github className="h-4 w-4" />
+            </a>
+            <button
+              type="button"
+              onClick={switchLocale}
+              aria-label={t("switch_language")}
+              className="rounded-md px-2.5 py-2 font-mono text-xs font-semibold tracking-wide text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+            >
+              {locale === "ko" ? "EN" : "KO"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setTheme(isDark ? "light" : "dark")}
+              aria-label={t("toggle_theme")}
+              className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
+            >
+              {mounted && isDark ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={() => setMobileOpen((open) => !open)}
+              aria-label={t("menu")}
+              aria-expanded={mobileOpen}
+              className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground md:hidden"
+            >
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
           </div>
         </div>
-      </m.header>
+      </header>
 
-      {/* Mobile Drawer */}
       <AnimatePresence>
         {mobileOpen && (
-          <MobileDrawer
-            navKeys={navKeys}
-            onClose={() => setMobileOpen(false)}
-            onNavigate={scrollTo}
-          />
+          <MobileDrawer links={links} onClose={() => setMobileOpen(false)} />
         )}
       </AnimatePresence>
+
+      <SearchDialog open={searchOpen} onOpenChange={setSearchOpen} />
     </>
   );
 }

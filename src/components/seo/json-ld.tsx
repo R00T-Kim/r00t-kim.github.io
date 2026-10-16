@@ -145,8 +145,8 @@ export function CareerJsonLd({ locale }: { locale: string }) {
       {
         "@type": "ListItem",
         position: 1,
-        name: isKo ? "포트폴리오" : "Portfolio",
-        item: `${siteConfig.url}/${locale}`,
+        name: isKo ? "소개" : "About me",
+        item: `${siteConfig.url}/${locale}/about_me`,
       },
       {
         "@type": "ListItem",

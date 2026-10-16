@@ -6,17 +6,18 @@ import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 import { LazyMotionProvider } from "@/components/providers/lazy-motion-provider";
 import { ErrorBoundary } from "@/components/error-boundary";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { JetBrains_Mono, Nanum_Gothic_Coding } from "next/font/google";
 
-const inter = Inter({
+const koreanMono = Nanum_Gothic_Coding({
+  weight: ["400", "700"],
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-korean-mono",
   display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-jetbrains",
   display: "swap",
 });
 import { Analytics } from "@vercel/analytics/next";
@@ -42,15 +43,8 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${inter.variable} ${jetbrainsMono.variable}`}
+      className={`${jetbrainsMono.variable} ${koreanMono.variable}`}
     >
-      <head>
-        <link
-          rel="stylesheet"
-          crossOrigin="anonymous"
-          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
-        />
-      </head>
       <body className="bg-background text-foreground antialiased font-sans">
         <ThemeProvider
           attribute="class"

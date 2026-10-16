@@ -1,211 +1,95 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
-import { m, AnimatePresence } from "framer-motion";
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { projects } from "@/data/projects";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { Badge } from "@/components/ui/badge";
+import { Bullets, Cmd, Tags } from "@/components/ui/term";
 import { cn } from "@/lib/utils";
 
-export function Projects() {
+function dirName(project: { dir?: string; title: string }): string {
+  return project.dir ?? project.title.split(" - ")[0].trim().replace(/\s+/g, "_");
+}
+
+export function Projects({ showHeading = true }: { showHeading?: boolean }) {
   const t = useTranslations("projects");
   const tc = useTranslations("common");
-  const locale = useLocale();
-  const isKo = locale === "ko";
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
-  const isSingle = projects.length === 1;
-
-  const toggle = (i: number) => {
-    setExpandedIndex(expandedIndex === i ? null : i);
-  };
+  const isKo = useLocale() === "ko";
+  const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section id="projects" className="bg-section-alt py-20 md:py-28">
-      <div className={cn("mx-auto px-4 sm:px-6 lg:px-8", isSingle ? "max-w-3xl" : "max-w-4xl")}>
-        <SectionHeading>{t("heading")}</SectionHeading>
+    <section id="projects" className="bg-section-alt py-16 md:py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        {showHeading ? <SectionHeading>{t("heading")}</SectionHeading> : <h2 className="sr-only">{t("heading")}</h2>}
 
-        <div className="space-y-4">
+        <ol className="border-b border-border">
           {projects.map((project, i) => {
-            const isOpen = expandedIndex === i;
-            const links =
-              project.links ??
-              (project.url
-                ? [
-                    {
-                      label: tc("view_more"),
-                      labelEn: tc("view_more"),
-                      url: project.url,
-                    },
-                  ]
-                : []);
+            const isOpen = open === i;
+            const title = isKo ? project.title : project.titleEn;
+            const subtitle = project.dir
+              ? title
+              : title.includes(" - ")
+                ? title.split(" - ").slice(1).join(" - ")
+                : "";
+            const links = project.links ?? (project.url ? [{ label: "github", labelEn: "github", url: project.url }] : []);
             return (
-              <m.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="group overflow-hidden rounded-xl border border-border bg-card transition-colors transition-shadow hover:border-accent/20"
-              >
-                {/* Header (clickable) */}
+              <li key={project.titleEn} className="border-t border-border">
                 <button
-                  onClick={() => toggle(i)}
+                  type="button"
+                  onClick={() => setOpen(isOpen ? null : i)}
                   aria-expanded={isOpen}
                   aria-controls={`project-panel-${i}`}
-                  aria-label={`${isKo ? project.title : project.titleEn} — ${isOpen ? "collapse" : "expand"}`}
-                  className="flex w-full items-start justify-between gap-4 p-5 text-left"
+                  className="grid w-full gap-1 py-4 text-left transition-colors hover:bg-muted/30 sm:grid-cols-[1.25rem_minmax(0,1fr)_auto] sm:items-baseline sm:gap-x-3"
                 >
-                  <div className="flex min-w-0 items-start gap-4">
-                    {/* Subtle left gradient bar on collapsed */}
-                    <div aria-hidden="true" className="hidden h-12 w-1 shrink-0 rounded-full bg-gradient-to-b from-accent to-accent-secondary/60 sm:block" />
-                    <div className="min-w-0">
-                      <h3 id={`project-heading-${i}`} className="text-base font-semibold text-foreground">
-                        {isKo ? project.title : project.titleEn}
-                      </h3>
-                      <p className="mt-1 text-xs text-muted-foreground">
-                        {isKo ? project.period : project.periodEn}
-                      </p>
-                      {/* Tags on collapsed view */}
-                      {!isOpen && (
-                        <div className="mt-2 flex flex-wrap gap-1.5">
-                          {project.tags.slice(0, 5).map((tag) => (
-                            <Badge key={tag} variant="outline">
-                              {tag}
-                            </Badge>
-                          ))}
-                          {project.tags.length > 5 && (
-                            <span className="text-xs text-muted-foreground">
-                              +{project.tags.length - 5}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <ChevronDown
-                    className={cn(
-                      "mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform duration-200",
-                      isOpen && "rotate-180"
-                    )}
-                  />
+                  <span aria-hidden="true" className="hidden font-mono text-sm text-accent sm:block">
+                    {isOpen ? "▾" : "▸"}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="font-mono text-base font-semibold text-foreground md:text-lg">
+                      {dirName(project)}
+                      <span className="text-accent">/</span>
+                    </span>
+                    {subtitle && <span className="ml-3 text-sm text-muted-foreground">{subtitle}</span>}
+                    {!isOpen && <Tags tags={project.tags.slice(0, 4)} className="mt-1.5" />}
+                  </span>
+                  <span className="font-mono text-xs text-muted-foreground">{isKo ? project.period : project.periodEn}</span>
                 </button>
 
-                {/* Expandable detail */}
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <m.div
-                      id={`project-panel-${i}`}
-                      role="region"
-                      aria-labelledby={`project-heading-${i}`}
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                      className="overflow-hidden"
-                    >
-                      <div className="border-t border-border px-5 pb-5 pt-4 space-y-5">
-                        {/* Goals */}
-                        <div>
-                          <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
-                            <span aria-hidden="true" className="h-px w-4 bg-accent/40" />
-                            {tc("goal")}
-                          </h4>
-                          <ul className="space-y-1">
-                            {(isKo
-                              ? project.goals
-                              : project.goalsEn
-                            ).map((item, j) => (
-                              <li
-                                key={j}
-                                className="flex items-start gap-2 text-sm text-foreground/80"
-                              >
-                                <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Contents */}
-                        <div>
-                          <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent">
-                            <span aria-hidden="true" className="h-px w-4 bg-accent/40" />
-                            {tc("content")}
-                          </h4>
-                          <ul className="space-y-1">
-                            {(isKo
-                              ? project.contents
-                              : project.contentsEn
-                            ).map((item, j) => (
-                              <li
-                                key={j}
-                                className="flex items-start gap-2 text-sm text-foreground/80"
-                              >
-                                <span aria-hidden="true" className="shrink-0 text-accent/60">/</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Results */}
-                        <div>
-                          <h4 className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-accent-secondary">
-                            <span aria-hidden="true" className="h-px w-4 bg-accent-secondary/40" />
-                            {tc("result")}
-                          </h4>
-                          <ul className="space-y-1">
-                            {(isKo
-                              ? project.results
-                              : project.resultsEn
-                            ).map((item, j) => (
-                              <li
-                                key={j}
-                                className="flex items-start gap-2 text-sm text-foreground/80"
-                              >
-                                <span aria-hidden="true" className="shrink-0 text-accent-secondary/60">/</span>
-                                {item}
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-
-                        {/* Links */}
-                        {links.length > 0 && (
-                          <div className="flex flex-wrap gap-2 pt-1">
-                            {links.map((link) => (
-                              <a
-                                key={link.url}
-                                href={link.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:border-accent/40 hover:text-foreground"
-                              >
-                                <ExternalLink className="h-3 w-3" />
-                                {isKo ? link.label : link.labelEn}
-                              </a>
-                            ))}
-                          </div>
-                        )}
-
-                        {/* Tags */}
-                        <div className="flex flex-wrap gap-1.5 pt-1">
-                          {project.tags.map((tag) => (
-                            <Badge key={tag} variant="accent">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
+                {isOpen && (
+                  <div
+                    id={`project-panel-${i}`}
+                    className={cn("mb-5 space-y-6 border-l border-border pl-5 sm:ml-8")}
+                  >
+                    {(
+                      [
+                        ["goal", isKo ? project.goals : project.goalsEn],
+                        ["content", isKo ? project.contents : project.contentsEn],
+                        ["result", isKo ? project.results : project.resultsEn],
+                      ] as const
+                    ).map(([key, items]) => (
+                      <div key={key}>
+                        <p className="mb-2 font-mono text-xs font-semibold uppercase tracking-wider text-accent">
+                          ### {tc(key)}
+                        </p>
+                        <Bullets items={[...items]} />
                       </div>
-                    </m.div>
-                  )}
-                </AnimatePresence>
-              </m.div>
+                    ))}
+                    {links.length > 0 && (
+                      <p className="flex flex-wrap gap-x-5 gap-y-1">
+                        {links.map((link) => (
+                          <Cmd key={link.url} href={link.url}>
+                            open {(isKo ? link.label : link.labelEn).toLowerCase()}
+                          </Cmd>
+                        ))}
+                      </p>
+                    )}
+                    <Tags tags={project.tags} />
+                  </div>
+                )}
+              </li>
             );
           })}
-        </div>
+        </ol>
       </div>
     </section>
   );

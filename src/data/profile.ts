@@ -1,7 +1,7 @@
 export const profile = {
   name: {
     ko: "김근호",
-    en: "Keunho Kim",
+    en: "KeunHo Kim",
   },
   title: {
     ko: "Vulnerability Researcher",

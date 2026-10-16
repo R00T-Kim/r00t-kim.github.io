@@ -40,3 +40,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local-only agent tooling & workspace state (not part of the deployed site)
+.claude/
+.agents/
+.omc/
+_workspace/
+skills-lock.json

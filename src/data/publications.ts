@@ -33,8 +33,8 @@ export const publications: Publication[] = [
       "Multi-Strategy RAG with ATT&CK STIX Metadata-Enriched Embeddings for Technique Extraction",
     titleEn:
       "Multi-Strategy RAG with ATT&CK STIX Metadata-Enriched Embeddings for Technique Extraction",
-    authors: ["Jimin Lee", "Keunho Kim", "Kwonmoo You", "Changhee Choi"],
-    authorsEn: ["Jimin Lee", "Keunho Kim", "Kwonmoo You", "Changhee Choi"],
+    authors: ["Jimin Lee", "KeunHo Kim", "Kwonmoo You", "Changhee Choi"],
+    authorsEn: ["Jimin Lee", "KeunHo Kim", "Kwonmoo You", "Changhee Choi"],
     authorIndex: 1,
     venue: "IEEE Access",
     venueEn: "IEEE Access",
@@ -61,7 +61,7 @@ export const publications: Publication[] = [
     titleEn:
       "MuCamp2: Generating Validated Cyber Campaign Variants via Constrained LLMs for Group Attribution",
     authors: [
-      "Keunho Kim",
+      "KeunHo Kim",
       "Jimin Lee",
       "Insup Lee",
       "Insung Han",
@@ -70,7 +70,7 @@ export const publications: Publication[] = [
       "Changhee Choi",
     ],
     authorsEn: [
-      "Keunho Kim",
+      "KeunHo Kim",
       "Jimin Lee",
       "Insup Lee",
       "Insung Han",
@@ -121,7 +121,7 @@ export const publications: Publication[] = [
     authorsEn: [
       "Minjun Kim",
       "Jaejun Byun",
-      "Keunho Kim",
+      "KeunHo Kim",
       "Sanghoon Cho",
       "Jimin Lee",
       "Insung Han",
@@ -154,7 +154,7 @@ export const publications: Publication[] = [
     authorsEn: [
       "Jaejun Byun",
       "Minjun Kim",
-      "Keunho Kim",
+      "KeunHo Kim",
       "Sanghoon Cho",
       "Jimin Lee",
       "Insung Han",
@@ -173,7 +173,7 @@ export const publications: Publication[] = [
     titleEn:
       "Architecture Design and Autonomous Behavior Generation of Agentic AI-based ExploitAgent",
     authors: ["조상훈", "김근호", "최창희"],
-    authorsEn: ["Sanghun Jo", "Keunho Kim", "Changhee Choi"],
+    authorsEn: ["Sanghun Jo", "KeunHo Kim", "Changhee Choi"],
     authorIndex: 1,
     venue: "한국인터넷정보학회 추계학술대회 2025 (국방정보기술연구회)",
     venueEn: "KSII Autumn Conference 2025 (Defense IT Research Society)",

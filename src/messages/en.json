@@ -1,24 +1,95 @@
 {
   "nav": {
-    "about": "About",
-    "experience": "Experience",
-    "certified": "Certified",
-    "speaking": "Speaking",
-    "projects": "Projects",
-    "contact": "Contact",
-    "career-highlights": "Portfolio",
-    "publications": "Publications"
+    "home": "Hub",
+    "about_me": "about_me",
+    "blog": "blog",
+    "laboratory": "laboratory",
+    "menu": "Menu",
+    "switch_language": "한국어로 보기",
+    "toggle_theme": "Toggle theme"
   },
-  "hero": {
-    "greeting": "Hello",
-    "name": "Keunho Kim(gnosis,rootk1m)",
-    "title": "Vulnerability Researcher",
-    "subtitle": "I discover vulnerabilities, investigate their root causes, and validate exploitability in real environments.",
-    "cta_resume": "View Portfolio",
-    "cta_contact": "Get in Touch"
+  "home": {
+    "hero": {
+      "eyebrow": "Vulnerability Researcher",
+      "intro_1": "I work across software, firmware and hardware to understand how systems really behave.",
+      "intro_2": "I also research how to automate the path from discovery to exploit generation and the stages that follow initial access.",
+      "cta_posts": "Read research posts",
+      "cta_about": "About me",
+      "now": "now",
+      "latest": "latest",
+      "tagline": "Find the bug, explain the cause, prove it on real hardware"
+    },
+    "map": {
+      "window_title": "system-map",
+      "hint": "Select a layer to reveal its components and related research.",
+      "layer": "layer",
+      "open_research": "Open related research",
+      "status_mode": "NORMAL",
+      "status_count": "{count} layers"
+    },
+    "sections": {
+      "featured": "Featured research",
+      "posts": "Recent posts",
+      "projects": "Projects",
+      "contact": "Contact",
+      "featured_label": "Selected research",
+      "featured_title": "Research that looked inside",
+      "posts_label": "Field notes",
+      "posts_title": "Analyzed, learned, written down",
+      "projects_label": "Open source",
+      "projects_title": "Turning research into tools",
+      "contact_label": "The person behind",
+      "contact_title": "Hi, I'm KeunHo Kim"
+    },
+    "featured": {
+      "all": "All achievements",
+      "target": "Target",
+      "work": "Role",
+      "result": "Result",
+      "read_more": "Read more",
+      "related_post": "Related post"
+    },
+    "posts": {
+      "all": "All posts",
+      "published_on": "Posts are published on my Tistory blog (Korean).",
+      "rss": "RSS"
+    },
+    "projects": {
+      "all": "All projects",
+      "status_active": "Active",
+      "status_done": "Done",
+      "repo": "Repository",
+      "related_post": "Related post"
+    },
+    "contact": {
+      "description": "Feel free to reach out for research collaboration, talks, or opportunities.",
+      "email": "Email",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "rss": "RSS",
+      "bio_1": "I currently research zero-day vulnerabilities and offensive automation at Out of Bounds. This site collects the research, tools and writing that come out of that work.",
+      "profile_link": "Experience & research"
+    }
+  },
+  "blog_page": {
+    "title": "Blog",
+    "description": "Vulnerability analysis, reverse engineering, lab notes, AI for security, and retrospectives.",
+    "search_placeholder": "Search titles, summaries, tags",
+    "all_types": "All",
+    "count": "{count} posts",
+    "empty": "No posts match the filter.",
+    "series": "Series",
+    "published_on": "Originals are also on Tistory (Korean).",
+    "rss": "Subscribe via RSS",
+    "heading": "Blog"
+  },
+  "post_types": {
+    "analysis": "Analysis",
+    "note": "Tech note",
+    "retrospective": "Retrospective"
   },
   "about": {
-    "heading": "About",
+    "heading": "Profile",
     "description_1": "I am a vulnerability researcher working across software / firmware / hardware. I discover vulnerabilities, investigate their root causes and impact, and develop exploits to validate them in real environments.",
     "description_2": "I currently research zero-day vulnerabilities and offensive automation at Out of Bounds. At Pwn2Own Ireland 2026, I successfully exploited Philips Hue Bridge Pro as part of Out of Bounds. I contributed to the discovery of 18 CVEs in smart devices and worked as a Red Team intern at AUTOCRYPT’s Vehicle Threat Research Lab. At AutoHack 2025, I received the COSS Council Chair Award.",
     "description_3": "I am also interested in using AI agents to automate security research. My work includes Automated Exploit Generation and Automated Post-Exploitation, which automates follow-up attacks after initial access.",
@@ -64,7 +135,7 @@
     "linkedin": "LinkedIn"
   },
   "footer": {
-    "copyright": "© 2026 Keunho Kim. All rights reserved.",
+    "copyright": "© 2026 KeunHo Kim. All rights reserved.",
     "built_with": "Built with Awesome Portfolio Template"
   },
   "common": {
@@ -89,13 +160,63 @@
     "self_developed_tools_label": "Self-Developed Tools"
   },
   "career_story": {
-    "title": "Portfolio",
+    "title": "Project Stories",
     "subtitle": "Background and results from projects in vulnerability analysis, exploit development, and security research automation.",
-    "back": "Go Back",
+    "back": "Back to About me",
     "background": "Background",
     "role": "Role",
     "results": "Results & Impact",
     "lessons": "Lessons Learned",
     "toc": "Table of Contents"
+  },
+  "search": {
+    "open": "Search",
+    "shortcut": "⌘K",
+    "title": "Find a record",
+    "placeholder": "Search posts, projects, research…",
+    "hint": "Search by title, topic or tag",
+    "empty": "No matching records.",
+    "navigate": "navigate",
+    "select": "open",
+    "close": "close",
+    "kind_post": "Post",
+    "kind_project": "Project",
+    "kind_research": "Research"
+  },
+  "hub": {
+    "tagline": "Finding vulnerabilities and proving them on real devices",
+    "blog": {
+      "title": "Blog",
+      "desc": "Vulnerability analysis · Reverse engineering · Lab notes · Retrospectives",
+      "stat": "{count} posts · Latest {date}"
+    },
+    "laboratory": {
+      "title": "Lab",
+      "desc": "{names} · Open tools and experiments",
+      "stat": "{count} active · GitHub"
+    },
+    "prompt": "gnosis@kim:~ $ ls",
+    "about_me": {
+      "title": "Portfolio",
+      "desc": "Experience · Papers · Awards · Talks · Project stories",
+      "stat": "Latest {date} · {title}"
+    }
+  },
+  "laboratory_page": {
+    "title": "Laboratory",
+    "description": "Tools and experiments I have built, and their repositories.",
+    "heading": "Laboratory"
+  },
+  "about_me_page": {
+    "title": "About me",
+    "description": "Experience, papers, awards, talks, contact, and detailed project stories.",
+    "career_link": "Detailed project stories",
+    "heading": "About me"
+  },
+  "post_page": {
+    "reading_time": "{minutes} min read",
+    "older": "← older",
+    "newer": "newer →",
+    "nav": "Post navigation"
   }
 }

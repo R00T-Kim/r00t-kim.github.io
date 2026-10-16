@@ -1,20 +1,12 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/layout/header";
-import { Hero } from "@/components/sections/hero";
-import { About } from "@/components/sections/about";
-import { Experience } from "@/components/sections/experience";
 import { Footer } from "@/components/layout/footer";
-import { CareerHighlights } from "@/components/sections/career-highlights";
-import { Credentials } from "@/components/sections/credentials";
-import { Publications } from "@/components/sections/publications";
-import { Speaking } from "@/components/sections/speaking";
-import { Projects } from "@/components/sections/projects";
-import { Contact } from "@/components/sections/contact";
+import { Hub } from "@/components/home/hub";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
-import { setRequestLocale } from "next-intl/server";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -67,19 +59,12 @@ export default async function Home({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <CareerHighlights />
-        <Publications />
-        <Speaking />
-        <Credentials />
-        <Projects />
-        <Contact />
+        <Hub />
       </main>
       <Footer />
       <ScrollToTop />

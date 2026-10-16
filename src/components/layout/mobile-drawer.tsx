@@ -1,21 +1,31 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useCallback, useEffect, useRef } from "react";
+import Link from "next/link";
 import { m } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { Github, Mail, Rss } from "lucide-react";
+import { siteConfig } from "@/config/site";
+import { cn } from "@/lib/utils";
 
-interface MobileDrawerProps {
-  navKeys: readonly string[];
-  onClose: () => void;
-  onNavigate: (key: string) => void;
+export interface NavLink {
+  key: string;
+  href: string;
+  label: string;
+  active: boolean;
 }
 
-export function MobileDrawer({
-  navKeys,
-  onClose,
-  onNavigate,
-}: MobileDrawerProps) {
-  const t = useTranslations("nav");
+interface MobileDrawerProps {
+  links: NavLink[];
+  onClose: () => void;
+}
+
+const quickLinks = [
+  { href: `mailto:${siteConfig.author.email}`, icon: Mail, label: "Email" },
+  { href: siteConfig.social.github, icon: Github, label: "GitHub" },
+  { href: siteConfig.social.rss, icon: Rss, label: "RSS" },
+];
+
+export function MobileDrawer({ links, onClose }: MobileDrawerProps) {
   const navRef = useRef<HTMLElement>(null);
 
   const handleEscape = useCallback(
@@ -28,8 +38,7 @@ export function MobileDrawer({
   useEffect(() => {
     document.addEventListener("keydown", handleEscape);
     const timer = setTimeout(() => {
-      const firstBtn = navRef.current?.querySelector<HTMLButtonElement>("button");
-      firstBtn?.focus();
+      navRef.current?.querySelector<HTMLAnchorElement>("a")?.focus();
     }, 100);
     return () => {
       document.removeEventListener("keydown", handleEscape);
@@ -53,21 +62,51 @@ export function MobileDrawer({
         initial={{ x: "100%" }}
         animate={{ x: 0 }}
         exit={{ x: "100%" }}
-        transition={{ type: "spring", damping: 25, stiffness: 200 }}
-        className="fixed top-0 right-0 bottom-0 z-40 w-72 bg-card border-l border-border p-6 pt-20 shadow-xl md:hidden"
+        transition={{ type: "spring", damping: 26, stiffness: 220 }}
+        className="fixed top-0 right-0 bottom-0 z-40 flex w-72 flex-col border-l border-border bg-card p-6 pt-20 shadow-xl md:hidden"
       >
         <div className="flex flex-col gap-1">
-          {navKeys.map((key, i) => (
-            <m.button
-              key={key}
-              initial={{ opacity: 0, x: 20 }}
+          {links.map((link, i) => (
+            <m.div
+              key={link.key}
+              initial={{ opacity: 0, x: 16 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.05 }}
-              onClick={() => onNavigate(key)}
-              className="rounded-lg px-4 py-3 text-left text-base font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-muted/50"
             >
-              {t(key)}
-            </m.button>
+              <Link
+                href={link.href}
+                onClick={onClose}
+                aria-current={link.active ? "page" : undefined}
+                className={cn(
+                  "flex items-center gap-2 rounded-md px-4 py-3 text-base font-medium transition-colors",
+                  link.active
+                    ? "bg-muted/60 text-foreground"
+                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                )}
+              >
+                <span aria-hidden="true" className="font-mono text-accent">
+                  /
+                </span>
+                {link.label}
+              </Link>
+            </m.div>
+          ))}
+        </div>
+
+        <div className="mt-auto flex items-center gap-1 border-t border-border pt-4">
+          {quickLinks.map(({ href, icon: Icon, label }) => (
+            <a
+              key={label}
+              href={href}
+              {...(href.startsWith("http") && {
+                target: "_blank",
+                rel: "noopener noreferrer",
+              })}
+              aria-label={label}
+              className="rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted/50 hover:text-foreground"
+            >
+              <Icon className="h-4 w-4" />
+            </a>
           ))}
         </div>
       </m.nav>

@@ -23,7 +23,7 @@ export async function generateMetadata({
   const name = isKo ? siteConfig.author.name.ko : siteConfig.author.name.en;
 
   return {
-    title: isKo ? "포트폴리오" : "Portfolio",
+    title: isKo ? "프로젝트 스토리" : "Project Stories",
     description: isKo
       ? "각 성과의 배경, 역할, 결과와 교훈을 상세히 소개합니다."
       : "Detailed background, role, results and lessons behind each achievement.",
@@ -37,8 +37,8 @@ export async function generateMetadata({
     },
     openGraph: {
       title: isKo
-        ? `${name} | 포트폴리오`
-        : `${siteConfig.author.name.en} | Portfolio`,
+        ? `${name} | 프로젝트 스토리`
+        : `${siteConfig.author.name.en} | Project Stories`,
       description: isKo
         ? "각 성과의 배경, 역할, 결과와 교훈을 상세히 소개합니다."
         : "Detailed background, role, results and lessons behind each achievement.",
@@ -49,8 +49,8 @@ export async function generateMetadata({
     },
     twitter: {
       title: isKo
-        ? `${name} | 포트폴리오`
-        : `${siteConfig.author.name.en} | Portfolio`,
+        ? `${name} | 프로젝트 스토리`
+        : `${siteConfig.author.name.en} | Project Stories`,
       description: isKo
         ? "각 성과의 배경, 역할, 결과와 교훈을 상세히 소개합니다."
         : "Detailed background, role, results and lessons behind each achievement.",

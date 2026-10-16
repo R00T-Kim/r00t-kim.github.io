@@ -1,24 +1,95 @@
 {
   "nav": {
-    "about": "소개",
-    "experience": "경력",
-    "certified": "자격 / 수상",
-    "speaking": "발표",
-    "projects": "프로젝트",
-    "contact": "연락처",
-    "career-highlights": "포트폴리오",
-    "publications": "논문"
+    "home": "허브",
+    "about_me": "about_me",
+    "blog": "blog",
+    "laboratory": "laboratory",
+    "menu": "메뉴",
+    "switch_language": "English로 보기",
+    "toggle_theme": "테마 전환"
   },
-  "hero": {
-    "greeting": "안녕하세요",
-    "name": "김근호(gnosis,rootk1m)",
-    "title": "Vulnerability Researcher",
-    "subtitle": "취약점을 찾고 원인을 분석하며 실제 환경에서 공격 가능성을 검증합니다.",
-    "cta_resume": "포트폴리오",
-    "cta_contact": "연락하기"
+  "home": {
+    "hero": {
+      "eyebrow": "Vulnerability Researcher",
+      "intro_1": "소프트웨어 · 펌웨어 · 하드웨어를 넘나들며 시스템이 실제로 어떻게 동작하는지 분석합니다.",
+      "intro_2": "취약점 발견부터 익스플로잇 생성, 초기 접근 이후의 단계까지 이어지는 연구 과정을 자동화하는 방법도 연구합니다.",
+      "cta_posts": "연구 글 보기",
+      "cta_about": "소개 보기",
+      "now": "now",
+      "latest": "latest",
+      "tagline": "취약점을 찾고 원인을 밝히고 실제 기기에서 증명합니다"
+    },
+    "map": {
+      "window_title": "system-map",
+      "hint": "레이어를 선택하면 구성 요소와 관련 연구가 표시됩니다.",
+      "layer": "layer",
+      "open_research": "관련 연구 보기",
+      "status_mode": "NORMAL",
+      "status_count": "{count}개 레이어"
+    },
+    "sections": {
+      "featured": "대표 연구",
+      "posts": "최근 글",
+      "projects": "프로젝트",
+      "contact": "연락처",
+      "featured_label": "Selected research",
+      "featured_title": "안쪽까지 들여다본 연구",
+      "posts_label": "Field notes",
+      "posts_title": "분석하고 배우고 기록한 것들",
+      "projects_label": "Open source",
+      "projects_title": "연구를 도구로 만드는 중",
+      "contact_label": "The person behind",
+      "contact_title": "안녕하세요, 김근호입니다"
+    },
+    "featured": {
+      "all": "전체 성과 보기",
+      "target": "대상",
+      "work": "역할",
+      "result": "결과",
+      "read_more": "자세히 보기",
+      "related_post": "관련 글"
+    },
+    "posts": {
+      "all": "모든 글 보기",
+      "published_on": "글은 Tistory 블로그에 발행하고 있습니다.",
+      "rss": "RSS"
+    },
+    "projects": {
+      "all": "모든 프로젝트",
+      "status_active": "진행 중",
+      "status_done": "완료",
+      "repo": "저장소",
+      "related_post": "관련 글"
+    },
+    "contact": {
+      "description": "보안 연구 협업, 강연, 채용 관련 문의는 편하게 연락 주세요.",
+      "email": "이메일",
+      "github": "GitHub",
+      "linkedin": "LinkedIn",
+      "rss": "RSS",
+      "bio_1": "현재 Out of Bounds에서 제로데이 취약점과 공격 자동화를 연구합니다. 이 사이트에는 그 과정에서 나온 연구와 도구, 글을 모아 둡니다.",
+      "profile_link": "경력과 연구 이력"
+    }
+  },
+  "blog_page": {
+    "title": "글",
+    "description": "취약점 분석, 리버스 엔지니어링, 실험 기록, AI 활용, 그리고 회고.",
+    "search_placeholder": "제목, 요약, 태그 검색",
+    "all_types": "전체",
+    "count": "{count}개의 글",
+    "empty": "조건에 맞는 글이 없습니다.",
+    "series": "시리즈",
+    "published_on": "원문은 Tistory에도 있습니다.",
+    "rss": "RSS 구독",
+    "heading": "Blog"
+  },
+  "post_types": {
+    "analysis": "연구 분석",
+    "note": "기술 노트",
+    "retrospective": "회고"
   },
   "about": {
-    "heading": "About",
+    "heading": "Profile",
     "description_1": "취약점을 찾고 원인과 영향을 분석하는 Vulnerability Researcher입니다. 소프트웨어 / 펌웨어 / 하드웨어를 대상으로 연구하며 실제 환경에서 취약점을 재현하고 익스플로잇을 개발해 공격 가능성을 검증합니다.",
     "description_2": "현재 Out of Bounds에서 제로데이 취약점과 공격 자동화를 연구합니다. Pwn2Own Ireland 2026에서 Philips Hue Bridge Pro 익스플로잇에 성공했습니다. 스마트 기기 취약점 18건의 CVE 발굴에 기여했으며 AUTOCRYPT 자동차보안위협연구소 Red Team 인턴으로 근무했습니다. AutoHack 2025에서는 COSS 협의회 의장상을 받았습니다.",
     "description_3": "AI 에이전트를 활용한 보안 연구 자동화에도 관심이 있습니다. 익스플로잇을 자동으로 생성하는 Automated Exploit Generation과 초기 접근 이후의 후속 공격을 자동화하는 Automated Post-Exploitation을 연구합니다.",
@@ -89,13 +160,63 @@
     "self_developed_tools_label": "자체 개발 도구"
   },
   "career_story": {
-    "title": "포트폴리오",
+    "title": "프로젝트 스토리",
     "subtitle": "취약점 분석과 익스플로잇 개발, 보안 연구 자동화 프로젝트의 배경과 성과를 소개합니다.",
-    "back": "뒤로가기",
+    "back": "소개로 돌아가기",
     "background": "배경",
     "role": "역할",
     "results": "결과 & 임팩트",
     "lessons": "Lessons Learned",
     "toc": "목차"
+  },
+  "search": {
+    "open": "검색",
+    "shortcut": "⌘K",
+    "title": "기록 찾기",
+    "placeholder": "글, 프로젝트, 연구 검색…",
+    "hint": "제목 · 주제 · 태그로 검색합니다",
+    "empty": "일치하는 기록이 없습니다.",
+    "navigate": "이동",
+    "select": "열기",
+    "close": "닫기",
+    "kind_post": "글",
+    "kind_project": "프로젝트",
+    "kind_research": "연구"
+  },
+  "hub": {
+    "tagline": "실제 기기에서 취약점을 찾고 증명합니다",
+    "blog": {
+      "title": "블로그",
+      "desc": "취약점 분석 · 리버싱 · 실험 기록 · 회고",
+      "stat": "글 {count}편 · 최근 {date}"
+    },
+    "laboratory": {
+      "title": "랩",
+      "desc": "{names} · 공개 도구와 실험",
+      "stat": "진행 중 {count} · GitHub"
+    },
+    "prompt": "gnosis@kim:~ $ ls",
+    "about_me": {
+      "title": "포트폴리오",
+      "desc": "경력 · 논문 · 수상 · 발표 · 프로젝트별 스토리",
+      "stat": "최근 {date} · {title}"
+    }
+  },
+  "laboratory_page": {
+    "title": "랩",
+    "description": "직접 만든 도구와 실험, 그리고 저장소.",
+    "heading": "Laboratory"
+  },
+  "about_me_page": {
+    "title": "소개",
+    "description": "경력, 논문, 수상, 발표와 연락처, 그리고 프로젝트별 상세 스토리.",
+    "career_link": "프로젝트별 상세 스토리",
+    "heading": "About me"
+  },
+  "post_page": {
+    "reading_time": "{minutes}분 읽기",
+    "older": "← 이전 글",
+    "newer": "다음 글 →",
+    "nav": "글 이동"
   }
 }

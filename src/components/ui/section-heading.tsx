@@ -18,6 +18,7 @@ export function SectionHeading({ children, className }: SectionHeadingProps) {
       className={cn("mb-12 md:mb-16", className)}
     >
       <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+        <span className="text-accent">## </span>
         {children}
       </h2>
       <m.div
@@ -26,7 +27,7 @@ export function SectionHeading({ children, className }: SectionHeadingProps) {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-        className="mt-3 h-1.5 w-20 origin-left rounded-full bg-accent"
+        className="mt-4 h-px w-full origin-left bg-border"
       />
     </m.div>
   );

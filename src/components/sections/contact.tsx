@@ -13,6 +13,7 @@ export function Contact({ className }: { className?: string }) {
     { href: `mailto:${profile.links.email}`, label: `mail ${profile.links.email}` },
     { href: profile.links.github, label: "open github" },
     { href: profile.links.linkedin, label: "open linkedin" },
+    { href: profile.links.x, label: "open x" },
     { href: profile.links.blog, label: "open blog" },
   ];
 

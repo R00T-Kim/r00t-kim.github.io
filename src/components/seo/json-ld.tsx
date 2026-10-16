@@ -16,6 +16,7 @@ export function JsonLd() {
     sameAs: [
       profile.links.github,
       profile.links.linkedin,
+      profile.links.x,
       profile.links.blog,
     ],
     knowsAbout: siteConfig.seo.keywords,

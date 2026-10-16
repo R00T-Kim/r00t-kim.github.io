@@ -18,6 +18,7 @@ export const siteConfig = {
       "https://www.linkedin.com/in/%EA%B7%BC%ED%98%B8-%EA%B9%80-2abaa135a/",
     blog: "https://rootk1m.tistory.com/",
     rss: "https://rootk1m.tistory.com/rss",
+    x: "https://x.com/gn0sis__",
   },
   // Top-level routes. `href` is appended to `/${locale}`; `key` is the label
   // key under `nav` in src/messages/*.json.
@@ -27,10 +28,9 @@ export const siteConfig = {
     { key: "laboratory", href: "/laboratory" },
   ] as const,
   seo: {
-    titleTemplate: "%s | KeunHo Kim",
-    defaultTitle: "KeunHo Kim | Vulnerability Researcher",
-    description:
-      "소프트웨어 / 펌웨어 / 하드웨어의 취약점과 익스플로잇 개발, 보안 연구 자동화를 연구하는 Vulnerability Researcher 김근호의 포트폴리오입니다.",
+    titleTemplate: "%s · Gnosis Kim",
+    defaultTitle: "Gnosis Kim",
+    description: "Gnosis is to be surprised at everything.",
     keywords: [
       "vulnerability researcher",
       "vulnerability research",

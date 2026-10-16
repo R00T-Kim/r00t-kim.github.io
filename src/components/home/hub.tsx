@@ -48,9 +48,11 @@ export function Hub() {
     </p>,
     // cat /etc/shadow
     <p key="shadow" className={`${mono} break-all`}>
-      root:$6$rounds=656000$
-      <span className="text-accent">gnosis</span>
-      $…[redacted]…:20089:0:99999:7:::
+      root:
+      <span className="text-accent">
+        Gnosis is to be surprised at everything
+      </span>
+      :20089:0:99999:7:::
     </p>,
     // ls
     <ul key="ls" className="mt-5 flex flex-wrap gap-x-8 gap-y-3 sm:gap-x-12 lg:gap-x-16">

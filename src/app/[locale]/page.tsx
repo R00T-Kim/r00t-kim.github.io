@@ -20,12 +20,9 @@ export async function generateMetadata({
   const { locale } = await params;
   const isKo = locale === "ko";
 
-  const name = isKo ? siteConfig.author.name.ko : siteConfig.author.name.en;
-  const title = isKo ? siteConfig.author.title.ko : siteConfig.author.title.en;
-
   return {
     title: {
-      absolute: `${name} | ${title}`,
+      absolute: siteConfig.seo.defaultTitle,
     },
     description: siteConfig.seo.description,
     alternates: {
@@ -37,7 +34,7 @@ export async function generateMetadata({
       },
     },
     openGraph: {
-      title: `${name} | ${title}`,
+      title: siteConfig.seo.defaultTitle,
       description: siteConfig.seo.description,
       type: "profile",
       locale: isKo ? "ko_KR" : "en_US",
@@ -46,7 +43,10 @@ export async function generateMetadata({
       siteName: `${siteConfig.author.name.en} Portfolio`,
     },
     twitter: {
-      title: `${name} | ${title}`,
+      card: "summary",
+      site: "@gn0sis__",
+      creator: "@gn0sis__",
+      title: siteConfig.seo.defaultTitle,
       description: siteConfig.seo.description,
     },
   };

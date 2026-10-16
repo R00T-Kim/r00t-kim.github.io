@@ -10,6 +10,7 @@ export function Footer() {
     { href: `mailto:${siteConfig.author.email}`, label: `mail ${siteConfig.author.email}`, external: false },
     { href: siteConfig.social.github, label: "open github", external: true },
     { href: siteConfig.social.linkedin, label: "open linkedin", external: true },
+    { href: siteConfig.social.x, label: "open x", external: true },
     { href: siteConfig.social.blog, label: "open blog", external: true },
   ];
 

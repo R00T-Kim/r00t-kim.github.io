@@ -11,6 +11,7 @@ export const profile = {
   links: {
     email: "awqs1221@naver.com",
     blog: "https://rootk1m.tistory.com/",
+    x: "https://x.com/gn0sis__",
     github: "https://github.com/R00T-Kim",
     linkedin:
       "https://www.linkedin.com/in/%EA%B7%BC%ED%98%B8-%EA%B9%80-2abaa135a/",

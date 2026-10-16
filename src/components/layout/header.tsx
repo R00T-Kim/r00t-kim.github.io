@@ -88,7 +88,7 @@ export function Header() {
           {/* Wordmark */}
           <Link
             href={`/${locale}`}
-            className="flex items-center rounded-md font-mono text-sm font-semibold tracking-tight text-foreground"
+            className="flex shrink-0 items-center whitespace-nowrap rounded-md font-mono text-sm font-semibold tracking-tight text-foreground"
             aria-label={t("home")}
           >
             <span className="text-accent">{siteConfig.author.alias}@kim</span>

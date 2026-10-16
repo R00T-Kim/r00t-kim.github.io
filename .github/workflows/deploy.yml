@@ -41,7 +41,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ github.event.repository.homepage || 'https://r00t-kim.github.io' }}
+      url: ${{ github.event.repository.homepage || 'https://gnosis.kim' }}
     runs-on: ubuntu-latest
     needs: build
     steps:

@@ -1,7 +1,7 @@
 export const siteConfig = {
   // Switch to the custom domain (e.g. "https://gnosis.kim") here once its DNS
   // points at GitHub Pages. sitemap/robots/JSON-LD all derive from this value.
-  url: process.env.NEXT_PUBLIC_BASE_URL || "https://r00t-kim.github.io",
+  url: process.env.NEXT_PUBLIC_BASE_URL || "https://gnosis.kim",
   author: {
     name: { ko: "김근호", en: "KeunHo Kim" },
     alias: "gnosis",

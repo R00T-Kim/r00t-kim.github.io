@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { PageIntro } from "@/components/ui/page-intro";
 import { Projects } from "@/components/sections/projects";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import { siteConfig } from "@/config/site";
+import { ogImage, siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -38,6 +38,7 @@ export async function generateMetadata({
       locale: locale === "ko" ? "ko_KR" : "en_US",
       url: `${siteConfig.url}/${locale}/laboratory`,
       siteName: `${siteConfig.author.name.en} Portfolio`,
+      images: [ogImage],
     },
   };
 }

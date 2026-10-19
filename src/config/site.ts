@@ -48,3 +48,16 @@ export const siteConfig = {
 };
 
 export type NavKey = (typeof siteConfig.nav)[number]["key"];
+
+/**
+ * Shared Open Graph / Twitter card image: a 1200×630 terminal-style card
+ * (public/og.png). Next.js replaces `openGraph`/`twitter` per route segment
+ * instead of deep-merging, so every page that sets its own block re-attaches
+ * this rather than inheriting it from the root layout.
+ */
+export const ogImage = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: `${siteConfig.seo.defaultTitle} — ${siteConfig.seo.description}`,
+} as const;

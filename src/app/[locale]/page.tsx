@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { Hub } from "@/components/home/hub";
 import { JsonLd } from "@/components/seo/json-ld";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
-import { siteConfig } from "@/config/site";
+import { ogImage, siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -41,13 +41,15 @@ export async function generateMetadata({
       alternateLocale: isKo ? "en_US" : "ko_KR",
       url: `${siteConfig.url}/${locale}`,
       siteName: `${siteConfig.author.name.en} Portfolio`,
+      images: [ogImage],
     },
     twitter: {
-      card: "summary",
+      card: "summary_large_image",
       site: "@gn0sis__",
       creator: "@gn0sis__",
       title: siteConfig.seo.defaultTitle,
       description: siteConfig.seo.description,
+      images: [ogImage.url],
     },
   };
 }

@@ -8,7 +8,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Bracket, Cmd, Tags } from "@/components/ui/term";
 import { postBySlug, postSummary, postTitle, sortedPosts } from "@/data/posts";
 import { readingMinutes, renderPost } from "@/lib/post-content";
-import { siteConfig } from "@/config/site";
+import { ogImage, siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
 
 export function generateStaticParams() {
@@ -44,6 +44,7 @@ export async function generateMetadata({
       locale: "ko_KR",
       url: `${siteConfig.url}/${locale}/blog/${slug}`,
       siteName: `${siteConfig.author.name.en} Portfolio`,
+      images: [ogImage],
     },
   };
 }

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { siteConfig } from "@/config/site";
+import { ogImage, siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: siteConfig.seo.defaultTitle,
     description: siteConfig.seo.description,
     siteName: `${siteConfig.author.name.en} Portfolio`,
-    images: [],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     creator: "@gn0sis__",
     title: siteConfig.seo.defaultTitle,
     description: siteConfig.seo.description,
-    images: [],
+    images: [ogImage.url],
   },
   robots: {
     index: true,

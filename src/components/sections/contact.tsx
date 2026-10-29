@@ -19,9 +19,9 @@ export function Contact({ className }: { className?: string }) {
 
   return (
     <section id="contact" className={cn("bg-background py-20 md:py-28", className)}>
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading>{t("heading")}</SectionHeading>
-        <p className="text-sm text-muted-foreground md:text-base">{t("description")}</p>
+        <p className="text-base text-foreground/90">{t("description")}</p>
         <ul className="mt-6 space-y-2">
           {commands.map((cmd) => (
             <li key={cmd.label}>

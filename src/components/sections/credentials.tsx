@@ -15,7 +15,7 @@ export function Credentials() {
 
   return (
     <section id="certified" className="bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading>{t("heading")}</SectionHeading>
 
         <SubHeading>{t("awards")}</SubHeading>
@@ -33,7 +33,7 @@ export function Credentials() {
               </h4>
               <p className="mt-1 text-xs text-muted-foreground">{isKo ? award.issuer : award.issuerEn}</p>
               {(isKo ? award.description : award.descriptionEn) && (
-                <p className="mt-2 text-sm leading-relaxed text-foreground/80">
+                <p className="mt-2 max-w-3xl text-sm leading-relaxed text-foreground/85">
                   {isKo ? award.description : award.descriptionEn}
                 </p>
               )}

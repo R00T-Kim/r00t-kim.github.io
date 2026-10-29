@@ -130,7 +130,7 @@ export function Header() {
               className="inline-flex items-center gap-2 rounded-md p-2 text-muted-foreground transition-colors hover:bg-muted/60 hover:text-foreground"
             >
               <Search className="h-4 w-4" />
-              <kbd className="hidden rounded border border-border px-1.5 py-0.5 font-mono text-[11px] md:inline">
+              <kbd className="hidden rounded border border-border px-1.5 py-0.5 font-mono text-xs md:inline">
                 {tSearch("shortcut")}
               </kbd>
             </button>

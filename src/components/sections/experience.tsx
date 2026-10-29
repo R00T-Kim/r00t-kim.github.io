@@ -11,7 +11,7 @@ export function Experience() {
 
   return (
     <section id="experience" className="bg-background py-20 md:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading>{t("heading")}</SectionHeading>
         <div className="border-b border-border">
           {experiences.map((exp) => (

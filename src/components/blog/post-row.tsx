@@ -38,10 +38,10 @@ export function PostRow({ post, showSeries = false, heading = "h3" }: PostRowPro
         {showSeries && post.series && (
           <span className="mb-1 block font-mono text-xs text-muted-foreground">series/{post.series}</span>
         )}
-        <Heading className="text-sm font-semibold leading-snug text-foreground transition-colors group-hover:text-accent md:text-base">
+        <Heading className="text-base font-semibold leading-snug text-foreground transition-colors group-hover:text-accent">
           {postTitle(post, locale)}
         </Heading>
-        <span className="mt-1 block text-sm leading-relaxed text-muted-foreground">{postSummary(post, locale)}</span>
+        <span className="mt-1 block max-w-3xl text-sm leading-relaxed text-foreground/80">{postSummary(post, locale)}</span>
         <Tags tags={post.tags} className="mt-1.5" />
       </span>
     </Link>

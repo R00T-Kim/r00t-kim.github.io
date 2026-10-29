@@ -12,10 +12,10 @@ export function CareerHighlights() {
 
   return (
     <section id="career-highlights" className="bg-section-alt py-20 md:py-28">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading>{t("heading")}</SectionHeading>
 
-        <p className="border-l-2 border-accent/60 pl-4 text-sm leading-relaxed text-foreground/85 md:text-base">
+        <p className="max-w-3xl border-l-2 border-accent/60 pl-4 text-base leading-relaxed text-foreground/90">
           {isKo ? careerOverview.ko : careerOverview.en}
         </p>
 

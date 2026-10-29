@@ -20,6 +20,12 @@
     "Noto Sans KR", ui-monospace, monospace;
   --font-sans: "JetBrains Mono", "Nanum Gothic Coding", "D2Coding", "Apple SD Gothic Neo",
     "Noto Sans KR", ui-monospace, monospace;
+
+  /* Small steps raised from Tailwind's 12/14px: dates, venues and authors are read, not glanced at. */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.5;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.6;
 }
 
 /* Dark palette (default): ink background, light text, single teal accent */
@@ -142,6 +148,11 @@ html {
 }
 .cursor-blink {
   animation: cursor-blink 1.1s steps(1) infinite;
+}
+
+/* Home session: not typed yet. Hidden, but keeps its space so the page does not shift. */
+.hub-pending {
+  visibility: hidden;
 }
 
 /* Flowing dashes on active system-map connections */

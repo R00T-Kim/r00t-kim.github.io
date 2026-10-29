@@ -27,9 +27,9 @@ export function Hub() {
   const outputs = [
     // whoami
     <div key="whoami">
-      <p className="mt-3 text-4xl font-bold leading-none tracking-[-0.02em] text-foreground sm:text-5xl md:text-6xl">
+      <h1 className="mt-3 text-4xl font-bold leading-none tracking-[-0.02em] text-foreground sm:text-5xl md:text-6xl">
         {name}
-      </p>
+      </h1>
       <p className="mt-3 font-mono text-sm text-muted-foreground">
         {siteConfig.author.handles.join(" · ")}
         <span className="mx-1.5">·</span>
@@ -70,8 +70,9 @@ export function Hub() {
     </ul>,
   ];
 
-  // Starts from an empty prompt (identical on server + client, so no flash),
-  // then types each command out. prefers-reduced-motion jumps straight to done.
+  // The whole session is always in the markup (crawlers and no-JS visitors read it),
+  // and whatever has not been "typed" yet is .hub-pending: hidden but still taking its
+  // space, so nothing shifts while it types. prefers-reduced-motion jumps straight to done.
   const [playing, setPlaying] = useState(true);
   const [step, setStep] = useState(0);
   const [typed, setTyped] = useState(0);
@@ -115,26 +116,31 @@ export function Hub() {
 
   return (
     <section className="mx-auto max-w-6xl px-4 pt-28 pb-24 sm:px-6 md:pt-36 md:pb-32 lg:px-8">
+      <noscript>
+        <style>{".hub-pending{visibility:visible}.hub-cursor{display:none}"}</style>
+      </noscript>
       <div className="space-y-7 md:space-y-9">
         {CMDS.map((cmd, i) => {
           const visible = !playing || i <= step;
-          if (!visible) return null;
           const active = playing && i === step;
-          const cmdText = active ? cmd.slice(0, typed) : cmd;
+          const cut = active ? typed : cmd.length;
           const showOutput = !playing || i < step || (active && outShown);
           return (
-            <div key={cmd}>
+            <div key={cmd} className={visible ? undefined : "hub-pending"}>
               <p className="prompt text-sm">
                 <span className="user">{siteConfig.author.alias}@kim</span>
                 <span className="text-muted-foreground">:~ # </span>
-                <span className="cmd">{cmdText}</span>
-                {active && (
-                  <span aria-hidden="true" className="cursor-blink text-accent">
-                    ▍
-                  </span>
-                )}
+                <span className="cmd">
+                  {cmd.slice(0, cut)}
+                  {active && (
+                    <span aria-hidden="true" className="hub-cursor cursor-blink text-accent">
+                      ▍
+                    </span>
+                  )}
+                  {cut < cmd.length && <span className="hub-pending">{cmd.slice(cut)}</span>}
+                </span>
               </p>
-              {showOutput && outputs[i]}
+              <div className={showOutput ? undefined : "hub-pending"}>{outputs[i]}</div>
             </div>
           );
         })}

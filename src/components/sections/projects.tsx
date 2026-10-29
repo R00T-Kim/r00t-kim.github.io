@@ -19,7 +19,7 @@ export function Projects({ showHeading = true }: { showHeading?: boolean }) {
 
   return (
     <section id="projects" className="bg-section-alt py-16 md:py-24">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {showHeading ? <SectionHeading>{t("heading")}</SectionHeading> : <h2 className="sr-only">{t("heading")}</h2>}
 
         <ol className="border-b border-border">

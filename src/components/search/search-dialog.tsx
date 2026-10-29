@@ -122,7 +122,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                     i === activeIndex ? "bg-accent/10" : "hover:bg-muted/50"
                   )}
                 >
-                  <span className="w-16 shrink-0 font-mono text-[11px] uppercase tracking-wider text-accent">
+                  <span className="w-16 shrink-0 font-mono text-xs uppercase tracking-wider text-accent">
                     {t(`kind_${entry.kind}`)}
                   </span>
                   <span className="min-w-0 flex-1">
@@ -130,7 +130,7 @@ export function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
                       {entry.title}
                     </span>
                     {entry.subtitle && (
-                      <span className="block truncate font-mono text-[11px] text-muted-foreground">
+                      <span className="block truncate font-mono text-xs text-muted-foreground">
                         {entry.subtitle}
                       </span>
                     )}

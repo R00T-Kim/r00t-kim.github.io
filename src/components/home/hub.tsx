@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { siteConfig } from "@/config/site";
 import { experiences } from "@/data/experience";
+import { HubShell } from "@/components/home/hub-shell";
 
 // A believable "just got root" session. The last command, `ls`, lists the site.
 const CMDS = ["whoami", "id", "uname -a", "cat /etc/shadow", "ls"];
@@ -144,6 +145,7 @@ export function Hub() {
             </div>
           );
         })}
+        {!playing && <HubShell dirs={dirs} name={name} />}
       </div>
     </section>
   );

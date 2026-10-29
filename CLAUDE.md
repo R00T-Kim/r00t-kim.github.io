@@ -31,7 +31,7 @@ No test suite is configured.
 
 ```
 /                    → redirect to /ko
-/[locale]            → hub: name, one sentence, and `about_me/ blog/ laboratory/` listed like `ls` — `src/components/home/hub.tsx`
+/[locale]            → hub: a root session typed out on load (name, id, `ls` of `about_me/ blog/ laboratory/`), then a live prompt (`help`, `ls`, `cd`, `whoami`, `clear`; anything else searches) — `src/components/home/hub.tsx`, `hub-shell.tsx`
 /[locale]/about_me   → about me: profile, experience, highlights, publications, talks, credentials, contact
 /[locale]/blog       → post index (client-side filter/search over src/data/posts.ts)
 /[locale]/laboratory → tools & experiments (project accordion)

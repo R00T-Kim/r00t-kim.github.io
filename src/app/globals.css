@@ -342,9 +342,11 @@ html {
 .post .hljs-emphasis { font-style: italic; }
 .post .hljs-strong { font-weight: 700; }
 
-/* Search fields own their focus context (command palette, prompt line);
-   the global focus ring hugs them too tightly, so drop it here. */
+/* Search fields and the home shell own their focus context (command palette, prompt
+   line, the blinking caret); the global focus ring hugs them too tightly, so drop it here. */
 input[type="search"]:focus,
-input[type="search"]:focus-visible {
+input[type="search"]:focus-visible,
+#hub-shell:focus,
+#hub-shell:focus-visible {
   outline: none;
 }

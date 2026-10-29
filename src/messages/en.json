@@ -183,6 +183,7 @@
     "kind_research": "Research"
   },
   "hub": {
+    "shell_label": "Type a command",
     "tagline": "Finding vulnerabilities and proving them on real devices",
     "blog": {
       "title": "Blog",

@@ -183,6 +183,7 @@
     "kind_research": "연구"
   },
   "hub": {
+    "shell_label": "명령 입력",
     "tagline": "실제 기기에서 취약점을 찾고 증명합니다",
     "blog": {
       "title": "블로그",

@@ -10,15 +10,30 @@ import { siteConfig } from "@/config/site";
 import ko from "@/messages/ko.json";
 import en from "@/messages/en.json";
 
+// Long enough for any real path on this site; a longer one is cut so a crafted link cannot
+// put a whole sentence of its own on the page.
+const MAX_PATH = 60;
+
+/** Decodes %-escapes for display; a malformed escape (decodeURIComponent throws) is shown raw. */
+function readPath(): string {
+  const raw = window.location.pathname;
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
+
 /** The 404 body: the failed `cd` to the missing path, an `ls` of the site, and the live prompt. */
 export function NotFoundSession() {
   // The missing path is only known in the browser; the exported HTML renders it empty.
   const path = useSyncExternalStore(
     () => () => {},
-    () => decodeURIComponent(window.location.pathname),
+    readPath,
     () => ""
   );
   const locale = path.startsWith("/en") ? "en" : "ko";
+  const shown = path.length > MAX_PATH ? `${path.slice(0, MAX_PATH)}…` : path;
 
   useEffect(() => {
     document.documentElement.lang = locale;
@@ -41,10 +56,10 @@ export function NotFoundSession() {
           <div>
             <p className="prompt">
               {prompt}
-              <span className="cmd">cd {path}</span>
+              <span className="cmd">cd {shown}</span>
             </p>
             <h1 className="mt-2 break-all text-muted-foreground">
-              cd: {path}: No such file or directory
+              cd: {shown}: No such file or directory
             </h1>
           </div>
           <div>

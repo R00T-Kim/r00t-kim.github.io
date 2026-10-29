@@ -214,6 +214,9 @@
     "heading": "About me"
   },
   "post_page": {
+    "copy": "copy",
+    "copied": "copied",
+    "toc": "목차",
     "reading_time": "{minutes}분 읽기",
     "older": "← 이전 글",
     "newer": "다음 글 →",

@@ -59,26 +59,37 @@ MCP는 기본적으로 호스트 애플리케이션이 여러 서버에 연결�
 -   메시지 프레이밍, 요청/응답 매핑, JSON-RPC 2.0 규격 준수를 담당
     
 -   typescript
-    
-    ```typescript
-    import { Protocol } from "@modelcontextprotocol/sdk";
-    ```
-    
 
-async function main() { const protocol = new Protocol();
+```typescript
+import { Protocol } from "@modelcontextprotocol/sdk";
 
-// 요청 처리기 등록 protocol.setRequestHandler("echo", async ({ params }) => { return { echo: params.message }; });
+async function main() {
+  const protocol = new Protocol();
 
-// 알림 처리기 등록 protocol.setNotificationHandler("log", async ({ params }) => { console.log("Log:", params.message); });
+  // 요청 처리기 등록
+  protocol.setRequestHandler("echo", async ({ params }) => {
+    return { echo: params.message };
+  });
 
-// 요청 전송 및 응답 대기 const response = await protocol.request({ method: "echo", params: { message: "Hello, MCP!" } }); console.log("Response:", response);
+  // 알림 처리기 등록
+  protocol.setNotificationHandler("log", async ({ params }) => {
+    console.log("Log:", params.message);
+  });
 
-// 알림 전송 (응답 없음) await protocol.notification({ method: "log", params: { message: "TypeScript MCP example" } }); }
+  // 요청 전송 및 응답 대기
+  const response = await protocol.request({ method: "echo", params: { message: "Hello, MCP!" } });
+  console.log("Response:", response);
+
+  // 알림 전송 (응답 없음)
+  await protocol.notification({ method: "log", params: { message: "TypeScript MCP example" } });
+}
 
 main().catch(console.error);
 
-````
-- python
+```
+
+-   python
+
 ```python
 import asyncio
 from mcp.protocol import Protocol
@@ -101,7 +112,8 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
-````
+
+```
 
 ### Transport Layer
 

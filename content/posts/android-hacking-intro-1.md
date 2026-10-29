@@ -30,7 +30,7 @@ Project 뷰(1)는 프로젝트의 파일과 폴더를 보여줍니다. Code 뷰(
 
 일단 해봅시다. 공식 문서를 따라 가볼게요.
 
-```
+```kotlin
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

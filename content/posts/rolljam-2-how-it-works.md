@@ -384,7 +384,7 @@ Samy의 PoC 코드는 구조적으로 보면 <strong>Finite State Machine(FSM)</
 
 이걸 아주 압축한 형태의 의사코드로 쓰면 대략:
 
-```
+```cpp
 loop() {
     switch (state) {
         case IDLE:

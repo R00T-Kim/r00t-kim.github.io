@@ -214,6 +214,9 @@
     "heading": "About me"
   },
   "post_page": {
+    "copy": "copy",
+    "copied": "copied",
+    "toc": "Contents",
     "reading_time": "{minutes} min read",
     "older": "← older",
     "newer": "newer →",

@@ -5,6 +5,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { ScrollToTop } from "@/components/ui/scroll-to-top";
+import { CodeCopy } from "@/components/blog/code-copy";
+import { PostToc } from "@/components/blog/post-toc";
 import { Bracket, Cmd, Tags } from "@/components/ui/term";
 import { postBySlug, postSummary, postTitle, sortedPosts } from "@/data/posts";
 import { readingMinutes, renderPost } from "@/lib/post-content";
@@ -60,7 +62,9 @@ export default async function PostPage({
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: "post_page" });
   const tt = await getTranslations({ locale, namespace: "post_types" });
-  const [html, minutes] = await Promise.all([renderPost(slug), readingMinutes(slug)]);
+  const [{ html, headings }, minutes] = await Promise.all([renderPost(slug), readingMinutes(slug)]);
+  // A table of contents only pays for itself on posts with a few sections.
+  const toc = headings.length >= 3 ? headings : null;
   const all = sortedPosts();
   const index = all.findIndex((item) => item.slug === slug);
   const newer = index > 0 ? all[index - 1] : undefined;
@@ -71,7 +75,8 @@ export default async function PostPage({
       <Header />
       <main>
         <div className="border-b border-border pt-28 pb-10 md:pt-36 md:pb-14">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
             <p className="prompt text-sm">
               <span className="user">gnosis@kim</span>
               <span className="text-muted-foreground">:~ # </span>
@@ -89,11 +94,14 @@ export default async function PostPage({
               {locale !== post.lang && <Bracket>{post.lang}</Bracket>}
             </p>
             <Tags tags={post.tags} className="mt-3" />
+            </div>
           </div>
         </div>
 
-        <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:grid lg:grid-cols-[minmax(0,48rem)_minmax(0,1fr)] lg:gap-16 lg:px-8">
+        <article className="min-w-0">
           <div className="post" lang={post.lang} dangerouslySetInnerHTML={{ __html: html }} />
+          <CodeCopy label={t("copy")} done={t("copied")} />
 
           <div className="mt-14 border-t border-border pt-6 font-mono text-sm">
             <p className="flex flex-wrap gap-x-6 gap-y-2">
@@ -118,6 +126,14 @@ export default async function PostPage({
             </nav>
           </div>
         </article>
+        {toc && (
+          <aside className="hidden lg:block">
+            <div className="sticky top-24 max-h-[calc(100vh-8rem)] overflow-y-auto">
+              <PostToc headings={toc} label={t("toc")} />
+            </div>
+          </aside>
+        )}
+        </div>
       </main>
       <Footer />
       <ScrollToTop />

@@ -268,7 +268,7 @@ EU 판매 대상 제품 식별
 
 먼저 필요한 것은 다음이다.
 
-```sql
+```
 Inventory
   → SBOM
   → Vulnerability Handling

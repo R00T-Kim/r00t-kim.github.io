@@ -273,6 +273,44 @@ html {
   line-height: 1.7;
 }
 :root:not(.dark) .post pre { background: #10151b; }
+
+/* Code frame: a head bar with the fence's language on the left and a copy button (added by JS) on the right */
+.post .code-block > pre {
+  margin: 0;
+  border-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.post .code-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 2rem;
+  padding: 0 0.6rem 0 1.1rem;
+  background: #0d1014;
+  border: 1px solid var(--color-border);
+  border-bottom-color: #1a2027;
+  border-radius: 2px 2px 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #8a96a1;
+}
+:root:not(.dark) .post .code-head { background: #161c23; border-bottom-color: #222931; }
+.post .code-lang::before { content: "["; }
+.post .code-lang::after { content: "]"; }
+.post .code-lang { color: #2dd4bf; }
+.post .code-lang-plain { color: #8a96a1; }
+.post .code-copy {
+  margin-left: auto;
+  padding: 0.25rem 0.4rem;
+  color: #8a96a1;
+  font: inherit;
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+.post .code-copy:hover,
+.post .code-copy:focus-visible { color: #2dd4bf; }
 .post pre code {
   background: none;
   border: 0;
@@ -324,9 +362,10 @@ html {
 .post .hljs-selector-tag,
 .post .hljs-built_in,
 .post .hljs-type { color: #5ccfe6; }
+/* Code blocks stay dark in both themes, so colours here are fixed, not theme tokens. */
 .post .hljs-string,
 .post .hljs-attr,
-.post .hljs-regexp { color: var(--color-accent); }
+.post .hljs-regexp { color: #2dd4bf; }
 .post .hljs-number,
 .post .hljs-literal { color: #e6a06c; }
 .post .hljs-title,
@@ -338,7 +377,7 @@ html {
 .post .hljs-meta,
 .post .hljs-symbol { color: #8a96a1; }
 .post .hljs-deletion { color: #ff6b7a; }
-.post .hljs-addition { color: var(--color-accent); }
+.post .hljs-addition { color: #2dd4bf; }
 .post .hljs-emphasis { font-style: italic; }
 .post .hljs-strong { font-weight: 700; }
 

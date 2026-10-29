@@ -1,7 +1,9 @@
+// Switch to the custom domain (e.g. "https://gnosis.kim") here once its DNS
+// points at GitHub Pages. sitemap/robots/JSON-LD/RSS all derive from this value.
+const url = process.env.NEXT_PUBLIC_BASE_URL || "https://gnosis.kim";
+
 export const siteConfig = {
-  // Switch to the custom domain (e.g. "https://gnosis.kim") here once its DNS
-  // points at GitHub Pages. sitemap/robots/JSON-LD all derive from this value.
-  url: process.env.NEXT_PUBLIC_BASE_URL || "https://gnosis.kim",
+  url,
   author: {
     name: { ko: "김근호", en: "KeunHo Kim" },
     alias: "gnosis",
@@ -17,7 +19,8 @@ export const siteConfig = {
     linkedin:
       "https://www.linkedin.com/in/%EA%B7%BC%ED%98%B8-%EA%B9%80-2abaa135a/",
     blog: "https://rootk1m.tistory.com/",
-    rss: "https://rootk1m.tistory.com/rss",
+    // Generated from src/data/posts.ts by src/app/rss.xml/route.ts
+    rss: `${url}/rss.xml`,
     x: "https://x.com/gn0sis__",
   },
   // Top-level routes. `href` is appended to `/${locale}`; `key` is the label
@@ -45,6 +48,9 @@ export const siteConfig = {
     ],
   },
   googleVerification: "",
+  // GoatCounter site code (the "<code>" in https://<code>.goatcounter.com). Empty = no
+  // visit counting at all; the script is only added once this is set.
+  goatcounter: "gnosiskim",
 };
 
 export type NavKey = (typeof siteConfig.nav)[number]["key"];

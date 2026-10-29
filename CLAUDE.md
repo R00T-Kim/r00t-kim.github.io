@@ -34,6 +34,9 @@ No test suite is configured.
 /[locale]            → hub: a root session typed out on load (name, id, `ls` of `about_me/ blog/ laboratory/`), then a live prompt (`help`, `ls`, `cd`, `whoami`, `clear`; anything else searches) — `src/components/home/hub.tsx`, `hub-shell.tsx`
 /[locale]/about_me   → about me: profile, experience, highlights, publications, talks, credentials, contact
 /[locale]/blog       → post index (client-side filter/search over src/data/posts.ts)
+/[locale]/blog/<slug> → post body from content/posts/<slug>.md, rendered at build time by `src/lib/post-content.ts` (code blocks get a `[lang]` head bar and a JS-added copy button; h2/h3 feed a `tree`-style table of contents on lg+)
+/rss.xml             → RSS 2.0 feed of the posts, generated at build time (`src/app/rss.xml/route.ts`)
+404                  → `src/app/not-found.tsx` → out/404.html (GitHub Pages serves it for any missing path); builds its own <html> and reads the locale from the URL on the client
 /[locale]/laboratory → tools & experiments (project accordion)
 /[locale]/career     → project stories (long-form, per-project sections `#section-<id>`), linked from about_me
 /[locale]/about, /[locale]/projects → legacy redirects to /about_me and /laboratory
@@ -84,7 +87,7 @@ Defined in `src/app/[locale]/layout.tsx`.
 - **Class utility**: `cn()` from `src/lib/utils.ts` (clsx + tailwind-merge)
 - **Section components** are `"use client"`; home sections use Framer Motion `m` with `whileInView` fade-ins. `SectionLabel` and `PageIntro` are plain server-compatible components.
 - **No state management library** — local `useState` only
-- **Site config**: `src/config/site.ts` is the single source for URL, author (name, alias, handles, email), social links (incl. `rss`), nav routes, SEO metadata
+- **Site config**: `src/config/site.ts` is the single source for URL, author (name, alias, handles, email), social links (incl. `rss`), nav routes, SEO metadata, and the GoatCounter site code (`goatcounter`; empty = no visit counting, see `src/components/pageview-counter.tsx`)
 - **SEO is generated, not hand-written**: `src/app/sitemap.ts`, `src/app/robots.ts`, and the JSON-LD in `src/components/seo/json-ld.tsx` all derive from `siteConfig` — edit the config, not these files
 - **Custom domain switch**: when `gnosis.kim` (or any custom domain) points at GitHub Pages, change the default of `siteConfig.url` (or set `NEXT_PUBLIC_BASE_URL`); sitemap, robots, canonical/alternate URLs and JSON-LD follow automatically. No `CNAME` file is needed with the Actions deploy.
 - **Date sorting**: data with Korean date strings (e.g. `"2024. 03."`) is sorted via `parseDate()` in `src/lib/date-utils.ts`; posts use ISO `YYYY-MM-DD` and sort lexicographically.
@@ -100,7 +103,7 @@ Defined in `src/app/[locale]/layout.tsx`.
 | Featured research cards on the home (first = large card) | `src/data/featured.ts` |
 | Hero system-map layers (blocks, captions, links) | `src/data/system-map.ts` |
 | Projects (`featured: true` → home strip, `relatedPostIds` → "관련 글") | `src/data/projects.ts` |
-| Blog posts (mirror of the Tistory RSS; add an entry per new post) | `src/data/posts.ts` |
+| Blog posts (entry per post in `src/data/posts.ts`, body in `content/posts/<slug>.md`; label code fences with their language, unlabelled fences stay plain) | `src/data/posts.ts`, `content/posts/` |
 | Publications (papers) | `src/data/publications.ts` |
 | Certifications, awards | `src/data/credentials.ts` |
 | Talks, community | `src/data/speaking.ts` |
@@ -111,4 +114,4 @@ Defined in `src/app/[locale]/layout.tsx`.
 
 ### Roadmap notes
 
-Posts currently link out to Tistory. The planned next step is MDX posts under the same site (`/[locale]/blog/<slug>`), tags, and an RSS feed generated from `src/data/posts.ts`; `PostRow`, `PostList`, and the search index are written so that `url` can become an internal path without changing their shape.
+Posts render on this site from Markdown (`content/posts/`), and the RSS feed is generated from `src/data/posts.ts`; `url` on each post still points at the Tistory original ("open original"). Not done yet: MDX, per-tag pages.

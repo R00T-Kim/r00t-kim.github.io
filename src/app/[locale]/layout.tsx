@@ -6,22 +6,9 @@ import { routing } from "@/i18n/routing";
 import "@/app/globals.css";
 import { LazyMotionProvider } from "@/components/providers/lazy-motion-provider";
 import { ErrorBoundary } from "@/components/error-boundary";
-import { JetBrains_Mono, Nanum_Gothic_Coding } from "next/font/google";
-
-const koreanMono = Nanum_Gothic_Coding({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-  variable: "--font-korean-mono",
-  display: "swap",
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+import { siteConfig } from "@/config/site";
+import { jetbrainsMono, koreanMono } from "@/lib/fonts";
+import { PageviewCounter } from "@/components/pageview-counter";
 
 export default async function LocaleLayout({
   children,
@@ -46,6 +33,8 @@ export default async function LocaleLayout({
       className={`${jetbrainsMono.variable} ${koreanMono.variable}`}
     >
       <body className="bg-background text-foreground antialiased font-sans">
+        {/* React hoists this into <head>: lets feed readers find the blog's RSS from any page */}
+        <link rel="alternate" type="application/rss+xml" title={`${siteConfig.author.name.en} blog`} href={siteConfig.social.rss} />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -56,8 +45,7 @@ export default async function LocaleLayout({
             <ErrorBoundary>
               <LazyMotionProvider>
                 {children}
-                <Analytics />
-                <SpeedInsights />
+                <PageviewCounter />
               </LazyMotionProvider>
             </ErrorBoundary>
           </NextIntlClientProvider>

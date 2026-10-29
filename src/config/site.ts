@@ -12,7 +12,7 @@ export const siteConfig = {
       ko: "Vulnerability Researcher",
       en: "Vulnerability Researcher",
     },
-    email: "awqs1221@naver.com",
+    email: "gimgeunho5@gmail.com",
   },
   social: {
     github: "https://github.com/R00T-Kim",

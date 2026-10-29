@@ -9,7 +9,7 @@ export const profile = {
   },
   birth: "",
   links: {
-    email: "awqs1221@naver.com",
+    email: "gimgeunho5@gmail.com",
     blog: "https://rootk1m.tistory.com/",
     x: "https://x.com/gn0sis__",
     github: "https://github.com/R00T-Kim",

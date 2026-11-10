@@ -700,7 +700,7 @@ An intent is the message used to invoke a component. It is explicit when it name
 
 > "If the intent contains any private data, then data can be leaked to third-party apps installed on the same device when implicit intents are used."
 >
-> (Oversecured, "Interception of Android implicit intents", 2020, [blog.oversecured.com](https://blog.oversecured.com/Interception-of-Android-implicit-intents/))
+> (Oversecured, "Interception of Android implicit intents", 2020, [oversecured.com](https://oversecured.com/blog/interception-of-android-implicit-intents))
 
 The official documentation also warns that a service should always be invoked with an explicit intent[^10].
 
@@ -1351,7 +1351,7 @@ Thanks for reading.
 [^8]: [`<activity>` element](https://developer.android.com/guide/topics/manifest/activity-element)
 [^9]: "Since Android 10 (API level 29), the platform has placed restrictions on when apps can start activities from the background.", [Activity security](https://developer.android.com/guide/components/activities/secure-bal)
 [^10]: "always use an explicit intent when starting a Service and do not declare intent filters for your services", [Intents and intent filters](https://developer.android.com/guide/components/intents-filters)
-[^11]: [Access to app protected components](https://blog.oversecured.com/Android-Access-to-app-protected-components/)
+[^11]: [Access to app protected components](https://oversecured.com/blog/android-access-to-app-protected-components)
 [^12]: [PendingIntent risks](https://developer.android.com/privacy-and-security/risks/pending-intent)
 [^13]: "SELinux neverallow rules prohibit behavior that should never occur. With compatibility testing, SELinux neverallow rules are now enforced across devices.", [Customizing SELinux](https://source.android.com/docs/security/features/selinux/customize)
 [^14]: [Add system properties](https://source.android.com/docs/core/architecture/configuration/add-system-properties)

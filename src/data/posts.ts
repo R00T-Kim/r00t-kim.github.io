@@ -23,16 +23,38 @@ export interface Post {
   summaryEn?: string;
   /** ISO date (YYYY-MM-DD) */
   date: string;
-  /** Original post on Tistory. */
-  url: string;
+  /** Where the post was first published (Tistory, company blog); absent for posts written for this site. */
+  url?: string;
+  /** Per-locale canonical URL when this copy duplicates a post published elsewhere in that language. */
+  canonical?: Partial<Record<"ko" | "en", string>>;
   type: PostType;
   tags: string[];
   series?: string;
-  /** Language the post is written in. */
+  /** Language of the default Markdown body. */
   lang: "ko" | "en";
+  /** Locale-specific Markdown basenames, without the .md extension. */
+  contentTranslations?: Partial<Record<"ko" | "en", string>>;
 }
 
 export const posts: Post[] = [
+  {
+    id: 201,
+    slug: "aaos-01-android-basics",
+    title: "AAOS Teardown #1 Android 보안 기본기",
+    titleEn: "AAOS Teardown #1 Android Security Basics",
+    summary:
+      "AAOS가 그대로 가져다 쓰는 Android 보안 구조를 차량 에뮬레이터 출력과 소스로 확인합니다. UID와 권한, Binder, 앱 component와 intent, SELinux, zygote, seccomp, init과 시스템 속성, HAL, Verified Boot와 저장소 암호화까지.",
+    summaryEn:
+      "Android's security architecture as inherited by AAOS, checked against vehicle-emulator output and source: UIDs and permissions, Binder, app components and intents, SELinux, zygote and seccomp, init and system properties, HALs, Verified Boot, and storage encryption.",
+    date: "2026-11-10",
+    url: "https://oobs.io/posts/aaos-teardown-01-android-basics/",
+    canonical: { en: "https://oobs.io/posts/aaos-teardown-01-android-basics/" },
+    type: "analysis",
+    tags: ["Automotive", "Android", "AAOS", "SELinux", "Binder"],
+    series: "AAOS Teardown",
+    lang: "ko",
+    contentTranslations: { en: "aaos-01-android-basics.en" },
+  },
   {
     id: 24,
     slug: "mucamp2-first-author-notes",
@@ -560,6 +582,15 @@ export function postById(id: number): Post | undefined {
 
 export function postBySlug(slug: string): Post | undefined {
   return posts.find((p) => p.slug === slug);
+}
+
+/** Resolve the actual body and its language; translated metadata alone is not a body translation. */
+export function postContent(post: Post, locale: string): { slug: string; lang: Post["lang"] } {
+  if (locale === "ko" || locale === "en") {
+    const slug = post.contentTranslations?.[locale];
+    if (slug) return { slug, lang: locale };
+  }
+  return { slug: post.slug, lang: post.lang };
 }
 
 export function postTitle(post: Post, locale: string): string {

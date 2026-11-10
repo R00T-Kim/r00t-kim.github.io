@@ -8,7 +8,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { CodeCopy } from "@/components/blog/code-copy";
 import { PostToc } from "@/components/blog/post-toc";
 import { Bracket, Cmd, Tags } from "@/components/ui/term";
-import { postBySlug, postSummary, postTitle, sortedPosts } from "@/data/posts";
+import { postBySlug, postContent, postSummary, postTitle, sortedPosts } from "@/data/posts";
 import { readingMinutes, renderPost } from "@/lib/post-content";
 import { ogImage, siteConfig } from "@/config/site";
 import { routing } from "@/i18n/routing";
@@ -31,7 +31,8 @@ export async function generateMetadata({
     title,
     description,
     alternates: {
-      canonical: `${siteConfig.url}/${locale}/blog/${slug}`,
+      canonical:
+        post.canonical?.[locale as "ko" | "en"] ?? `${siteConfig.url}/${locale}/blog/${slug}`,
       languages: {
         ko: `${siteConfig.url}/ko/blog/${slug}`,
         en: `${siteConfig.url}/en/blog/${slug}`,
@@ -43,7 +44,7 @@ export async function generateMetadata({
       description,
       type: "article",
       publishedTime: post.date,
-      locale: "ko_KR",
+      locale: postContent(post, locale).lang === "en" ? "en_US" : "ko_KR",
       url: `${siteConfig.url}/${locale}/blog/${slug}`,
       siteName: `${siteConfig.author.name.en} Portfolio`,
       images: [ogImage],
@@ -62,7 +63,8 @@ export default async function PostPage({
   if (!post) notFound();
   const t = await getTranslations({ locale, namespace: "post_page" });
   const tt = await getTranslations({ locale, namespace: "post_types" });
-  const [{ html, headings }, minutes] = await Promise.all([renderPost(slug), readingMinutes(slug)]);
+  const content = postContent(post, locale);
+  const [{ html, headings }, minutes] = await Promise.all([renderPost(content.slug), readingMinutes(content.slug)]);
   // A table of contents only pays for itself on posts with a few sections.
   const toc = headings.length >= 3 ? headings : null;
   const all = sortedPosts();
@@ -80,7 +82,7 @@ export default async function PostPage({
             <p className="prompt text-sm">
               <span className="user">gnosis@kim</span>
               <span className="text-muted-foreground">:~ # </span>
-              <span className="cmd">cat blog/{slug}.md</span>
+              <span className="cmd">cat blog/{content.slug}.md</span>
             </p>
             <h1 className="mt-5 text-3xl font-bold leading-snug tracking-tight text-foreground md:text-4xl">
               <span className="text-accent"># </span>
@@ -91,21 +93,25 @@ export default async function PostPage({
               <Bracket accent>{tt(post.type)}</Bracket>
               {post.series && <span>series/{post.series}</span>}
               <span>{t("reading_time", { minutes })}</span>
-              {locale !== post.lang && <Bracket>{post.lang}</Bracket>}
+              {locale !== content.lang && <Bracket>{content.lang}</Bracket>}
             </p>
             <Tags tags={post.tags} className="mt-3" />
+            {post.url && (
+              <p className="mt-4">
+                <Cmd href={post.url}>open original ({new URL(post.url).hostname}) ↗</Cmd>
+              </p>
+            )}
             </div>
           </div>
         </div>
 
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:grid lg:grid-cols-[minmax(0,48rem)_minmax(0,1fr)] lg:gap-16 lg:px-8">
         <article className="min-w-0">
-          <div className="post" lang={post.lang} dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="post" lang={content.lang} dangerouslySetInnerHTML={{ __html: html }} />
           <CodeCopy label={t("copy")} done={t("copied")} />
 
           <div className="mt-14 border-t border-border pt-6 font-mono text-sm">
             <p className="flex flex-wrap gap-x-6 gap-y-2">
-              <Cmd href={post.url}>open original ↗</Cmd>
               <Cmd href={`/${locale}/blog`} internal>
                 cd ../
               </Cmd>

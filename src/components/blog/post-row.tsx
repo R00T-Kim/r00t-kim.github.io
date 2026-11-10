@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
-import { type Post, postSummary, postTitle } from "@/data/posts";
+import { type Post, postContent, postSummary, postTitle } from "@/data/posts";
 import { Bracket, Tags } from "@/components/ui/term";
 
 interface PostRowProps {
@@ -16,6 +16,7 @@ export function PostRow({ post, showSeries = false, heading = "h3" }: PostRowPro
   const Heading = heading;
   const locale = useLocale();
   const tt = useTranslations("post_types");
+  const content = postContent(post, locale);
 
   return (
     <Link
@@ -27,10 +28,10 @@ export function PostRow({ post, showSeries = false, heading = "h3" }: PostRowPro
       </time>
       <span className="sm:pt-1">
         <Bracket accent>{tt(post.type)}</Bracket>
-        {locale !== post.lang && (
+        {locale !== content.lang && (
           <>
             {" "}
-            <Bracket>{post.lang}</Bracket>
+            <Bracket>{content.lang}</Bracket>
           </>
         )}
       </span>

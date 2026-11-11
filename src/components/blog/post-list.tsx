@@ -63,7 +63,7 @@ export function PostList() {
           value={query}
           onChange={(event) => setQuery(event.target.value)}
           placeholder={t("search_placeholder")}
-          className="min-w-0 flex-1 bg-transparent text-foreground placeholder:text-muted-foreground/70 focus:outline-none focus-visible:outline-none"
+          className="min-w-0 flex-1 bg-transparent text-foreground placeholder:text-muted-foreground focus:outline-none focus-visible:outline-none"
         />
         <span className="shrink-0 text-muted-foreground">&quot; blog/</span>
       </label>

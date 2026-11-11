@@ -357,7 +357,7 @@ html {
 
 /* highlight.js — minimal terminal theme driven by one accent family */
 .post .hljs-comment,
-.post .hljs-quote { color: #6b7681; font-style: italic; }
+.post .hljs-quote { color: #7f8a96; font-style: italic; }
 .post .hljs-keyword,
 .post .hljs-selector-tag,
 .post .hljs-built_in,

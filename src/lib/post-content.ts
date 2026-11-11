@@ -29,6 +29,29 @@ const textOf = (node: HastNode): string =>
   node.type === "text" ? (node.value ?? "") : (node.children ?? []).map(textOf).join("");
 
 /**
+ * Renumbers headings so the outline never skips a level: the page title is the h1, a post's top-level
+ * headings become h2 and each nested heading sits one level below its parent. Imported posts open with
+ * `###` or jump from `##` to `####`, which left those headings out of the table of contents.
+ */
+function rehypeHeadingOutline() {
+  return (tree: HastNode) => {
+    const open: number[] = [];
+    const walk = (node: HastNode) => {
+      const level = /^h([1-6])$/.exec(node.tagName ?? "")?.[1];
+      if (level) {
+        const written = Number(level);
+        while (open.length && open[open.length - 1] >= written) open.pop();
+        open.push(written);
+        node.tagName = `h${Math.min(open.length + 1, 6)}`;
+        return;
+      }
+      node.children?.forEach(walk);
+    };
+    walk(tree);
+  };
+}
+
+/**
  * Wraps every <pre> in div.code-block with a head bar naming its language (from the
  * fence label, `text` when there is none), and collects h2/h3 for the table of contents.
  */
@@ -79,6 +102,7 @@ export async function renderPost(slug: string): Promise<{ html: string; headings
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(rehypeHeadingOutline)
     .use(rehypeSlug)
     .use(rehypeHighlight, { detect: false, ignoreMissing: true })
     .use(rehypeCodeFrameAndHeadings(headings))

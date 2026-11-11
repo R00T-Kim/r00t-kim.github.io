@@ -193,7 +193,7 @@ export function HubShell({ dirs, name }: { dirs: Dir[]; name: string }) {
           autoCorrect="off"
           spellCheck={false}
           enterKeyHint="go"
-          className="min-w-0 flex-1 bg-transparent text-base text-foreground caret-accent outline-none placeholder:text-muted-foreground/50 sm:text-sm"
+          className="min-w-0 flex-1 bg-transparent text-base text-foreground caret-accent outline-none placeholder:text-muted-foreground sm:text-sm"
         />
       </form>
     </div>
